@@ -16,4 +16,3 @@ from .ssTEM import ssTEMDataset
 from .oai_zib import OAIZIBDataset
 from .oai import OAIDataset
 from .hard import HARDDataset
-from .granularity_refine import GranularityRefineDataset

@@ -6,11 +6,13 @@ experiments/
 outputs/
 paper/
 .vscode/
+.agents/
 1/
 five_dataset_noc_eval/
 part_noc85_eval/
 model_upgrade_plan/
 pascalpart_training_extension/
+server_logs/
 third_party/
 
 # Byte-compiled / optimized / DLL files

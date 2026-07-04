@@ -14,12 +14,22 @@ set "PYTHON=%ENV_DIR%\python.exe"
 set "CHECKPOINT=weights\simpleclick_models\cocolvis_vit_base.pth"
 set "DINOV3_MODEL=dinov3_vitl16"
 set "BASE_GRANULARITY_CHECKPOINT="
-set "RECOVERY_CHECKPOINT=experiments\granularity_recovery\latest.pth"
+set "RECOVERY_CHECKPOINT="
 
-if exist "%PROJECT_DIR%\experiments\granularity_refine\best.pth" (
+if defined BASE_GRANULARITY_CHECKPOINT (
+    set "BASE_GRANULARITY_CHECKPOINT=%BASE_GRANULARITY_CHECKPOINT%"
+) else if exist "%PROJECT_DIR%\experiments\granularity_refine\best.pth" (
     set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine\best.pth"
 ) else if exist "%PROJECT_DIR%\experiments\granularity_refine\latest.pth" (
     set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine\latest.pth"
+)
+
+if defined GRANULARITY_RECOVERY_CHECKPOINT (
+    set "RECOVERY_CHECKPOINT=%GRANULARITY_RECOVERY_CHECKPOINT%"
+) else if exist "%PROJECT_DIR%\experiments\granularity_recovery\best.pth" (
+    set "RECOVERY_CHECKPOINT=experiments\granularity_recovery\best.pth"
+) else if exist "%PROJECT_DIR%\experiments\granularity_recovery\latest.pth" (
+    set "RECOVERY_CHECKPOINT=experiments\granularity_recovery\latest.pth"
 )
 
 if not exist "%PYTHON%" (
@@ -48,6 +58,13 @@ if not exist "%PROJECT_DIR%\%CHECKPOINT%" (
 if "%BASE_GRANULARITY_CHECKPOINT%"=="" (
     echo Base granularity checkpoint not found under:
     echo %PROJECT_DIR%\experiments\granularity_refine
+    pause
+    exit /b 1
+)
+
+if "%RECOVERY_CHECKPOINT%"=="" (
+    echo Granularity recovery checkpoint not found under:
+    echo %PROJECT_DIR%\experiments\granularity_recovery
     pause
     exit /b 1
 )
