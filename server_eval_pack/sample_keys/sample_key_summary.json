@@ -1,0 +1,18 @@
+{
+  "pascalpart": {
+    "head": 590,
+    "wheel": 134,
+    "torso": 554,
+    "all_random1000": 1000,
+    "all_candidate_count": 9332,
+    "all_random1000_seed": 20260706
+  },
+  "partimagenet": {
+    "head": 2009,
+    "body": 2157,
+    "foot": 789,
+    "all_random1000": 1000,
+    "all_candidate_images": 2363,
+    "all_random1000_seed": 20260706
+  }
+}

@@ -2,7 +2,7 @@
 
 This folder now keeps only the runtime files required by the current GUI launcher:
 
-- `start_granularity_recovery_gui.bat`
+- `start_granularity_refine_rerun_gui.bat`
 
 Files:
 
@@ -13,7 +13,7 @@ Files:
 - `granularity_mapping.py`
   Splits the display slider into hierarchy-space and model-space granularity values.
 - `gui_controller.py`
-  Keeps the original base-granularity feel for `g <= 0.5`
+  Keeps the rerun base-granularity feel for `g <= 0.5`
   and applies recovery enhancement for `g > 0.5`.
 - `gui_app.py`
   Standalone Tk GUI.

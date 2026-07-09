@@ -16,12 +16,12 @@ set "DINOV3_MODEL=dinov3_vitl16"
 set "BASE_GRANULARITY_CHECKPOINT="
 set "RECOVERY_CHECKPOINT="
 
-if defined BASE_GRANULARITY_CHECKPOINT (
-    set "BASE_GRANULARITY_CHECKPOINT=%BASE_GRANULARITY_CHECKPOINT%"
-) else if exist "%PROJECT_DIR%\experiments\granularity_refine\best.pth" (
-    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine\best.pth"
-) else if exist "%PROJECT_DIR%\experiments\granularity_refine\latest.pth" (
-    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine\latest.pth"
+if defined GRANULARITY_REFINE_RERUN_CHECKPOINT (
+    set "BASE_GRANULARITY_CHECKPOINT=%GRANULARITY_REFINE_RERUN_CHECKPOINT%"
+) else if exist "%PROJECT_DIR%\experiments\granularity_refine_rerun\best.pth" (
+    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine_rerun\best.pth"
+) else if exist "%PROJECT_DIR%\experiments\granularity_refine_rerun\latest.pth" (
+    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine_rerun\latest.pth"
 )
 
 if defined GRANULARITY_RECOVERY_CHECKPOINT (
@@ -56,8 +56,8 @@ if not exist "%PROJECT_DIR%\%CHECKPOINT%" (
 )
 
 if "%BASE_GRANULARITY_CHECKPOINT%"=="" (
-    echo Base granularity checkpoint not found under:
-    echo %PROJECT_DIR%\experiments\granularity_refine
+    echo Rerun base checkpoint not found under:
+    echo %PROJECT_DIR%\experiments\granularity_refine_rerun
     pause
     exit /b 1
 )
@@ -69,8 +69,15 @@ if "%RECOVERY_CHECKPOINT%"=="" (
     exit /b 1
 )
 
+if not exist "%PROJECT_DIR%\%BASE_GRANULARITY_CHECKPOINT%" (
+    echo Rerun base checkpoint not found:
+    echo %PROJECT_DIR%\%BASE_GRANULARITY_CHECKPOINT%
+    pause
+    exit /b 1
+)
+
 if not exist "%PROJECT_DIR%\%RECOVERY_CHECKPOINT%" (
-    echo Granularity recovery checkpoint not found under:
+    echo Granularity recovery checkpoint not found:
     echo %PROJECT_DIR%\%RECOVERY_CHECKPOINT%
     pause
     exit /b 1
@@ -82,7 +89,7 @@ set "PYTHONPATH=%PROJECT_DIR%;%PYTHONPATH%"
 
 if /i "%~1"=="--check" (
     echo Granularity Recovery GUI launcher is ready.
-    echo Using base checkpoint: %BASE_GRANULARITY_CHECKPOINT%
+    echo Using rerun base checkpoint: %BASE_GRANULARITY_CHECKPOINT%
     echo Using recovery checkpoint: %RECOVERY_CHECKPOINT%
     exit /b 0
 )

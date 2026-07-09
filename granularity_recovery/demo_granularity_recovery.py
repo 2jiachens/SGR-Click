@@ -42,12 +42,19 @@ def resolve_default_dinov3_weights(model_name):
 
 
 def resolve_default_base_checkpoint():
+    env_path = os.environ.get("GRANULARITY_REFINE_RERUN_CHECKPOINT")
+    if env_path:
+        return env_path
     env_path = os.environ.get("GRANULARITY_REFINE_CHECKPOINT")
     if env_path:
         return env_path
-    candidate = REPO_ROOT / "experiments" / "granularity_refine" / "best.pth"
-    if candidate.exists():
-        return str(candidate)
+    candidates = [
+        REPO_ROOT / "experiments" / "granularity_refine_rerun" / "best.pth",
+        REPO_ROOT / "experiments" / "granularity_refine_rerun" / "latest.pth",
+    ]
+    for candidate in candidates:
+        if candidate.exists():
+            return str(candidate)
     return None
 
 

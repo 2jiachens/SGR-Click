@@ -1,0 +1,8002 @@
+[
+  {
+    "sample_id": "2008_000009",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 136
+  },
+  {
+    "sample_id": "2008_000009",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 126
+  },
+  {
+    "sample_id": "2008_000009",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 47
+  },
+  {
+    "sample_id": "2008_000009",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 123
+  },
+  {
+    "sample_id": "2008_000080",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "lfleg",
+    "raw_part_name": "lfleg",
+    "mask_area": 1365
+  },
+  {
+    "sample_id": "2008_000080",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 449
+  },
+  {
+    "sample_id": "2008_000123",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1669
+  },
+  {
+    "sample_id": "2008_000123",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2008_000213",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 473
+  },
+  {
+    "sample_id": "2008_000213",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 2422
+  },
+  {
+    "sample_id": "2008_000213",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 7158
+  },
+  {
+    "sample_id": "2008_000215",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 289
+  },
+  {
+    "sample_id": "2008_000215",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 131
+  },
+  {
+    "sample_id": "2008_000223",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 265
+  },
+  {
+    "sample_id": "2008_000223",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 22
+  },
+  {
+    "sample_id": "2008_000223",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 266
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 820
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4651
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 62
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 51
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 14606
+  },
+  {
+    "sample_id": "2008_000234",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 22886
+  },
+  {
+    "sample_id": "2008_000239",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 240
+  },
+  {
+    "sample_id": "2008_000254",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 56
+  },
+  {
+    "sample_id": "2008_000254",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 48
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 37
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 2,
+    "part_id": 12,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 290
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 2,
+    "part_id": 10,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 2069
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 47
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 27
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 1978
+  },
+  {
+    "sample_id": "2008_000271",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 36
+  },
+  {
+    "sample_id": "2008_000359",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 380
+  },
+  {
+    "sample_id": "2008_000391",
+    "object_id": 4,
+    "part_id": 1,
+    "part_name": "plant",
+    "raw_part_name": "plant",
+    "mask_area": 16933
+  },
+  {
+    "sample_id": "2008_000469",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 135
+  },
+  {
+    "sample_id": "2008_000469",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2008_000469",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 408
+  },
+  {
+    "sample_id": "2008_000474",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_000474",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 1707
+  },
+  {
+    "sample_id": "2008_000474",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 2
+  },
+  {
+    "sample_id": "2008_000510",
+    "object_id": 0,
+    "part_id": 19,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 818
+  },
+  {
+    "sample_id": "2008_000533",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2336
+  },
+  {
+    "sample_id": "2008_000533",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 650
+  },
+  {
+    "sample_id": "2008_000573",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 1505
+  },
+  {
+    "sample_id": "2008_000573",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_000602",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 34243
+  },
+  {
+    "sample_id": "2008_000630",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 620
+  },
+  {
+    "sample_id": "2008_000657",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "hrightside",
+    "raw_part_name": "hrightside",
+    "mask_area": 6069
+  },
+  {
+    "sample_id": "2008_000661",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 400
+  },
+  {
+    "sample_id": "2008_000661",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 95
+  },
+  {
+    "sample_id": "2008_000662",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7992
+  },
+  {
+    "sample_id": "2008_000662",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 84
+  },
+  {
+    "sample_id": "2008_000662",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 261
+  },
+  {
+    "sample_id": "2008_000666",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 209
+  },
+  {
+    "sample_id": "2008_000666",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 1292
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 58
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 1091
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 1051
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 622
+  },
+  {
+    "sample_id": "2008_000700",
+    "object_id": 0,
+    "part_id": 18,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 1430
+  },
+  {
+    "sample_id": "2008_000700",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 1651
+  },
+  {
+    "sample_id": "2008_000700",
+    "object_id": 0,
+    "part_id": 17,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 488
+  },
+  {
+    "sample_id": "2008_000731",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 2736
+  },
+  {
+    "sample_id": "2008_000765",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 103
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 1,
+    "part_id": 18,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 690
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 91
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 10
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 661
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 3209
+  },
+  {
+    "sample_id": "2008_000853",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 98
+  },
+  {
+    "sample_id": "2008_000853",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 446
+  },
+  {
+    "sample_id": "2008_000943",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 5413
+  },
+  {
+    "sample_id": "2008_000992",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 457
+  },
+  {
+    "sample_id": "2008_000992",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 3740
+  },
+  {
+    "sample_id": "2008_001013",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 340
+  },
+  {
+    "sample_id": "2008_001013",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 2134
+  },
+  {
+    "sample_id": "2008_001028",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 195
+  },
+  {
+    "sample_id": "2008_001028",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 597
+  },
+  {
+    "sample_id": "2008_001028",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 15
+  },
+  {
+    "sample_id": "2008_001074",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 103
+  },
+  {
+    "sample_id": "2008_001076",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5141
+  },
+  {
+    "sample_id": "2008_001076",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 1336
+  },
+  {
+    "sample_id": "2008_001078",
+    "object_id": 1,
+    "part_id": 16,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 747
+  },
+  {
+    "sample_id": "2008_001170",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 3420
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 493
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 70
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 21
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 263
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 132
+  },
+  {
+    "sample_id": "2008_001249",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 2724
+  },
+  {
+    "sample_id": "2008_001249",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 505
+  },
+  {
+    "sample_id": "2008_001308",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 702
+  },
+  {
+    "sample_id": "2008_001308",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 159
+  },
+  {
+    "sample_id": "2008_001308",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 62
+  },
+  {
+    "sample_id": "2008_001308",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 14362
+  },
+  {
+    "sample_id": "2008_001379",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 203
+  },
+  {
+    "sample_id": "2008_001404",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 7463
+  },
+  {
+    "sample_id": "2008_001404",
+    "object_id": 1,
+    "part_id": 16,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 1209
+  },
+  {
+    "sample_id": "2008_001433",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 136
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 12,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 566
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 16,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 1160
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 108
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 192
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 15,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 712
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 13,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1417
+  },
+  {
+    "sample_id": "2008_001504",
+    "object_id": 0,
+    "part_id": 17,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 7076
+  },
+  {
+    "sample_id": "2008_001504",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 196
+  },
+  {
+    "sample_id": "2008_001504",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 3067
+  },
+  {
+    "sample_id": "2008_001513",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 2660
+  },
+  {
+    "sample_id": "2008_001513",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 795
+  },
+  {
+    "sample_id": "2008_001531",
+    "object_id": 1,
+    "part_id": 15,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 246
+  },
+  {
+    "sample_id": "2008_001629",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1219
+  },
+  {
+    "sample_id": "2008_001682",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 217
+  },
+  {
+    "sample_id": "2008_001821",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 8128
+  },
+  {
+    "sample_id": "2008_001874",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 127
+  },
+  {
+    "sample_id": "2008_001874",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 17
+  },
+  {
+    "sample_id": "2008_001895",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 21361
+  },
+  {
+    "sample_id": "2008_001966",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1962
+  },
+  {
+    "sample_id": "2008_001992",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 261
+  },
+  {
+    "sample_id": "2008_002152",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3529
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1036
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_2",
+    "mask_area": 307
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 6
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 43954
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 7226
+  },
+  {
+    "sample_id": "2008_002241",
+    "object_id": 8,
+    "part_id": 8,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 53
+  },
+  {
+    "sample_id": "2008_002269",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "chainwheel",
+    "raw_part_name": "chainwheel",
+    "mask_area": 1715
+  },
+  {
+    "sample_id": "2008_002269",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 22187
+  },
+  {
+    "sample_id": "2008_002429",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 78
+  },
+  {
+    "sample_id": "2008_002429",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 1348
+  },
+  {
+    "sample_id": "2008_002429",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rleg",
+    "raw_part_name": "rleg",
+    "mask_area": 1072
+  },
+  {
+    "sample_id": "2008_002467",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 21229
+  },
+  {
+    "sample_id": "2008_002495",
+    "object_id": 2,
+    "part_id": 16,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 457
+  },
+  {
+    "sample_id": "2008_002495",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 1159
+  },
+  {
+    "sample_id": "2008_002495",
+    "object_id": 2,
+    "part_id": 15,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 1822
+  },
+  {
+    "sample_id": "2008_002536",
+    "object_id": 2,
+    "part_id": 12,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 1101
+  },
+  {
+    "sample_id": "2008_002681",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9397
+  },
+  {
+    "sample_id": "2008_002775",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 13198
+  },
+  {
+    "sample_id": "2008_002775",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 119
+  },
+  {
+    "sample_id": "2008_002775",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 73
+  },
+  {
+    "sample_id": "2008_002775",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 714
+  },
+  {
+    "sample_id": "2008_002835",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 16601
+  },
+  {
+    "sample_id": "2008_002859",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 73
+  },
+  {
+    "sample_id": "2008_002864",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 97
+  },
+  {
+    "sample_id": "2008_002864",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 6086
+  },
+  {
+    "sample_id": "2008_002904",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 2096
+  },
+  {
+    "sample_id": "2008_002904",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 1386
+  },
+  {
+    "sample_id": "2008_002936",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5020
+  },
+  {
+    "sample_id": "2008_002936",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 652
+  },
+  {
+    "sample_id": "2008_002936",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 2970
+  },
+  {
+    "sample_id": "2008_002936",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 17549
+  },
+  {
+    "sample_id": "2008_002942",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 96330
+  },
+  {
+    "sample_id": "2008_002958",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 37
+  },
+  {
+    "sample_id": "2008_002958",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 539
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 97
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 8
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 463
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 69
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 20
+  },
+  {
+    "sample_id": "2008_003076",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 215
+  },
+  {
+    "sample_id": "2008_003076",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 7
+  },
+  {
+    "sample_id": "2008_003108",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 1530
+  },
+  {
+    "sample_id": "2008_003108",
+    "object_id": 6,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 255
+  },
+  {
+    "sample_id": "2008_003108",
+    "object_id": 6,
+    "part_id": 12,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 379
+  },
+  {
+    "sample_id": "2008_003108",
+    "object_id": 3,
+    "part_id": 6,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 222
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "bliplate",
+    "raw_part_name": "bliplate",
+    "mask_area": 389
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 52
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 38
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 39
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 142
+  },
+  {
+    "sample_id": "2008_003210",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 19464
+  },
+  {
+    "sample_id": "2008_003210",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 61320
+  },
+  {
+    "sample_id": "2008_003238",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 427
+  },
+  {
+    "sample_id": "2008_003270",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "chainwheel",
+    "raw_part_name": "chainwheel",
+    "mask_area": 3282
+  },
+  {
+    "sample_id": "2008_003270",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 1737
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "backside",
+    "raw_part_name": "backside",
+    "mask_area": 1958
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 820
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 7,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 21
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 283
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 20,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 592
+  },
+  {
+    "sample_id": "2008_003379",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 659
+  },
+  {
+    "sample_id": "2008_003379",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 521
+  },
+  {
+    "sample_id": "2008_003451",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 7
+  },
+  {
+    "sample_id": "2008_003451",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 4190
+  },
+  {
+    "sample_id": "2008_003451",
+    "object_id": 1,
+    "part_id": 17,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 421
+  },
+  {
+    "sample_id": "2008_003461",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 321
+  },
+  {
+    "sample_id": "2008_003461",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 977
+  },
+  {
+    "sample_id": "2008_003461",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 4207
+  },
+  {
+    "sample_id": "2008_003461",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 299
+  },
+  {
+    "sample_id": "2008_003492",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 28620
+  },
+  {
+    "sample_id": "2008_003499",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 2200
+  },
+  {
+    "sample_id": "2008_003511",
+    "object_id": 2,
+    "part_id": 10,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 706
+  },
+  {
+    "sample_id": "2008_003546",
+    "object_id": 2,
+    "part_id": 13,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 734
+  },
+  {
+    "sample_id": "2008_003546",
+    "object_id": 2,
+    "part_id": 11,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 132
+  },
+  {
+    "sample_id": "2008_003546",
+    "object_id": 1,
+    "part_id": 21,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 703
+  },
+  {
+    "sample_id": "2008_003546",
+    "object_id": 1,
+    "part_id": 15,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 428
+  },
+  {
+    "sample_id": "2008_003576",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10284
+  },
+  {
+    "sample_id": "2008_003576",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 63
+  },
+  {
+    "sample_id": "2008_003576",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 16399
+  },
+  {
+    "sample_id": "2008_003676",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 375
+  },
+  {
+    "sample_id": "2008_003676",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 999
+  },
+  {
+    "sample_id": "2008_003676",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 4469
+  },
+  {
+    "sample_id": "2008_003733",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 6529
+  },
+  {
+    "sample_id": "2008_003733",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 3080
+  },
+  {
+    "sample_id": "2008_003733",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 22743
+  },
+  {
+    "sample_id": "2008_003777",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "backside",
+    "raw_part_name": "backside",
+    "mask_area": 1490
+  },
+  {
+    "sample_id": "2008_003782",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 3821
+  },
+  {
+    "sample_id": "2008_003874",
+    "object_id": 2,
+    "part_id": 18,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 3911
+  },
+  {
+    "sample_id": "2008_003926",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 2523
+  },
+  {
+    "sample_id": "2008_004101",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 61
+  },
+  {
+    "sample_id": "2008_004101",
+    "object_id": 2,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 93
+  },
+  {
+    "sample_id": "2008_004101",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 229
+  },
+  {
+    "sample_id": "2008_004101",
+    "object_id": 2,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 32200
+  },
+  {
+    "sample_id": "2008_004140",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_004140",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_004175",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 2992
+  },
+  {
+    "sample_id": "2008_004363",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "chainwheel",
+    "raw_part_name": "chainwheel",
+    "mask_area": 692
+  },
+  {
+    "sample_id": "2008_004363",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 582
+  },
+  {
+    "sample_id": "2008_004396",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 42871
+  },
+  {
+    "sample_id": "2008_004399",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 2
+  },
+  {
+    "sample_id": "2008_004453",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9706
+  },
+  {
+    "sample_id": "2008_004477",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "plant",
+    "raw_part_name": "plant",
+    "mask_area": 22394
+  },
+  {
+    "sample_id": "2008_004477",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "pot",
+    "raw_part_name": "pot",
+    "mask_area": 2426
+  },
+  {
+    "sample_id": "2008_004552",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 36151
+  },
+  {
+    "sample_id": "2008_004575",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 728
+  },
+  {
+    "sample_id": "2008_004575",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 27
+  },
+  {
+    "sample_id": "2008_004610",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "hfrontside",
+    "raw_part_name": "hfrontside",
+    "mask_area": 35583
+  },
+  {
+    "sample_id": "2008_004610",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "hleftside",
+    "raw_part_name": "hleftside",
+    "mask_area": 18213
+  },
+  {
+    "sample_id": "2008_004624",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 818
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 981
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1836
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 203
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 1162
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 524
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 15,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 683
+  },
+  {
+    "sample_id": "2008_004687",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 41
+  },
+  {
+    "sample_id": "2008_004687",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1635
+  },
+  {
+    "sample_id": "2008_004754",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 22915
+  },
+  {
+    "sample_id": "2008_004758",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 18728
+  },
+  {
+    "sample_id": "2008_004854",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 1156
+  },
+  {
+    "sample_id": "2008_004854",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 85
+  },
+  {
+    "sample_id": "2008_004910",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 3988
+  },
+  {
+    "sample_id": "2008_004995",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "chainwheel",
+    "raw_part_name": "chainwheel",
+    "mask_area": 808
+  },
+  {
+    "sample_id": "2008_005049",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 2841
+  },
+  {
+    "sample_id": "2008_005049",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 1466
+  },
+  {
+    "sample_id": "2008_005089",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 2
+  },
+  {
+    "sample_id": "2008_005089",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 482
+  },
+  {
+    "sample_id": "2008_005097",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 2360
+  },
+  {
+    "sample_id": "2008_005105",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lblleg",
+    "raw_part_name": "lblleg",
+    "mask_area": 803
+  },
+  {
+    "sample_id": "2008_005105",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 1196
+  },
+  {
+    "sample_id": "2008_005105",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2008_005197",
+    "object_id": 8,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 74
+  },
+  {
+    "sample_id": "2008_005197",
+    "object_id": 7,
+    "part_id": 10,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 810
+  },
+  {
+    "sample_id": "2008_005245",
+    "object_id": 4,
+    "part_id": 2,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 332
+  },
+  {
+    "sample_id": "2008_005245",
+    "object_id": 7,
+    "part_id": 4,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 136
+  },
+  {
+    "sample_id": "2008_005245",
+    "object_id": 7,
+    "part_id": 11,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 318
+  },
+  {
+    "sample_id": "2008_005338",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 128
+  },
+  {
+    "sample_id": "2008_005338",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 2
+  },
+  {
+    "sample_id": "2008_005399",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 46
+  },
+  {
+    "sample_id": "2008_005445",
+    "object_id": 2,
+    "part_id": 12,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1246
+  },
+  {
+    "sample_id": "2008_005445",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 7145
+  },
+  {
+    "sample_id": "2008_005525",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 275
+  },
+  {
+    "sample_id": "2008_005633",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 967
+  },
+  {
+    "sample_id": "2008_005633",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 2737
+  },
+  {
+    "sample_id": "2008_005633",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 259
+  },
+  {
+    "sample_id": "2008_005642",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2008_005676",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "door",
+    "raw_part_name": "door_1",
+    "mask_area": 543
+  },
+  {
+    "sample_id": "2008_005691",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6234
+  },
+  {
+    "sample_id": "2008_005738",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 345
+  },
+  {
+    "sample_id": "2008_005738",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 623
+  },
+  {
+    "sample_id": "2008_005738",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 206
+  },
+  {
+    "sample_id": "2008_005738",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 3332
+  },
+  {
+    "sample_id": "2008_006063",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 39529
+  },
+  {
+    "sample_id": "2008_006108",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 80
+  },
+  {
+    "sample_id": "2008_006108",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 3824
+  },
+  {
+    "sample_id": "2008_006216",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 8402
+  },
+  {
+    "sample_id": "2008_006216",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 3
+  },
+  {
+    "sample_id": "2008_006216",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_006216",
+    "object_id": 3,
+    "part_id": 14,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 130
+  },
+  {
+    "sample_id": "2008_006219",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 424
+  },
+  {
+    "sample_id": "2008_006219",
+    "object_id": 1,
+    "part_id": 17,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 212
+  },
+  {
+    "sample_id": "2008_006254",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "frontside",
+    "raw_part_name": "frontside",
+    "mask_area": 49726
+  },
+  {
+    "sample_id": "2008_006254",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 13400
+  },
+  {
+    "sample_id": "2008_006275",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1925
+  },
+  {
+    "sample_id": "2008_006325",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 797
+  },
+  {
+    "sample_id": "2008_006408",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 7
+  },
+  {
+    "sample_id": "2008_006408",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 2427
+  },
+  {
+    "sample_id": "2008_006408",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2008_006408",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 3434
+  },
+  {
+    "sample_id": "2008_006480",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 480
+  },
+  {
+    "sample_id": "2008_006526",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 139
+  },
+  {
+    "sample_id": "2008_006526",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 28662
+  },
+  {
+    "sample_id": "2008_006528",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lfuleg",
+    "raw_part_name": "lfuleg",
+    "mask_area": 447
+  },
+  {
+    "sample_id": "2008_006528",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rblleg",
+    "raw_part_name": "rblleg",
+    "mask_area": 355
+  },
+  {
+    "sample_id": "2008_006528",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 1150
+  },
+  {
+    "sample_id": "2008_006553",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "coach",
+    "raw_part_name": "coach_1",
+    "mask_area": 872
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 120
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 121
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 704
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 1467
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 1996
+  },
+  {
+    "sample_id": "2008_006722",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8614
+  },
+  {
+    "sample_id": "2008_006722",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 4456
+  },
+  {
+    "sample_id": "2008_006835",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3373
+  },
+  {
+    "sample_id": "2008_006835",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lfuleg",
+    "raw_part_name": "lfuleg",
+    "mask_area": 167
+  },
+  {
+    "sample_id": "2008_006874",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 730
+  },
+  {
+    "sample_id": "2008_006874",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 1541
+  },
+  {
+    "sample_id": "2008_006874",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 8822
+  },
+  {
+    "sample_id": "2008_006986",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 429
+  },
+  {
+    "sample_id": "2008_007025",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 255
+  },
+  {
+    "sample_id": "2008_007031",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 186
+  },
+  {
+    "sample_id": "2008_007031",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 431
+  },
+  {
+    "sample_id": "2008_007120",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 384
+  },
+  {
+    "sample_id": "2008_007123",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 207
+  },
+  {
+    "sample_id": "2008_007123",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 110
+  },
+  {
+    "sample_id": "2008_007123",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rblleg",
+    "raw_part_name": "rblleg",
+    "mask_area": 461
+  },
+  {
+    "sample_id": "2008_007123",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 344
+  },
+  {
+    "sample_id": "2008_007219",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 856
+  },
+  {
+    "sample_id": "2008_007219",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 171
+  },
+  {
+    "sample_id": "2008_007219",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 555
+  },
+  {
+    "sample_id": "2008_007273",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 699
+  },
+  {
+    "sample_id": "2008_007273",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 1434
+  },
+  {
+    "sample_id": "2008_007273",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 211
+  },
+  {
+    "sample_id": "2008_007273",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2008_007350",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "engine",
+    "raw_part_name": "engine_1",
+    "mask_area": 1825
+  },
+  {
+    "sample_id": "2008_007350",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 120
+  },
+  {
+    "sample_id": "2008_007378",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 1061
+  },
+  {
+    "sample_id": "2008_007378",
+    "object_id": 2,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 115
+  },
+  {
+    "sample_id": "2008_007392",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lfuleg",
+    "raw_part_name": "lfuleg",
+    "mask_area": 496
+  },
+  {
+    "sample_id": "2008_007392",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2008_007392",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 410
+  },
+  {
+    "sample_id": "2008_007497",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1033
+  },
+  {
+    "sample_id": "2008_007497",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "rblleg",
+    "raw_part_name": "rblleg",
+    "mask_area": 103
+  },
+  {
+    "sample_id": "2008_007497",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 123
+  },
+  {
+    "sample_id": "2008_007507",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 441
+  },
+  {
+    "sample_id": "2008_007507",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 21
+  },
+  {
+    "sample_id": "2008_007513",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 1470
+  },
+  {
+    "sample_id": "2008_007596",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 88
+  },
+  {
+    "sample_id": "2008_007677",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "lblleg",
+    "raw_part_name": "lblleg",
+    "mask_area": 907
+  },
+  {
+    "sample_id": "2008_007677",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 851
+  },
+  {
+    "sample_id": "2008_007677",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 23
+  },
+  {
+    "sample_id": "2008_007737",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 26994
+  },
+  {
+    "sample_id": "2008_007804",
+    "object_id": 8,
+    "part_id": 2,
+    "part_name": "leftside",
+    "raw_part_name": "leftside",
+    "mask_area": 23597
+  },
+  {
+    "sample_id": "2008_007811",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "cap",
+    "raw_part_name": "cap",
+    "mask_area": 1561
+  },
+  {
+    "sample_id": "2008_007814",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 94
+  },
+  {
+    "sample_id": "2008_007814",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 1332
+  },
+  {
+    "sample_id": "2008_007828",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 2864
+  },
+  {
+    "sample_id": "2008_007828",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 426
+  },
+  {
+    "sample_id": "2008_007828",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 6383
+  },
+  {
+    "sample_id": "2008_007828",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 1262
+  },
+  {
+    "sample_id": "2008_007945",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 32810
+  },
+  {
+    "sample_id": "2008_008127",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 738
+  },
+  {
+    "sample_id": "2008_008127",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 333
+  },
+  {
+    "sample_id": "2008_008252",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 544
+  },
+  {
+    "sample_id": "2008_008268",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "beak",
+    "raw_part_name": "beak",
+    "mask_area": 42
+  },
+  {
+    "sample_id": "2008_008268",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 97
+  },
+  {
+    "sample_id": "2008_008268",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rleg",
+    "raw_part_name": "rleg",
+    "mask_area": 101
+  },
+  {
+    "sample_id": "2008_008296",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 228
+  },
+  {
+    "sample_id": "2008_008296",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 201
+  },
+  {
+    "sample_id": "2008_008296",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 64
+  },
+  {
+    "sample_id": "2008_008335",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 159
+  },
+  {
+    "sample_id": "2008_008335",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 181
+  },
+  {
+    "sample_id": "2008_008335",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 99
+  },
+  {
+    "sample_id": "2008_008335",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 2398
+  },
+  {
+    "sample_id": "2008_008362",
+    "object_id": 3,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 6
+  },
+  {
+    "sample_id": "2008_008362",
+    "object_id": 3,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 75
+  },
+  {
+    "sample_id": "2008_008392",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 604
+  },
+  {
+    "sample_id": "2008_008421",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51743
+  },
+  {
+    "sample_id": "2008_008469",
+    "object_id": 0,
+    "part_id": 21,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 1341
+  },
+  {
+    "sample_id": "2009_000013",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 601
+  },
+  {
+    "sample_id": "2009_000013",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 2161
+  },
+  {
+    "sample_id": "2009_000013",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 9461
+  },
+  {
+    "sample_id": "2009_000037",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 111
+  },
+  {
+    "sample_id": "2009_000039",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 543
+  },
+  {
+    "sample_id": "2009_000039",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 129
+  },
+  {
+    "sample_id": "2009_000074",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 12148
+  },
+  {
+    "sample_id": "2009_000074",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 499
+  },
+  {
+    "sample_id": "2009_000080",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 147
+  },
+  {
+    "sample_id": "2009_000080",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 3393
+  },
+  {
+    "sample_id": "2009_000149",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 497
+  },
+  {
+    "sample_id": "2009_000149",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 2167
+  },
+  {
+    "sample_id": "2009_000156",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2009_000201",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "cap",
+    "raw_part_name": "cap",
+    "mask_area": 835
+  },
+  {
+    "sample_id": "2009_000219",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 10150
+  },
+  {
+    "sample_id": "2009_000335",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 117
+  },
+  {
+    "sample_id": "2009_000335",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 540
+  },
+  {
+    "sample_id": "2009_000335",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 3721
+  },
+  {
+    "sample_id": "2009_000351",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 1670
+  },
+  {
+    "sample_id": "2009_000412",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 1423
+  },
+  {
+    "sample_id": "2009_000412",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 641
+  },
+  {
+    "sample_id": "2009_000418",
+    "object_id": 2,
+    "part_id": 17,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 1002
+  },
+  {
+    "sample_id": "2009_000418",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "pot",
+    "raw_part_name": "pot",
+    "mask_area": 1431
+  },
+  {
+    "sample_id": "2009_000418",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 34
+  },
+  {
+    "sample_id": "2009_000421",
+    "object_id": 4,
+    "part_id": 12,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 144
+  },
+  {
+    "sample_id": "2009_000421",
+    "object_id": 4,
+    "part_id": 13,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 73
+  },
+  {
+    "sample_id": "2009_000421",
+    "object_id": 3,
+    "part_id": 14,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 272
+  },
+  {
+    "sample_id": "2009_000440",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 13771
+  },
+  {
+    "sample_id": "2009_000440",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 165
+  },
+  {
+    "sample_id": "2009_000455",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 2
+  },
+  {
+    "sample_id": "2009_000455",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "frontside",
+    "raw_part_name": "frontside",
+    "mask_area": 2044
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 492
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 633
+  },
+  {
+    "sample_id": "2009_000488",
+    "object_id": 2,
+    "part_id": 12,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 39
+  },
+  {
+    "sample_id": "2009_000488",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 5972
+  },
+  {
+    "sample_id": "2009_000523",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 3614
+  },
+  {
+    "sample_id": "2009_000628",
+    "object_id": 0,
+    "part_id": 27,
+    "part_name": "hroofside",
+    "raw_part_name": "hroofside",
+    "mask_area": 1652
+  },
+  {
+    "sample_id": "2009_000641",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 47
+  },
+  {
+    "sample_id": "2009_000664",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 722
+  },
+  {
+    "sample_id": "2009_000675",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2009_000675",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 336
+  },
+  {
+    "sample_id": "2009_000704",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 31
+  },
+  {
+    "sample_id": "2009_000704",
+    "object_id": 2,
+    "part_id": 12,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 3083
+  },
+  {
+    "sample_id": "2009_000704",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 80
+  },
+  {
+    "sample_id": "2009_000705",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 57
+  },
+  {
+    "sample_id": "2009_000705",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 161
+  },
+  {
+    "sample_id": "2009_000705",
+    "object_id": 0,
+    "part_id": 18,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 681
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 151
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 955
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "lblleg",
+    "raw_part_name": "lblleg",
+    "mask_area": 413
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 260
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 190
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 1137
+  },
+  {
+    "sample_id": "2009_000730",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 526
+  },
+  {
+    "sample_id": "2009_000825",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 7
+  },
+  {
+    "sample_id": "2009_000825",
+    "object_id": 4,
+    "part_id": 3,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 171
+  },
+  {
+    "sample_id": "2009_000825",
+    "object_id": 7,
+    "part_id": 3,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 107
+  },
+  {
+    "sample_id": "2009_000825",
+    "object_id": 7,
+    "part_id": 6,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 694
+  },
+  {
+    "sample_id": "2009_000879",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 23
+  },
+  {
+    "sample_id": "2009_000892",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 281
+  },
+  {
+    "sample_id": "2009_000892",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 276
+  },
+  {
+    "sample_id": "2009_000892",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 5488
+  },
+  {
+    "sample_id": "2009_000924",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 22
+  },
+  {
+    "sample_id": "2009_000924",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 1467
+  },
+  {
+    "sample_id": "2009_000924",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 428
+  },
+  {
+    "sample_id": "2009_000931",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2009_000931",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 401
+  },
+  {
+    "sample_id": "2009_000931",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 381
+  },
+  {
+    "sample_id": "2009_000931",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 6833
+  },
+  {
+    "sample_id": "2009_000935",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 82
+  },
+  {
+    "sample_id": "2009_000935",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 1110
+  },
+  {
+    "sample_id": "2009_000964",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 362
+  },
+  {
+    "sample_id": "2009_000989",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2009_000989",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 271
+  },
+  {
+    "sample_id": "2009_000989",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 24
+  },
+  {
+    "sample_id": "2009_000991",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3134
+  },
+  {
+    "sample_id": "2009_001082",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "frontside",
+    "raw_part_name": "frontside",
+    "mask_area": 50289
+  },
+  {
+    "sample_id": "2009_001082",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_2",
+    "mask_area": 322
+  },
+  {
+    "sample_id": "2009_001108",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 791
+  },
+  {
+    "sample_id": "2009_001299",
+    "object_id": 4,
+    "part_id": 17,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 387
+  },
+  {
+    "sample_id": "2009_001299",
+    "object_id": 4,
+    "part_id": 15,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 567
+  },
+  {
+    "sample_id": "2009_001300",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 151
+  },
+  {
+    "sample_id": "2009_001300",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "hfrontside",
+    "raw_part_name": "hfrontside",
+    "mask_area": 10992
+  },
+  {
+    "sample_id": "2009_001314",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 40
+  },
+  {
+    "sample_id": "2009_001411",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "lfleg",
+    "raw_part_name": "lfleg",
+    "mask_area": 1807
+  },
+  {
+    "sample_id": "2009_001411",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 1533
+  },
+  {
+    "sample_id": "2009_001433",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 96
+  },
+  {
+    "sample_id": "2009_001505",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 1021
+  },
+  {
+    "sample_id": "2009_001607",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 231
+  },
+  {
+    "sample_id": "2009_001663",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 316
+  },
+  {
+    "sample_id": "2009_001663",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 235
+  },
+  {
+    "sample_id": "2009_001663",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 362
+  },
+  {
+    "sample_id": "2009_001663",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 2336
+  },
+  {
+    "sample_id": "2009_001718",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 838
+  },
+  {
+    "sample_id": "2009_001718",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 59
+  },
+  {
+    "sample_id": "2009_001718",
+    "object_id": 1,
+    "part_id": 18,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 4476
+  },
+  {
+    "sample_id": "2009_001718",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 105
+  },
+  {
+    "sample_id": "2009_001768",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 835
+  },
+  {
+    "sample_id": "2009_001816",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 1428
+  },
+  {
+    "sample_id": "2009_001816",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leftside",
+    "raw_part_name": "leftside",
+    "mask_area": 40825
+  },
+  {
+    "sample_id": "2009_001850",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 34
+  },
+  {
+    "sample_id": "2009_001851",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 185
+  },
+  {
+    "sample_id": "2009_001854",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 180
+  },
+  {
+    "sample_id": "2009_001991",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 14544
+  },
+  {
+    "sample_id": "2009_001991",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 63772
+  },
+  {
+    "sample_id": "2009_002012",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14016
+  },
+  {
+    "sample_id": "2009_002042",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 176
+  },
+  {
+    "sample_id": "2009_002042",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 150
+  },
+  {
+    "sample_id": "2009_002097",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lbuleg",
+    "raw_part_name": "lbuleg",
+    "mask_area": 439
+  },
+  {
+    "sample_id": "2009_002097",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 185
+  },
+  {
+    "sample_id": "2009_002097",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfho",
+    "raw_part_name": "rfho",
+    "mask_area": 31
+  },
+  {
+    "sample_id": "2009_002122",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 785
+  },
+  {
+    "sample_id": "2009_002122",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "rfuleg",
+    "raw_part_name": "rfuleg",
+    "mask_area": 153
+  },
+  {
+    "sample_id": "2009_002150",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 3400
+  },
+  {
+    "sample_id": "2009_002150",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 97
+  },
+  {
+    "sample_id": "2009_002150",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lhorn",
+    "raw_part_name": "lhorn",
+    "mask_area": 1096
+  },
+  {
+    "sample_id": "2009_002155",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23103
+  },
+  {
+    "sample_id": "2009_002155",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 2943
+  },
+  {
+    "sample_id": "2009_002155",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 14855
+  },
+  {
+    "sample_id": "2009_002185",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 836
+  },
+  {
+    "sample_id": "2009_002185",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 32402
+  },
+  {
+    "sample_id": "2009_002202",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "coach",
+    "raw_part_name": "coach_1",
+    "mask_area": 7520
+  },
+  {
+    "sample_id": "2009_002239",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 140
+  },
+  {
+    "sample_id": "2009_002239",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 251
+  },
+  {
+    "sample_id": "2009_002239",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 273
+  },
+  {
+    "sample_id": "2009_002265",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 27350
+  },
+  {
+    "sample_id": "2009_002268",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 454
+  },
+  {
+    "sample_id": "2009_002295",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 849
+  },
+  {
+    "sample_id": "2009_002317",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 2777
+  },
+  {
+    "sample_id": "2009_002317",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 768
+  },
+  {
+    "sample_id": "2009_002346",
+    "object_id": 9,
+    "part_id": 6,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 149
+  },
+  {
+    "sample_id": "2009_002372",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 124
+  },
+  {
+    "sample_id": "2009_002382",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 14395
+  },
+  {
+    "sample_id": "2009_002382",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 370
+  },
+  {
+    "sample_id": "2009_002382",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 365
+  },
+  {
+    "sample_id": "2009_002382",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 40
+  },
+  {
+    "sample_id": "2009_002445",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 21
+  },
+  {
+    "sample_id": "2009_002445",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 514
+  },
+  {
+    "sample_id": "2009_002445",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 55
+  },
+  {
+    "sample_id": "2009_002527",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 98
+  },
+  {
+    "sample_id": "2009_002527",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 755
+  },
+  {
+    "sample_id": "2009_002535",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 140
+  },
+  {
+    "sample_id": "2009_002539",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 2190
+  },
+  {
+    "sample_id": "2009_002604",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 179
+  },
+  {
+    "sample_id": "2009_002635",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "lfuleg",
+    "raw_part_name": "lfuleg",
+    "mask_area": 41
+  },
+  {
+    "sample_id": "2009_002638",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 764
+  },
+  {
+    "sample_id": "2009_002649",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "cap",
+    "raw_part_name": "cap",
+    "mask_area": 1909
+  },
+  {
+    "sample_id": "2009_002651",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 2850
+  },
+  {
+    "sample_id": "2009_002651",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 394
+  },
+  {
+    "sample_id": "2009_002732",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21223
+  },
+  {
+    "sample_id": "2009_002732",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 61
+  },
+  {
+    "sample_id": "2009_002732",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 9537
+  },
+  {
+    "sample_id": "2009_002753",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 4712
+  },
+  {
+    "sample_id": "2009_002856",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 23449
+  },
+  {
+    "sample_id": "2009_002928",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 2977
+  },
+  {
+    "sample_id": "2009_002936",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 62
+  },
+  {
+    "sample_id": "2009_002936",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 1204
+  },
+  {
+    "sample_id": "2009_003005",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lwing",
+    "raw_part_name": "lwing",
+    "mask_area": 4927
+  },
+  {
+    "sample_id": "2009_003059",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 59411
+  },
+  {
+    "sample_id": "2009_003059",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 6145
+  },
+  {
+    "sample_id": "2009_003063",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 216
+  },
+  {
+    "sample_id": "2009_003065",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 2240
+  },
+  {
+    "sample_id": "2009_003065",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 914
+  },
+  {
+    "sample_id": "2009_003065",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 608
+  },
+  {
+    "sample_id": "2009_003071",
+    "object_id": 2,
+    "part_id": 11,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 437
+  },
+  {
+    "sample_id": "2009_003071",
+    "object_id": 2,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 1664
+  },
+  {
+    "sample_id": "2009_003105",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 181
+  },
+  {
+    "sample_id": "2009_003193",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 17728
+  },
+  {
+    "sample_id": "2009_003196",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 1910
+  },
+  {
+    "sample_id": "2009_003196",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 1495
+  },
+  {
+    "sample_id": "2009_003217",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 3907
+  },
+  {
+    "sample_id": "2009_003217",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 20214
+  },
+  {
+    "sample_id": "2009_003224",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 1086
+  },
+  {
+    "sample_id": "2009_003241",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 6860
+  },
+  {
+    "sample_id": "2009_003269",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 177
+  },
+  {
+    "sample_id": "2009_003269",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 2788
+  },
+  {
+    "sample_id": "2009_003269",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 960
+  },
+  {
+    "sample_id": "2009_003269",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 15896
+  },
+  {
+    "sample_id": "2009_003273",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "beak",
+    "raw_part_name": "beak",
+    "mask_area": 348
+  },
+  {
+    "sample_id": "2009_003311",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "crightside",
+    "raw_part_name": "crightside_1",
+    "mask_area": 5598
+  },
+  {
+    "sample_id": "2009_003323",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 617
+  },
+  {
+    "sample_id": "2009_003323",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "rblleg",
+    "raw_part_name": "rblleg",
+    "mask_area": 1438
+  },
+  {
+    "sample_id": "2009_003323",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2009_003323",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 265
+  },
+  {
+    "sample_id": "2009_003378",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 97
+  },
+  {
+    "sample_id": "2009_003406",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "door",
+    "raw_part_name": "door_1",
+    "mask_area": 15515
+  },
+  {
+    "sample_id": "2009_003406",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 40763
+  },
+  {
+    "sample_id": "2009_003406",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "window",
+    "raw_part_name": "window_2",
+    "mask_area": 4091
+  },
+  {
+    "sample_id": "2009_003433",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "coach",
+    "raw_part_name": "coach_2",
+    "mask_area": 23407
+  },
+  {
+    "sample_id": "2009_003450",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3527
+  },
+  {
+    "sample_id": "2009_003450",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 16575
+  },
+  {
+    "sample_id": "2009_003481",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 238
+  },
+  {
+    "sample_id": "2009_003542",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 270
+  },
+  {
+    "sample_id": "2009_003569",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 35
+  },
+  {
+    "sample_id": "2009_003569",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2009_003666",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 158
+  },
+  {
+    "sample_id": "2009_003773",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 17431
+  },
+  {
+    "sample_id": "2009_003804",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 4090
+  },
+  {
+    "sample_id": "2009_003804",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 2333
+  },
+  {
+    "sample_id": "2009_003804",
+    "object_id": 0,
+    "part_id": 18,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 550
+  },
+  {
+    "sample_id": "2009_003806",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_3",
+    "mask_area": 123
+  },
+  {
+    "sample_id": "2009_003810",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rbpa",
+    "raw_part_name": "rbpa",
+    "mask_area": 1505
+  },
+  {
+    "sample_id": "2009_003810",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 6071
+  },
+  {
+    "sample_id": "2009_003849",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9080
+  },
+  {
+    "sample_id": "2009_003858",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "beak",
+    "raw_part_name": "beak",
+    "mask_area": 90
+  },
+  {
+    "sample_id": "2009_003858",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rleg",
+    "raw_part_name": "rleg",
+    "mask_area": 481
+  },
+  {
+    "sample_id": "2009_003895",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 106
+  },
+  {
+    "sample_id": "2009_003903",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 430
+  },
+  {
+    "sample_id": "2009_003904",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 1297
+  },
+  {
+    "sample_id": "2009_003928",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 3206
+  },
+  {
+    "sample_id": "2009_003938",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "cleftside",
+    "raw_part_name": "cleftside_1",
+    "mask_area": 3327
+  },
+  {
+    "sample_id": "2009_003938",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "hleftside",
+    "raw_part_name": "hleftside",
+    "mask_area": 7957
+  },
+  {
+    "sample_id": "2009_004033",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 599
+  },
+  {
+    "sample_id": "2009_004043",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 1020
+  },
+  {
+    "sample_id": "2009_004072",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "leftside",
+    "raw_part_name": "leftside",
+    "mask_area": 45938
+  },
+  {
+    "sample_id": "2009_004084",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 114
+  },
+  {
+    "sample_id": "2009_004084",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 115
+  },
+  {
+    "sample_id": "2009_004084",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 7849
+  },
+  {
+    "sample_id": "2009_004099",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2009_004221",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 78
+  },
+  {
+    "sample_id": "2009_004497",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 2219
+  },
+  {
+    "sample_id": "2009_004504",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 4542
+  },
+  {
+    "sample_id": "2009_004507",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 9236
+  },
+  {
+    "sample_id": "2009_004507",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 888
+  },
+  {
+    "sample_id": "2009_004568",
+    "object_id": 5,
+    "part_id": 3,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 17
+  },
+  {
+    "sample_id": "2009_004581",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 104
+  },
+  {
+    "sample_id": "2009_004592",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4429
+  },
+  {
+    "sample_id": "2009_004592",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rbpa",
+    "raw_part_name": "rbpa",
+    "mask_area": 250
+  },
+  {
+    "sample_id": "2009_004594",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "roofside",
+    "raw_part_name": "roofside",
+    "mask_area": 2398
+  },
+  {
+    "sample_id": "2009_004653",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 3486
+  },
+  {
+    "sample_id": "2009_004721",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 11856
+  },
+  {
+    "sample_id": "2009_004721",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 9709
+  },
+  {
+    "sample_id": "2009_004732",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 751
+  },
+  {
+    "sample_id": "2009_004789",
+    "object_id": 2,
+    "part_id": 9,
+    "part_name": "window",
+    "raw_part_name": "window_2",
+    "mask_area": 9534
+  },
+  {
+    "sample_id": "2009_004799",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_2",
+    "mask_area": 191
+  },
+  {
+    "sample_id": "2009_004801",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 606
+  },
+  {
+    "sample_id": "2009_004848",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 4216
+  },
+  {
+    "sample_id": "2009_004848",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 8188
+  },
+  {
+    "sample_id": "2009_004848",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 924
+  },
+  {
+    "sample_id": "2009_004859",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2009_004895",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 87
+  },
+  {
+    "sample_id": "2009_004942",
+    "object_id": 0,
+    "part_id": 18,
+    "part_name": "rbuleg",
+    "raw_part_name": "rbuleg",
+    "mask_area": 2040
+  },
+  {
+    "sample_id": "2009_004942",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 336
+  },
+  {
+    "sample_id": "2009_004942",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rfho",
+    "raw_part_name": "rfho",
+    "mask_area": 693
+  },
+  {
+    "sample_id": "2009_004987",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 199
+  },
+  {
+    "sample_id": "2009_004987",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 281
+  },
+  {
+    "sample_id": "2009_004994",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 264
+  },
+  {
+    "sample_id": "2009_004994",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 37
+  },
+  {
+    "sample_id": "2009_005038",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 30718
+  },
+  {
+    "sample_id": "2009_005078",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1099
+  },
+  {
+    "sample_id": "2009_005087",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 177
+  },
+  {
+    "sample_id": "2009_005089",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2009_005089",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 1896
+  },
+  {
+    "sample_id": "2009_005217",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 1301
+  },
+  {
+    "sample_id": "2009_005217",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 3096
+  },
+  {
+    "sample_id": "2009_005217",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 1259
+  },
+  {
+    "sample_id": "2009_005219",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 281
+  },
+  {
+    "sample_id": "2009_005219",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 14706
+  },
+  {
+    "sample_id": "2010_000003",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3998
+  },
+  {
+    "sample_id": "2010_000003",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 519
+  },
+  {
+    "sample_id": "2010_000003",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 1242
+  },
+  {
+    "sample_id": "2010_000003",
+    "object_id": 2,
+    "part_id": 10,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 1321
+  },
+  {
+    "sample_id": "2010_000038",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2755
+  },
+  {
+    "sample_id": "2010_000038",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 179
+  },
+  {
+    "sample_id": "2010_000038",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 1175
+  },
+  {
+    "sample_id": "2010_000038",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 332
+  },
+  {
+    "sample_id": "2010_000083",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 1276
+  },
+  {
+    "sample_id": "2010_000083",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_000083",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 95
+  },
+  {
+    "sample_id": "2010_000087",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1537
+  },
+  {
+    "sample_id": "2010_000087",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 747
+  },
+  {
+    "sample_id": "2010_000159",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 48295
+  },
+  {
+    "sample_id": "2010_000159",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 516
+  },
+  {
+    "sample_id": "2010_000160",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 675
+  },
+  {
+    "sample_id": "2010_000163",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 39109
+  },
+  {
+    "sample_id": "2010_000174",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 63
+  },
+  {
+    "sample_id": "2010_000216",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "lfleg",
+    "raw_part_name": "lfleg",
+    "mask_area": 890
+  },
+  {
+    "sample_id": "2010_000238",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 294
+  },
+  {
+    "sample_id": "2010_000238",
+    "object_id": 2,
+    "part_id": 11,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 307
+  },
+  {
+    "sample_id": "2010_000238",
+    "object_id": 2,
+    "part_id": 15,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 57
+  },
+  {
+    "sample_id": "2010_000238",
+    "object_id": 2,
+    "part_id": 7,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 112
+  },
+  {
+    "sample_id": "2010_000256",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 457
+  },
+  {
+    "sample_id": "2010_000256",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 3978
+  },
+  {
+    "sample_id": "2010_000309",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2010_000372",
+    "object_id": 2,
+    "part_id": 7,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 2307
+  },
+  {
+    "sample_id": "2010_000427",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 965
+  },
+  {
+    "sample_id": "2010_000427",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 46
+  },
+  {
+    "sample_id": "2010_000427",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 41065
+  },
+  {
+    "sample_id": "2010_000502",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 176
+  },
+  {
+    "sample_id": "2010_000502",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 412
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "backside",
+    "raw_part_name": "backside",
+    "mask_area": 184
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "frontside",
+    "raw_part_name": "frontside",
+    "mask_area": 2435
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 1903
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 114
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "roofside",
+    "raw_part_name": "roofside",
+    "mask_area": 572
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 2,
+    "part_id": 6,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 1171
+  },
+  {
+    "sample_id": "2010_000552",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15056
+  },
+  {
+    "sample_id": "2010_000552",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 11267
+  },
+  {
+    "sample_id": "2010_000573",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2010_000573",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 250
+  },
+  {
+    "sample_id": "2010_000573",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 53
+  },
+  {
+    "sample_id": "2010_000628",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 4934
+  },
+  {
+    "sample_id": "2010_000639",
+    "object_id": 2,
+    "part_id": 10,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 295
+  },
+  {
+    "sample_id": "2010_000666",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "lbho",
+    "raw_part_name": "lbho",
+    "mask_area": 109
+  },
+  {
+    "sample_id": "2010_000666",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "lblleg",
+    "raw_part_name": "lblleg",
+    "mask_area": 895
+  },
+  {
+    "sample_id": "2010_000666",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 60
+  },
+  {
+    "sample_id": "2010_000666",
+    "object_id": 1,
+    "part_id": 16,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 2348
+  },
+  {
+    "sample_id": "2010_000679",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_000682",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 80
+  },
+  {
+    "sample_id": "2010_000682",
+    "object_id": 3,
+    "part_id": 1,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 322
+  },
+  {
+    "sample_id": "2010_000682",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 3
+  },
+  {
+    "sample_id": "2010_000682",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 303
+  },
+  {
+    "sample_id": "2010_000683",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18533
+  },
+  {
+    "sample_id": "2010_000683",
+    "object_id": 2,
+    "part_id": 9,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 1248
+  },
+  {
+    "sample_id": "2010_000683",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 2416
+  },
+  {
+    "sample_id": "2010_000683",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 45
+  },
+  {
+    "sample_id": "2010_000724",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 385
+  },
+  {
+    "sample_id": "2010_000724",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 73
+  },
+  {
+    "sample_id": "2010_000724",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 11736
+  },
+  {
+    "sample_id": "2010_000738",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 3832
+  },
+  {
+    "sample_id": "2010_000738",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 4142
+  },
+  {
+    "sample_id": "2010_000738",
+    "object_id": 0,
+    "part_id": 17,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 2577
+  },
+  {
+    "sample_id": "2010_000738",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 1833
+  },
+  {
+    "sample_id": "2010_000788",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 142
+  },
+  {
+    "sample_id": "2010_000836",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2010_000836",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 1121
+  },
+  {
+    "sample_id": "2010_000904",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 120149
+  },
+  {
+    "sample_id": "2010_000918",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 247
+  },
+  {
+    "sample_id": "2010_000929",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 325
+  },
+  {
+    "sample_id": "2010_000929",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 17
+  },
+  {
+    "sample_id": "2010_000929",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 46
+  },
+  {
+    "sample_id": "2010_000961",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lwing",
+    "raw_part_name": "lwing",
+    "mask_area": 325
+  },
+  {
+    "sample_id": "2010_001000",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 14100
+  },
+  {
+    "sample_id": "2010_001010",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "rblleg",
+    "raw_part_name": "rblleg",
+    "mask_area": 386
+  },
+  {
+    "sample_id": "2010_001010",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 146
+  },
+  {
+    "sample_id": "2010_001017",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "engine",
+    "raw_part_name": "engine_1",
+    "mask_area": 598
+  },
+  {
+    "sample_id": "2010_001024",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 33926
+  },
+  {
+    "sample_id": "2010_001024",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 259
+  },
+  {
+    "sample_id": "2010_001024",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 1203
+  },
+  {
+    "sample_id": "2010_001070",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 80
+  },
+  {
+    "sample_id": "2010_001070",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 77
+  },
+  {
+    "sample_id": "2010_001070",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 234
+  },
+  {
+    "sample_id": "2010_001149",
+    "object_id": 2,
+    "part_id": 10,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 14
+  },
+  {
+    "sample_id": "2010_001151",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15491
+  },
+  {
+    "sample_id": "2010_001206",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 151
+  },
+  {
+    "sample_id": "2010_001206",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_001206",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 9259
+  },
+  {
+    "sample_id": "2010_001251",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 16341
+  },
+  {
+    "sample_id": "2010_001256",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 531
+  },
+  {
+    "sample_id": "2010_001264",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 11746
+  },
+  {
+    "sample_id": "2010_001264",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 2367
+  },
+  {
+    "sample_id": "2010_001313",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 257
+  },
+  {
+    "sample_id": "2010_001313",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 270
+  },
+  {
+    "sample_id": "2010_001367",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9155
+  },
+  {
+    "sample_id": "2010_001367",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 392
+  },
+  {
+    "sample_id": "2010_001367",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 5264
+  },
+  {
+    "sample_id": "2010_001367",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 21945
+  },
+  {
+    "sample_id": "2010_001376",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 627
+  },
+  {
+    "sample_id": "2010_001448",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 10151
+  },
+  {
+    "sample_id": "2010_001522",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 2762
+  },
+  {
+    "sample_id": "2010_001534",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 128
+  },
+  {
+    "sample_id": "2010_001534",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 2304
+  },
+  {
+    "sample_id": "2010_001563",
+    "object_id": 3,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 86
+  },
+  {
+    "sample_id": "2010_001563",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 87
+  },
+  {
+    "sample_id": "2010_001563",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2010_001577",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 153
+  },
+  {
+    "sample_id": "2010_001579",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 268
+  },
+  {
+    "sample_id": "2010_001646",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "fliplate",
+    "raw_part_name": "fliplate",
+    "mask_area": 216
+  },
+  {
+    "sample_id": "2010_001646",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 18579
+  },
+  {
+    "sample_id": "2010_001692",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 110
+  },
+  {
+    "sample_id": "2010_001692",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_001692",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 1953
+  },
+  {
+    "sample_id": "2010_001692",
+    "object_id": 0,
+    "part_id": 18,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 466
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 1598
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 15,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 4788
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 553
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 852
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 5631
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 252
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 12
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 47
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 82
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 6
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 252
+  },
+  {
+    "sample_id": "2010_001767",
+    "object_id": 4,
+    "part_id": 3,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 72
+  },
+  {
+    "sample_id": "2010_001767",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 38
+  },
+  {
+    "sample_id": "2010_001768",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 62
+  },
+  {
+    "sample_id": "2010_001768",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 5
+  },
+  {
+    "sample_id": "2010_001768",
+    "object_id": 1,
+    "part_id": 10,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 101
+  },
+  {
+    "sample_id": "2010_001908",
+    "object_id": 1,
+    "part_id": 13,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 372
+  },
+  {
+    "sample_id": "2010_001908",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 35
+  },
+  {
+    "sample_id": "2010_001913",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 104
+  },
+  {
+    "sample_id": "2010_001913",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 58
+  },
+  {
+    "sample_id": "2010_001951",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2010_001966",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 173
+  },
+  {
+    "sample_id": "2010_001966",
+    "object_id": 3,
+    "part_id": 3,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 44
+  },
+  {
+    "sample_id": "2010_001995",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 37867
+  },
+  {
+    "sample_id": "2010_002017",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 5235
+  },
+  {
+    "sample_id": "2010_002017",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 141
+  },
+  {
+    "sample_id": "2010_002025",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 873
+  },
+  {
+    "sample_id": "2010_002025",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 301
+  },
+  {
+    "sample_id": "2010_002025",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 1241
+  },
+  {
+    "sample_id": "2010_002025",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 30283
+  },
+  {
+    "sample_id": "2010_002106",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 170
+  },
+  {
+    "sample_id": "2010_002106",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 332
+  },
+  {
+    "sample_id": "2010_002137",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lfleg",
+    "raw_part_name": "lfleg",
+    "mask_area": 620
+  },
+  {
+    "sample_id": "2010_002137",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 17
+  },
+  {
+    "sample_id": "2010_002137",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2010_002142",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 265
+  },
+  {
+    "sample_id": "2010_002142",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 8
+  },
+  {
+    "sample_id": "2010_002146",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 675
+  },
+  {
+    "sample_id": "2010_002161",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 839
+  },
+  {
+    "sample_id": "2010_002161",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 119
+  },
+  {
+    "sample_id": "2010_002161",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lfuleg",
+    "raw_part_name": "lfuleg",
+    "mask_area": 836
+  },
+  {
+    "sample_id": "2010_002161",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 9
+  },
+  {
+    "sample_id": "2010_002228",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 1990
+  },
+  {
+    "sample_id": "2010_002232",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 174
+  },
+  {
+    "sample_id": "2010_002251",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 1948
+  },
+  {
+    "sample_id": "2010_002305",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 3083
+  },
+  {
+    "sample_id": "2010_002305",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 2187
+  },
+  {
+    "sample_id": "2010_002310",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lwing",
+    "raw_part_name": "lwing",
+    "mask_area": 3942
+  },
+  {
+    "sample_id": "2010_002310",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "stern",
+    "raw_part_name": "stern",
+    "mask_area": 5994
+  },
+  {
+    "sample_id": "2010_002348",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 40368
+  },
+  {
+    "sample_id": "2010_002396",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 672
+  },
+  {
+    "sample_id": "2010_002396",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 963
+  },
+  {
+    "sample_id": "2010_002450",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "lwing",
+    "raw_part_name": "lwing",
+    "mask_area": 492
+  },
+  {
+    "sample_id": "2010_002480",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 50223
+  },
+  {
+    "sample_id": "2010_002531",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 89
+  },
+  {
+    "sample_id": "2010_002536",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 1025
+  },
+  {
+    "sample_id": "2010_002546",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 82
+  },
+  {
+    "sample_id": "2010_002546",
+    "object_id": 4,
+    "part_id": 4,
+    "part_name": "rightmirror",
+    "raw_part_name": "rightmirror",
+    "mask_area": 100
+  },
+  {
+    "sample_id": "2010_002546",
+    "object_id": 5,
+    "part_id": 2,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 863
+  },
+  {
+    "sample_id": "2010_002623",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 1264
+  },
+  {
+    "sample_id": "2010_002623",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 236
+  },
+  {
+    "sample_id": "2010_002623",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 777
+  },
+  {
+    "sample_id": "2010_002682",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 134
+  },
+  {
+    "sample_id": "2010_002693",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 485
+  },
+  {
+    "sample_id": "2010_002701",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 20
+  },
+  {
+    "sample_id": "2010_002763",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 1509
+  },
+  {
+    "sample_id": "2010_002792",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 484
+  },
+  {
+    "sample_id": "2010_002792",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 4113
+  },
+  {
+    "sample_id": "2010_002792",
+    "object_id": 1,
+    "part_id": 9,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 3690
+  },
+  {
+    "sample_id": "2010_002868",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 16946
+  },
+  {
+    "sample_id": "2010_002900",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 334
+  },
+  {
+    "sample_id": "2010_002902",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 441
+  },
+  {
+    "sample_id": "2010_002902",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 625
+  },
+  {
+    "sample_id": "2010_002902",
+    "object_id": 2,
+    "part_id": 6,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 9038
+  },
+  {
+    "sample_id": "2010_002929",
+    "object_id": 7,
+    "part_id": 7,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 320
+  },
+  {
+    "sample_id": "2010_002929",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 1115
+  },
+  {
+    "sample_id": "2010_002939",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "engine",
+    "raw_part_name": "engine_2",
+    "mask_area": 2315
+  },
+  {
+    "sample_id": "2010_002939",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 5289
+  },
+  {
+    "sample_id": "2010_003014",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 28
+  },
+  {
+    "sample_id": "2010_003014",
+    "object_id": 4,
+    "part_id": 9,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 9835
+  },
+  {
+    "sample_id": "2010_003060",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 7292
+  },
+  {
+    "sample_id": "2010_003060",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 408
+  },
+  {
+    "sample_id": "2010_003060",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 22906
+  },
+  {
+    "sample_id": "2010_003123",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "backside",
+    "raw_part_name": "backside",
+    "mask_area": 1605
+  },
+  {
+    "sample_id": "2010_003123",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 436
+  },
+  {
+    "sample_id": "2010_003183",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 20
+  },
+  {
+    "sample_id": "2010_003183",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 36
+  },
+  {
+    "sample_id": "2010_003183",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "rhorn",
+    "raw_part_name": "rhorn",
+    "mask_area": 122
+  },
+  {
+    "sample_id": "2010_003207",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 8756
+  },
+  {
+    "sample_id": "2010_003231",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 498
+  },
+  {
+    "sample_id": "2010_003239",
+    "object_id": 4,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 43
+  },
+  {
+    "sample_id": "2010_003276",
+    "object_id": 1,
+    "part_id": 3,
+    "part_name": "roofside",
+    "raw_part_name": "roofside",
+    "mask_area": 5085
+  },
+  {
+    "sample_id": "2010_003293",
+    "object_id": 3,
+    "part_id": 2,
+    "part_name": "chainwheel",
+    "raw_part_name": "chainwheel",
+    "mask_area": 52
+  },
+  {
+    "sample_id": "2010_003293",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 273
+  },
+  {
+    "sample_id": "2010_003293",
+    "object_id": 3,
+    "part_id": 4,
+    "part_name": "saddle",
+    "raw_part_name": "saddle",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2010_003302",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "pot",
+    "raw_part_name": "pot",
+    "mask_area": 1884
+  },
+  {
+    "sample_id": "2010_003325",
+    "object_id": 3,
+    "part_id": 9,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 2173
+  },
+  {
+    "sample_id": "2010_003325",
+    "object_id": 3,
+    "part_id": 10,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 4608
+  },
+  {
+    "sample_id": "2010_003325",
+    "object_id": 3,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 104
+  },
+  {
+    "sample_id": "2010_003381",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3101
+  },
+  {
+    "sample_id": "2010_003381",
+    "object_id": 4,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 17
+  },
+  {
+    "sample_id": "2010_003381",
+    "object_id": 5,
+    "part_id": 10,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 1353
+  },
+  {
+    "sample_id": "2010_003402",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lbleg",
+    "raw_part_name": "lbleg",
+    "mask_area": 3245
+  },
+  {
+    "sample_id": "2010_003402",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 280
+  },
+  {
+    "sample_id": "2010_003409",
+    "object_id": 5,
+    "part_id": 9,
+    "part_name": "rlleg",
+    "raw_part_name": "rlleg",
+    "mask_area": 612
+  },
+  {
+    "sample_id": "2010_003473",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 11657
+  },
+  {
+    "sample_id": "2010_003495",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "stern",
+    "raw_part_name": "stern",
+    "mask_area": 4444
+  },
+  {
+    "sample_id": "2010_003506",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 27689
+  },
+  {
+    "sample_id": "2010_003541",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 5385
+  },
+  {
+    "sample_id": "2010_003597",
+    "object_id": 7,
+    "part_id": 3,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 88
+  },
+  {
+    "sample_id": "2010_003597",
+    "object_id": 4,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 4960
+  },
+  {
+    "sample_id": "2010_003675",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 28137
+  },
+  {
+    "sample_id": "2010_003708",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 8
+  },
+  {
+    "sample_id": "2010_003716",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 10362
+  },
+  {
+    "sample_id": "2010_003746",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 66991
+  },
+  {
+    "sample_id": "2010_003746",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 21699
+  },
+  {
+    "sample_id": "2010_003758",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 94
+  },
+  {
+    "sample_id": "2010_003758",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 285
+  },
+  {
+    "sample_id": "2010_003764",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 118
+  },
+  {
+    "sample_id": "2010_003771",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2128
+  },
+  {
+    "sample_id": "2010_003771",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 445
+  },
+  {
+    "sample_id": "2010_003781",
+    "object_id": 3,
+    "part_id": 3,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 3962
+  },
+  {
+    "sample_id": "2010_003854",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 197
+  },
+  {
+    "sample_id": "2010_003912",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "handlebar",
+    "raw_part_name": "handlebar",
+    "mask_area": 1301
+  },
+  {
+    "sample_id": "2010_003915",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "engine",
+    "raw_part_name": "engine_1",
+    "mask_area": 528
+  },
+  {
+    "sample_id": "2010_003971",
+    "object_id": 3,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 96
+  },
+  {
+    "sample_id": "2010_004063",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_1",
+    "mask_area": 59
+  },
+  {
+    "sample_id": "2010_004104",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 1549
+  },
+  {
+    "sample_id": "2010_004120",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 1425
+  },
+  {
+    "sample_id": "2010_004120",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 3484
+  },
+  {
+    "sample_id": "2010_004149",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "crightside",
+    "raw_part_name": "crightside_1",
+    "mask_area": 50566
+  },
+  {
+    "sample_id": "2010_004165",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 197
+  },
+  {
+    "sample_id": "2010_004165",
+    "object_id": 1,
+    "part_id": 12,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 1174
+  },
+  {
+    "sample_id": "2010_004226",
+    "object_id": 3,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 305
+  },
+  {
+    "sample_id": "2010_004320",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 672
+  },
+  {
+    "sample_id": "2010_004322",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "lhorn",
+    "raw_part_name": "lhorn",
+    "mask_area": 2689
+  },
+  {
+    "sample_id": "2010_004355",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 1058
+  },
+  {
+    "sample_id": "2010_004382",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "plant",
+    "raw_part_name": "plant",
+    "mask_area": 55005
+  },
+  {
+    "sample_id": "2010_004419",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "engine",
+    "raw_part_name": "engine_1",
+    "mask_area": 1962
+  },
+  {
+    "sample_id": "2010_004432",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "mouth",
+    "raw_part_name": "mouth",
+    "mask_area": 246
+  },
+  {
+    "sample_id": "2010_004472",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 477
+  },
+  {
+    "sample_id": "2010_004479",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 1651
+  },
+  {
+    "sample_id": "2010_004479",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 7918
+  },
+  {
+    "sample_id": "2010_004479",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 26698
+  },
+  {
+    "sample_id": "2010_004519",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 36747
+  },
+  {
+    "sample_id": "2010_004556",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 447
+  },
+  {
+    "sample_id": "2010_004559",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "beak",
+    "raw_part_name": "beak",
+    "mask_area": 243
+  },
+  {
+    "sample_id": "2010_004559",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 698
+  },
+  {
+    "sample_id": "2010_004559",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 1223
+  },
+  {
+    "sample_id": "2010_004559",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 46
+  },
+  {
+    "sample_id": "2010_004628",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "lfleg",
+    "raw_part_name": "lfleg",
+    "mask_area": 189
+  },
+  {
+    "sample_id": "2010_004628",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 191
+  },
+  {
+    "sample_id": "2010_004628",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2010_004628",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_004635",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "rhorn",
+    "raw_part_name": "rhorn",
+    "mask_area": 141
+  },
+  {
+    "sample_id": "2010_004697",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4601
+  },
+  {
+    "sample_id": "2010_004697",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2010_004789",
+    "object_id": 1,
+    "part_id": 8,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 892
+  },
+  {
+    "sample_id": "2010_004789",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "rflleg",
+    "raw_part_name": "rflleg",
+    "mask_area": 544
+  },
+  {
+    "sample_id": "2010_004795",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "lfpa",
+    "raw_part_name": "lfpa",
+    "mask_area": 103
+  },
+  {
+    "sample_id": "2010_004795",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 290
+  },
+  {
+    "sample_id": "2010_004795",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 50
+  },
+  {
+    "sample_id": "2010_004795",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 48
+  },
+  {
+    "sample_id": "2010_004828",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_004828",
+    "object_id": 2,
+    "part_id": 8,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 4444
+  },
+  {
+    "sample_id": "2010_004856",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 70
+  },
+  {
+    "sample_id": "2010_004856",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 44057
+  },
+  {
+    "sample_id": "2010_004861",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 2232
+  },
+  {
+    "sample_id": "2010_004861",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 929
+  },
+  {
+    "sample_id": "2010_004951",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 114
+  },
+  {
+    "sample_id": "2010_005013",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 22882
+  },
+  {
+    "sample_id": "2010_005021",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 275
+  },
+  {
+    "sample_id": "2010_005046",
+    "object_id": 2,
+    "part_id": 5,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 78
+  },
+  {
+    "sample_id": "2010_005046",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 6101
+  },
+  {
+    "sample_id": "2010_005063",
+    "object_id": 5,
+    "part_id": 1,
+    "part_name": "rightside",
+    "raw_part_name": "rightside",
+    "mask_area": 5187
+  },
+  {
+    "sample_id": "2010_005063",
+    "object_id": 3,
+    "part_id": 8,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 140
+  },
+  {
+    "sample_id": "2010_005063",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 3224
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 2,
+    "part_id": 3,
+    "part_name": "door",
+    "raw_part_name": "door_1",
+    "mask_area": 5811
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "hair",
+    "raw_part_name": "hair",
+    "mask_area": 237
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 976
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 26
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 2,
+    "part_id": 11,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 11479
+  },
+  {
+    "sample_id": "2010_005159",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 23540
+  },
+  {
+    "sample_id": "2010_005159",
+    "object_id": 0,
+    "part_id": 8,
+    "part_name": "rfleg",
+    "raw_part_name": "rfleg",
+    "mask_area": 6362
+  },
+  {
+    "sample_id": "2010_005160",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "fwheel",
+    "raw_part_name": "fwheel",
+    "mask_area": 3203
+  },
+  {
+    "sample_id": "2010_005160",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "lhorn",
+    "raw_part_name": "lhorn",
+    "mask_area": 43
+  },
+  {
+    "sample_id": "2010_005160",
+    "object_id": 4,
+    "part_id": 1,
+    "part_name": "window",
+    "raw_part_name": "window_1",
+    "mask_area": 8483
+  },
+  {
+    "sample_id": "2010_005166",
+    "object_id": 6,
+    "part_id": 12,
+    "part_name": "lfoot",
+    "raw_part_name": "lfoot",
+    "mask_area": 253
+  },
+  {
+    "sample_id": "2010_005166",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 614
+  },
+  {
+    "sample_id": "2010_005166",
+    "object_id": 5,
+    "part_id": 4,
+    "part_name": "rebrow",
+    "raw_part_name": "rebrow",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_005174",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 50
+  },
+  {
+    "sample_id": "2010_005180",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 1789
+  },
+  {
+    "sample_id": "2010_005206",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 9327
+  },
+  {
+    "sample_id": "2010_005206",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "nose",
+    "raw_part_name": "nose",
+    "mask_area": 936
+  },
+  {
+    "sample_id": "2010_005245",
+    "object_id": 1,
+    "part_id": 14,
+    "part_name": "lbpa",
+    "raw_part_name": "lbpa",
+    "mask_area": 38
+  },
+  {
+    "sample_id": "2010_005245",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "llleg",
+    "raw_part_name": "llleg",
+    "mask_area": 260
+  },
+  {
+    "sample_id": "2010_005252",
+    "object_id": 3,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 2283
+  },
+  {
+    "sample_id": "2010_005252",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "luarm",
+    "raw_part_name": "luarm",
+    "mask_area": 167
+  },
+  {
+    "sample_id": "2010_005252",
+    "object_id": 1,
+    "part_id": 7,
+    "part_name": "rhand",
+    "raw_part_name": "rhand",
+    "mask_area": 175
+  },
+  {
+    "sample_id": "2010_005252",
+    "object_id": 1,
+    "part_id": 6,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 597
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 9,
+    "part_id": 4,
+    "part_name": "leftmirror",
+    "raw_part_name": "leftmirror",
+    "mask_area": 786
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 7,
+    "part_id": 1,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 6,
+    "part_id": 2,
+    "part_name": "llarm",
+    "raw_part_name": "llarm",
+    "mask_area": 68
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 3,
+    "part_id": 8,
+    "part_name": "rfoot",
+    "raw_part_name": "rfoot",
+    "mask_area": 65
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 9,
+    "part_id": 9,
+    "part_name": "wheel",
+    "raw_part_name": "wheel_2",
+    "mask_area": 316
+  },
+  {
+    "sample_id": "2010_005305",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "screen",
+    "raw_part_name": "screen",
+    "mask_area": 5769
+  },
+  {
+    "sample_id": "2010_005344",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11554
+  },
+  {
+    "sample_id": "2010_005344",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 129
+  },
+  {
+    "sample_id": "2010_005344",
+    "object_id": 0,
+    "part_id": 11,
+    "part_name": "rbleg",
+    "raw_part_name": "rbleg",
+    "mask_area": 392
+  },
+  {
+    "sample_id": "2010_005353",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 41
+  },
+  {
+    "sample_id": "2010_005366",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 15391
+  },
+  {
+    "sample_id": "2010_005366",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "headlight",
+    "raw_part_name": "headlight_1",
+    "mask_area": 879
+  },
+  {
+    "sample_id": "2010_005421",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 165
+  },
+  {
+    "sample_id": "2010_005421",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 5144
+  },
+  {
+    "sample_id": "2010_005428",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "beak",
+    "raw_part_name": "beak",
+    "mask_area": 34
+  },
+  {
+    "sample_id": "2010_005428",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "lleg",
+    "raw_part_name": "lleg",
+    "mask_area": 850
+  },
+  {
+    "sample_id": "2010_005428",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 22
+  },
+  {
+    "sample_id": "2010_005428",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 2464
+  },
+  {
+    "sample_id": "2010_005432",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "backside",
+    "raw_part_name": "backside",
+    "mask_area": 52186
+  },
+  {
+    "sample_id": "2010_005501",
+    "object_id": 2,
+    "part_id": 1,
+    "part_name": "frontside",
+    "raw_part_name": "frontside",
+    "mask_area": 9931
+  },
+  {
+    "sample_id": "2010_005531",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "tail",
+    "raw_part_name": "tail",
+    "mask_area": 437
+  },
+  {
+    "sample_id": "2010_005575",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lear",
+    "raw_part_name": "lear",
+    "mask_area": 735
+  },
+  {
+    "sample_id": "2010_005575",
+    "object_id": 0,
+    "part_id": 5,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 2890
+  },
+  {
+    "sample_id": "2010_005582",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 2010
+  },
+  {
+    "sample_id": "2010_005626",
+    "object_id": 2,
+    "part_id": 4,
+    "part_name": "lebrow",
+    "raw_part_name": "lebrow",
+    "mask_area": 23
+  },
+  {
+    "sample_id": "2010_005644",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 10949
+  },
+  {
+    "sample_id": "2010_005664",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 11596
+  },
+  {
+    "sample_id": "2010_005709",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 77
+  },
+  {
+    "sample_id": "2010_005709",
+    "object_id": 0,
+    "part_id": 10,
+    "part_name": "neck",
+    "raw_part_name": "neck",
+    "mask_area": 1235
+  },
+  {
+    "sample_id": "2010_005709",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "reye",
+    "raw_part_name": "reye",
+    "mask_area": 121
+  },
+  {
+    "sample_id": "2010_005709",
+    "object_id": 1,
+    "part_id": 11,
+    "part_name": "rfpa",
+    "raw_part_name": "rfpa",
+    "mask_area": 198
+  },
+  {
+    "sample_id": "2010_005718",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "body",
+    "raw_part_name": "body",
+    "mask_area": 7212
+  },
+  {
+    "sample_id": "2010_005718",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "roofside",
+    "raw_part_name": "roofside",
+    "mask_area": 104
+  },
+  {
+    "sample_id": "2010_005718",
+    "object_id": 3,
+    "part_id": 6,
+    "part_name": "stern",
+    "raw_part_name": "stern",
+    "mask_area": 1852
+  },
+  {
+    "sample_id": "2010_005719",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9435
+  },
+  {
+    "sample_id": "2010_005719",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "muzzle",
+    "raw_part_name": "muzzle",
+    "mask_area": 3237
+  },
+  {
+    "sample_id": "2010_005871",
+    "object_id": 2,
+    "part_id": 16,
+    "part_name": "luleg",
+    "raw_part_name": "luleg",
+    "mask_area": 1162
+  },
+  {
+    "sample_id": "2010_005888",
+    "object_id": 0,
+    "part_id": 1,
+    "part_name": "lwing",
+    "raw_part_name": "lwing",
+    "mask_area": 1235
+  },
+  {
+    "sample_id": "2010_005888",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "rwing",
+    "raw_part_name": "rwing",
+    "mask_area": 1282
+  },
+  {
+    "sample_id": "2010_005899",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "leye",
+    "raw_part_name": "leye",
+    "mask_area": 1078
+  },
+  {
+    "sample_id": "2010_005922",
+    "object_id": 1,
+    "part_id": 5,
+    "part_name": "lflleg",
+    "raw_part_name": "lflleg",
+    "mask_area": 49
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "lhand",
+    "raw_part_name": "lhand",
+    "mask_area": 2163
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "rear",
+    "raw_part_name": "rear",
+    "mask_area": 462
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 0,
+    "part_id": 13,
+    "part_name": "rlarm",
+    "raw_part_name": "rlarm",
+    "mask_area": 4532
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "ruarm",
+    "raw_part_name": "ruarm",
+    "mask_area": 2469
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 0,
+    "part_id": 19,
+    "part_name": "ruleg",
+    "raw_part_name": "ruleg",
+    "mask_area": 21640
+  },
+  {
+    "sample_id": "2010_005992",
+    "object_id": 0,
+    "part_id": 7,
+    "part_name": "torso",
+    "raw_part_name": "torso",
+    "mask_area": 24566
+  },
+  {
+    "sample_id": "2010_006054",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "cleftside",
+    "raw_part_name": "cleftside_1",
+    "mask_area": 1285
+  },
+  {
+    "sample_id": "2010_006070",
+    "object_id": 1,
+    "part_id": 1,
+    "part_name": "bwheel",
+    "raw_part_name": "bwheel",
+    "mask_area": 24398
+  }
+]

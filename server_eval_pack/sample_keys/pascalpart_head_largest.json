@@ -1,0 +1,4722 @@
+[
+  {
+    "sample_id": "2008_000009",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 298
+  },
+  {
+    "sample_id": "2008_000073",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2476
+  },
+  {
+    "sample_id": "2008_000080",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4126
+  },
+  {
+    "sample_id": "2008_000123",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1669
+  },
+  {
+    "sample_id": "2008_000182",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1159
+  },
+  {
+    "sample_id": "2008_000213",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 20117
+  },
+  {
+    "sample_id": "2008_000215",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8393
+  },
+  {
+    "sample_id": "2008_000223",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 412
+  },
+  {
+    "sample_id": "2008_000233",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4651
+  },
+  {
+    "sample_id": "2008_000234",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 22886
+  },
+  {
+    "sample_id": "2008_000239",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17363
+  },
+  {
+    "sample_id": "2008_000254",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 82
+  },
+  {
+    "sample_id": "2008_000270",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5162
+  },
+  {
+    "sample_id": "2008_000271",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9921
+  },
+  {
+    "sample_id": "2008_000345",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7232
+  },
+  {
+    "sample_id": "2008_000359",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 31391
+  },
+  {
+    "sample_id": "2008_000401",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12560
+  },
+  {
+    "sample_id": "2008_000464",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6412
+  },
+  {
+    "sample_id": "2008_000469",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 121
+  },
+  {
+    "sample_id": "2008_000474",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1937
+  },
+  {
+    "sample_id": "2008_000510",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 866
+  },
+  {
+    "sample_id": "2008_000533",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2336
+  },
+  {
+    "sample_id": "2008_000573",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15360
+  },
+  {
+    "sample_id": "2008_000602",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 34243
+  },
+  {
+    "sample_id": "2008_000630",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 863
+  },
+  {
+    "sample_id": "2008_000657",
+    "object_id": 0,
+    "part_id": 6,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 39088
+  },
+  {
+    "sample_id": "2008_000661",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7453
+  },
+  {
+    "sample_id": "2008_000662",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7992
+  },
+  {
+    "sample_id": "2008_000666",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 693
+  },
+  {
+    "sample_id": "2008_000673",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1751
+  },
+  {
+    "sample_id": "2008_000700",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2687
+  },
+  {
+    "sample_id": "2008_000725",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 666
+  },
+  {
+    "sample_id": "2008_000731",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4688
+  },
+  {
+    "sample_id": "2008_000765",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10122
+  },
+  {
+    "sample_id": "2008_000795",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6498
+  },
+  {
+    "sample_id": "2008_000811",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1978
+  },
+  {
+    "sample_id": "2008_000848",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 252
+  },
+  {
+    "sample_id": "2008_000853",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1120
+  },
+  {
+    "sample_id": "2008_000863",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3749
+  },
+  {
+    "sample_id": "2008_000943",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 24960
+  },
+  {
+    "sample_id": "2008_000992",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14342
+  },
+  {
+    "sample_id": "2008_001013",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 386
+  },
+  {
+    "sample_id": "2008_001028",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1004
+  },
+  {
+    "sample_id": "2008_001070",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7204
+  },
+  {
+    "sample_id": "2008_001074",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9037
+  },
+  {
+    "sample_id": "2008_001076",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5141
+  },
+  {
+    "sample_id": "2008_001078",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7083
+  },
+  {
+    "sample_id": "2008_001170",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4294
+  },
+  {
+    "sample_id": "2008_001231",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 493
+  },
+  {
+    "sample_id": "2008_001249",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3067
+  },
+  {
+    "sample_id": "2008_001283",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18947
+  },
+  {
+    "sample_id": "2008_001308",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5013
+  },
+  {
+    "sample_id": "2008_001379",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17411
+  },
+  {
+    "sample_id": "2008_001404",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5216
+  },
+  {
+    "sample_id": "2008_001433",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15742
+  },
+  {
+    "sample_id": "2008_001478",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8618
+  },
+  {
+    "sample_id": "2008_001491",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5816
+  },
+  {
+    "sample_id": "2008_001504",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5198
+  },
+  {
+    "sample_id": "2008_001513",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2547
+  },
+  {
+    "sample_id": "2008_001514",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 399
+  },
+  {
+    "sample_id": "2008_001531",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3815
+  },
+  {
+    "sample_id": "2008_001547",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1580
+  },
+  {
+    "sample_id": "2008_001629",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11210
+  },
+  {
+    "sample_id": "2008_001640",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8603
+  },
+  {
+    "sample_id": "2008_001682",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 836
+  },
+  {
+    "sample_id": "2008_001821",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 43729
+  },
+  {
+    "sample_id": "2008_001874",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4357
+  },
+  {
+    "sample_id": "2008_001885",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11472
+  },
+  {
+    "sample_id": "2008_001895",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 34883
+  },
+  {
+    "sample_id": "2008_001966",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1962
+  },
+  {
+    "sample_id": "2008_001992",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 25620
+  },
+  {
+    "sample_id": "2008_002043",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10246
+  },
+  {
+    "sample_id": "2008_002152",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3529
+  },
+  {
+    "sample_id": "2008_002212",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1036
+  },
+  {
+    "sample_id": "2008_002239",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15592
+  },
+  {
+    "sample_id": "2008_002241",
+    "object_id": 6,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 555
+  },
+  {
+    "sample_id": "2008_002429",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9395
+  },
+  {
+    "sample_id": "2008_002495",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1037
+  },
+  {
+    "sample_id": "2008_002536",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1084
+  },
+  {
+    "sample_id": "2008_002588",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 31388
+  },
+  {
+    "sample_id": "2008_002623",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3858
+  },
+  {
+    "sample_id": "2008_002681",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9397
+  },
+  {
+    "sample_id": "2008_002775",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6030
+  },
+  {
+    "sample_id": "2008_002778",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4578
+  },
+  {
+    "sample_id": "2008_002835",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4644
+  },
+  {
+    "sample_id": "2008_002859",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7566
+  },
+  {
+    "sample_id": "2008_002864",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11278
+  },
+  {
+    "sample_id": "2008_002904",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11629
+  },
+  {
+    "sample_id": "2008_002929",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 878
+  },
+  {
+    "sample_id": "2008_002936",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5020
+  },
+  {
+    "sample_id": "2008_002942",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 96330
+  },
+  {
+    "sample_id": "2008_002958",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5157
+  },
+  {
+    "sample_id": "2008_003034",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2248
+  },
+  {
+    "sample_id": "2008_003076",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6242
+  },
+  {
+    "sample_id": "2008_003105",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 49599
+  },
+  {
+    "sample_id": "2008_003108",
+    "object_id": 6,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4434
+  },
+  {
+    "sample_id": "2008_003110",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1159
+  },
+  {
+    "sample_id": "2008_003141",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 134
+  },
+  {
+    "sample_id": "2008_003210",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21766
+  },
+  {
+    "sample_id": "2008_003238",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19749
+  },
+  {
+    "sample_id": "2008_003330",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 30167
+  },
+  {
+    "sample_id": "2008_003333",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 820
+  },
+  {
+    "sample_id": "2008_003379",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1380
+  },
+  {
+    "sample_id": "2008_003451",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2386
+  },
+  {
+    "sample_id": "2008_003461",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3489
+  },
+  {
+    "sample_id": "2008_003492",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 28620
+  },
+  {
+    "sample_id": "2008_003499",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17733
+  },
+  {
+    "sample_id": "2008_003511",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11235
+  },
+  {
+    "sample_id": "2008_003546",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2553
+  },
+  {
+    "sample_id": "2008_003576",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10284
+  },
+  {
+    "sample_id": "2008_003676",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1648
+  },
+  {
+    "sample_id": "2008_003733",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11446
+  },
+  {
+    "sample_id": "2008_003782",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3102
+  },
+  {
+    "sample_id": "2008_003856",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3055
+  },
+  {
+    "sample_id": "2008_003874",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4030
+  },
+  {
+    "sample_id": "2008_004101",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7379
+  },
+  {
+    "sample_id": "2008_004140",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6735
+  },
+  {
+    "sample_id": "2008_004175",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 409
+  },
+  {
+    "sample_id": "2008_004212",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17644
+  },
+  {
+    "sample_id": "2008_004367",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 37206
+  },
+  {
+    "sample_id": "2008_004396",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 42871
+  },
+  {
+    "sample_id": "2008_004399",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 771
+  },
+  {
+    "sample_id": "2008_004453",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9706
+  },
+  {
+    "sample_id": "2008_004575",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4833
+  },
+  {
+    "sample_id": "2008_004610",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 54570
+  },
+  {
+    "sample_id": "2008_004621",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5692
+  },
+  {
+    "sample_id": "2008_004624",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1212
+  },
+  {
+    "sample_id": "2008_004654",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1836
+  },
+  {
+    "sample_id": "2008_004687",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1635
+  },
+  {
+    "sample_id": "2008_004701",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 52982
+  },
+  {
+    "sample_id": "2008_004705",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 30707
+  },
+  {
+    "sample_id": "2008_004854",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8342
+  },
+  {
+    "sample_id": "2008_005089",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4899
+  },
+  {
+    "sample_id": "2008_005097",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19382
+  },
+  {
+    "sample_id": "2008_005105",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5023
+  },
+  {
+    "sample_id": "2008_005197",
+    "object_id": 8,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2230
+  },
+  {
+    "sample_id": "2008_005245",
+    "object_id": 7,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 873
+  },
+  {
+    "sample_id": "2008_005338",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 209
+  },
+  {
+    "sample_id": "2008_005399",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4538
+  },
+  {
+    "sample_id": "2008_005445",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1411
+  },
+  {
+    "sample_id": "2008_005525",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14067
+  },
+  {
+    "sample_id": "2008_005633",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4496
+  },
+  {
+    "sample_id": "2008_005642",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3254
+  },
+  {
+    "sample_id": "2008_005691",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6234
+  },
+  {
+    "sample_id": "2008_005738",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1299
+  },
+  {
+    "sample_id": "2008_005812",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 28593
+  },
+  {
+    "sample_id": "2008_006036",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 340
+  },
+  {
+    "sample_id": "2008_006055",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 45114
+  },
+  {
+    "sample_id": "2008_006063",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 49675
+  },
+  {
+    "sample_id": "2008_006108",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5460
+  },
+  {
+    "sample_id": "2008_006130",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21455
+  },
+  {
+    "sample_id": "2008_006143",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 45
+  },
+  {
+    "sample_id": "2008_006216",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 522
+  },
+  {
+    "sample_id": "2008_006219",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1861
+  },
+  {
+    "sample_id": "2008_006254",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2453
+  },
+  {
+    "sample_id": "2008_006275",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2286
+  },
+  {
+    "sample_id": "2008_006325",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21674
+  },
+  {
+    "sample_id": "2008_006327",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3830
+  },
+  {
+    "sample_id": "2008_006341",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13248
+  },
+  {
+    "sample_id": "2008_006408",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15907
+  },
+  {
+    "sample_id": "2008_006480",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21731
+  },
+  {
+    "sample_id": "2008_006526",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19418
+  },
+  {
+    "sample_id": "2008_006528",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7363
+  },
+  {
+    "sample_id": "2008_006553",
+    "object_id": 0,
+    "part_id": 4,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 44393
+  },
+  {
+    "sample_id": "2008_006554",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 772
+  },
+  {
+    "sample_id": "2008_006722",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8614
+  },
+  {
+    "sample_id": "2008_006752",
+    "object_id": 0,
+    "part_id": 9,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3040
+  },
+  {
+    "sample_id": "2008_006835",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3373
+  },
+  {
+    "sample_id": "2008_006874",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2606
+  },
+  {
+    "sample_id": "2008_006981",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11616
+  },
+  {
+    "sample_id": "2008_007025",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2845
+  },
+  {
+    "sample_id": "2008_007031",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2640
+  },
+  {
+    "sample_id": "2008_007120",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3453
+  },
+  {
+    "sample_id": "2008_007123",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1823
+  },
+  {
+    "sample_id": "2008_007219",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 36876
+  },
+  {
+    "sample_id": "2008_007273",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2365
+  },
+  {
+    "sample_id": "2008_007378",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4341
+  },
+  {
+    "sample_id": "2008_007392",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2587
+  },
+  {
+    "sample_id": "2008_007402",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4755
+  },
+  {
+    "sample_id": "2008_007497",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1033
+  },
+  {
+    "sample_id": "2008_007498",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1350
+  },
+  {
+    "sample_id": "2008_007513",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8831
+  },
+  {
+    "sample_id": "2008_007527",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 158
+  },
+  {
+    "sample_id": "2008_007548",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1623
+  },
+  {
+    "sample_id": "2008_007596",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 570
+  },
+  {
+    "sample_id": "2008_007677",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4968
+  },
+  {
+    "sample_id": "2008_007737",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 16694
+  },
+  {
+    "sample_id": "2008_007814",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14942
+  },
+  {
+    "sample_id": "2008_007828",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4539
+  },
+  {
+    "sample_id": "2008_007945",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6264
+  },
+  {
+    "sample_id": "2008_007994",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 25405
+  },
+  {
+    "sample_id": "2008_008127",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1020
+  },
+  {
+    "sample_id": "2008_008221",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 64038
+  },
+  {
+    "sample_id": "2008_008268",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 88
+  },
+  {
+    "sample_id": "2008_008296",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 228
+  },
+  {
+    "sample_id": "2008_008335",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19492
+  },
+  {
+    "sample_id": "2008_008362",
+    "object_id": 7,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1681
+  },
+  {
+    "sample_id": "2008_008392",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2816
+  },
+  {
+    "sample_id": "2008_008393",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 92254
+  },
+  {
+    "sample_id": "2008_008421",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51743
+  },
+  {
+    "sample_id": "2008_008469",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1090
+  },
+  {
+    "sample_id": "2008_008629",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 115
+  },
+  {
+    "sample_id": "2008_008746",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3448
+  },
+  {
+    "sample_id": "2009_000012",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1843
+  },
+  {
+    "sample_id": "2009_000013",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3299
+  },
+  {
+    "sample_id": "2009_000022",
+    "object_id": 0,
+    "part_id": 16,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6704
+  },
+  {
+    "sample_id": "2009_000037",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 895
+  },
+  {
+    "sample_id": "2009_000039",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3304
+  },
+  {
+    "sample_id": "2009_000074",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2250
+  },
+  {
+    "sample_id": "2009_000080",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2562
+  },
+  {
+    "sample_id": "2009_000149",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 624
+  },
+  {
+    "sample_id": "2009_000156",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 673
+  },
+  {
+    "sample_id": "2009_000219",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 26774
+  },
+  {
+    "sample_id": "2009_000309",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10679
+  },
+  {
+    "sample_id": "2009_000318",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 460
+  },
+  {
+    "sample_id": "2009_000412",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2646
+  },
+  {
+    "sample_id": "2009_000418",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5662
+  },
+  {
+    "sample_id": "2009_000421",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 375
+  },
+  {
+    "sample_id": "2009_000455",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2009_000457",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1360
+  },
+  {
+    "sample_id": "2009_000488",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 606
+  },
+  {
+    "sample_id": "2009_000619",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 636
+  },
+  {
+    "sample_id": "2009_000628",
+    "object_id": 0,
+    "part_id": 21,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12545
+  },
+  {
+    "sample_id": "2009_000641",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2898
+  },
+  {
+    "sample_id": "2009_000664",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2429
+  },
+  {
+    "sample_id": "2009_000675",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3463
+  },
+  {
+    "sample_id": "2009_000704",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3794
+  },
+  {
+    "sample_id": "2009_000705",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 679
+  },
+  {
+    "sample_id": "2009_000712",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 30848
+  },
+  {
+    "sample_id": "2009_000716",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12807
+  },
+  {
+    "sample_id": "2009_000727",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 955
+  },
+  {
+    "sample_id": "2009_000730",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1826
+  },
+  {
+    "sample_id": "2009_000731",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 45394
+  },
+  {
+    "sample_id": "2009_000771",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23995
+  },
+  {
+    "sample_id": "2009_000825",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1440
+  },
+  {
+    "sample_id": "2009_000839",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 125691
+  },
+  {
+    "sample_id": "2009_000845",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14744
+  },
+  {
+    "sample_id": "2009_000879",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1692
+  },
+  {
+    "sample_id": "2009_000892",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4737
+  },
+  {
+    "sample_id": "2009_000924",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5414
+  },
+  {
+    "sample_id": "2009_000931",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1117
+  },
+  {
+    "sample_id": "2009_000935",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4050
+  },
+  {
+    "sample_id": "2009_000964",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2458
+  },
+  {
+    "sample_id": "2009_000989",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 810
+  },
+  {
+    "sample_id": "2009_000991",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3134
+  },
+  {
+    "sample_id": "2009_000998",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7374
+  },
+  {
+    "sample_id": "2009_001008",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23073
+  },
+  {
+    "sample_id": "2009_001108",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 791
+  },
+  {
+    "sample_id": "2009_001160",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2886
+  },
+  {
+    "sample_id": "2009_001299",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2368
+  },
+  {
+    "sample_id": "2009_001300",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 16668
+  },
+  {
+    "sample_id": "2009_001314",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 216
+  },
+  {
+    "sample_id": "2009_001333",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 45703
+  },
+  {
+    "sample_id": "2009_001391",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6941
+  },
+  {
+    "sample_id": "2009_001411",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12749
+  },
+  {
+    "sample_id": "2009_001433",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5752
+  },
+  {
+    "sample_id": "2009_001505",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2305
+  },
+  {
+    "sample_id": "2009_001535",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 20170
+  },
+  {
+    "sample_id": "2009_001565",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5301
+  },
+  {
+    "sample_id": "2009_001607",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 748
+  },
+  {
+    "sample_id": "2009_001663",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 418
+  },
+  {
+    "sample_id": "2009_001683",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3353
+  },
+  {
+    "sample_id": "2009_001687",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14672
+  },
+  {
+    "sample_id": "2009_001718",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6734
+  },
+  {
+    "sample_id": "2009_001765",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 482
+  },
+  {
+    "sample_id": "2009_001768",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3468
+  },
+  {
+    "sample_id": "2009_001854",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 160
+  },
+  {
+    "sample_id": "2009_001991",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 32887
+  },
+  {
+    "sample_id": "2009_002012",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14016
+  },
+  {
+    "sample_id": "2009_002035",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10234
+  },
+  {
+    "sample_id": "2009_002042",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1051
+  },
+  {
+    "sample_id": "2009_002082",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1781
+  },
+  {
+    "sample_id": "2009_002097",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 625
+  },
+  {
+    "sample_id": "2009_002122",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2767
+  },
+  {
+    "sample_id": "2009_002150",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 35423
+  },
+  {
+    "sample_id": "2009_002155",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23103
+  },
+  {
+    "sample_id": "2009_002165",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3346
+  },
+  {
+    "sample_id": "2009_002171",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2414
+  },
+  {
+    "sample_id": "2009_002185",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7768
+  },
+  {
+    "sample_id": "2009_002202",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 28637
+  },
+  {
+    "sample_id": "2009_002221",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18613
+  },
+  {
+    "sample_id": "2009_002238",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 73
+  },
+  {
+    "sample_id": "2009_002239",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 177
+  },
+  {
+    "sample_id": "2009_002265",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 27350
+  },
+  {
+    "sample_id": "2009_002268",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 40787
+  },
+  {
+    "sample_id": "2009_002291",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51854
+  },
+  {
+    "sample_id": "2009_002317",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3563
+  },
+  {
+    "sample_id": "2009_002346",
+    "object_id": 8,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5084
+  },
+  {
+    "sample_id": "2009_002372",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3420
+  },
+  {
+    "sample_id": "2009_002382",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1686
+  },
+  {
+    "sample_id": "2009_002445",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6672
+  },
+  {
+    "sample_id": "2009_002527",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8977
+  },
+  {
+    "sample_id": "2009_002539",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3503
+  },
+  {
+    "sample_id": "2009_002549",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1489
+  },
+  {
+    "sample_id": "2009_002568",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 63437
+  },
+  {
+    "sample_id": "2009_002584",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21190
+  },
+  {
+    "sample_id": "2009_002604",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 179
+  },
+  {
+    "sample_id": "2009_002635",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 466
+  },
+  {
+    "sample_id": "2009_002638",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 72703
+  },
+  {
+    "sample_id": "2009_002651",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1653
+  },
+  {
+    "sample_id": "2009_002732",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21223
+  },
+  {
+    "sample_id": "2009_002753",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 28279
+  },
+  {
+    "sample_id": "2009_002936",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4306
+  },
+  {
+    "sample_id": "2009_002975",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8181
+  },
+  {
+    "sample_id": "2009_002982",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 40843
+  },
+  {
+    "sample_id": "2009_003003",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 463
+  },
+  {
+    "sample_id": "2009_003043",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 25
+  },
+  {
+    "sample_id": "2009_003059",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 59411
+  },
+  {
+    "sample_id": "2009_003063",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1542
+  },
+  {
+    "sample_id": "2009_003065",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1040
+  },
+  {
+    "sample_id": "2009_003071",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5422
+  },
+  {
+    "sample_id": "2009_003105",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 47304
+  },
+  {
+    "sample_id": "2009_003217",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15545
+  },
+  {
+    "sample_id": "2009_003241",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 38120
+  },
+  {
+    "sample_id": "2009_003269",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15782
+  },
+  {
+    "sample_id": "2009_003273",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12172
+  },
+  {
+    "sample_id": "2009_003299",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 38172
+  },
+  {
+    "sample_id": "2009_003311",
+    "object_id": 1,
+    "part_id": 4,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21144
+  },
+  {
+    "sample_id": "2009_003323",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1785
+  },
+  {
+    "sample_id": "2009_003378",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3469
+  },
+  {
+    "sample_id": "2009_003450",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3527
+  },
+  {
+    "sample_id": "2009_003466",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14640
+  },
+  {
+    "sample_id": "2009_003481",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4226
+  },
+  {
+    "sample_id": "2009_003494",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5208
+  },
+  {
+    "sample_id": "2009_003498",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2680
+  },
+  {
+    "sample_id": "2009_003542",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 31476
+  },
+  {
+    "sample_id": "2009_003569",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1108
+  },
+  {
+    "sample_id": "2009_003576",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1560
+  },
+  {
+    "sample_id": "2009_003640",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5478
+  },
+  {
+    "sample_id": "2009_003666",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2490
+  },
+  {
+    "sample_id": "2009_003756",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 70579
+  },
+  {
+    "sample_id": "2009_003771",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10490
+  },
+  {
+    "sample_id": "2009_003773",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 57103
+  },
+  {
+    "sample_id": "2009_003804",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10224
+  },
+  {
+    "sample_id": "2009_003810",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4512
+  },
+  {
+    "sample_id": "2009_003849",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9080
+  },
+  {
+    "sample_id": "2009_003858",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3389
+  },
+  {
+    "sample_id": "2009_003895",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 56
+  },
+  {
+    "sample_id": "2009_003903",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1906
+  },
+  {
+    "sample_id": "2009_003904",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10921
+  },
+  {
+    "sample_id": "2009_003928",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7017
+  },
+  {
+    "sample_id": "2009_003938",
+    "object_id": 0,
+    "part_id": 3,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13757
+  },
+  {
+    "sample_id": "2009_003991",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3598
+  },
+  {
+    "sample_id": "2009_004021",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 828
+  },
+  {
+    "sample_id": "2009_004033",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1955
+  },
+  {
+    "sample_id": "2009_004043",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2881
+  },
+  {
+    "sample_id": "2009_004070",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 226
+  },
+  {
+    "sample_id": "2009_004072",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 409
+  },
+  {
+    "sample_id": "2009_004084",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1421
+  },
+  {
+    "sample_id": "2009_004099",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3844
+  },
+  {
+    "sample_id": "2009_004125",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 88
+  },
+  {
+    "sample_id": "2009_004221",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2761
+  },
+  {
+    "sample_id": "2009_004248",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 42205
+  },
+  {
+    "sample_id": "2009_004255",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 70099
+  },
+  {
+    "sample_id": "2009_004497",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 41364
+  },
+  {
+    "sample_id": "2009_004504",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18788
+  },
+  {
+    "sample_id": "2009_004507",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7279
+  },
+  {
+    "sample_id": "2009_004540",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1796
+  },
+  {
+    "sample_id": "2009_004568",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 277
+  },
+  {
+    "sample_id": "2009_004581",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4270
+  },
+  {
+    "sample_id": "2009_004592",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4429
+  },
+  {
+    "sample_id": "2009_004721",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9642
+  },
+  {
+    "sample_id": "2009_004730",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14021
+  },
+  {
+    "sample_id": "2009_004738",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2206
+  },
+  {
+    "sample_id": "2009_004801",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 599
+  },
+  {
+    "sample_id": "2009_004848",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1134
+  },
+  {
+    "sample_id": "2009_004859",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12945
+  },
+  {
+    "sample_id": "2009_004886",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1359
+  },
+  {
+    "sample_id": "2009_004895",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2736
+  },
+  {
+    "sample_id": "2009_004942",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6415
+  },
+  {
+    "sample_id": "2009_004987",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1730
+  },
+  {
+    "sample_id": "2009_004994",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14236
+  },
+  {
+    "sample_id": "2009_005038",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12794
+  },
+  {
+    "sample_id": "2009_005078",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1099
+  },
+  {
+    "sample_id": "2009_005087",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1203
+  },
+  {
+    "sample_id": "2009_005089",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 151
+  },
+  {
+    "sample_id": "2009_005137",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2989
+  },
+  {
+    "sample_id": "2009_005158",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13316
+  },
+  {
+    "sample_id": "2009_005217",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14241
+  },
+  {
+    "sample_id": "2009_005219",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15288
+  },
+  {
+    "sample_id": "2009_005220",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 53130
+  },
+  {
+    "sample_id": "2009_005260",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 921
+  },
+  {
+    "sample_id": "2009_005262",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6603
+  },
+  {
+    "sample_id": "2010_000003",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3998
+  },
+  {
+    "sample_id": "2010_000038",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2755
+  },
+  {
+    "sample_id": "2010_000083",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 441
+  },
+  {
+    "sample_id": "2010_000084",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 348
+  },
+  {
+    "sample_id": "2010_000087",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 159
+  },
+  {
+    "sample_id": "2010_000110",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18875
+  },
+  {
+    "sample_id": "2010_000159",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 48295
+  },
+  {
+    "sample_id": "2010_000163",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13099
+  },
+  {
+    "sample_id": "2010_000174",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7025
+  },
+  {
+    "sample_id": "2010_000216",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5562
+  },
+  {
+    "sample_id": "2010_000238",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 294
+  },
+  {
+    "sample_id": "2010_000241",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1856
+  },
+  {
+    "sample_id": "2010_000256",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1416
+  },
+  {
+    "sample_id": "2010_000309",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 236
+  },
+  {
+    "sample_id": "2010_000335",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 224
+  },
+  {
+    "sample_id": "2010_000422",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51026
+  },
+  {
+    "sample_id": "2010_000427",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8962
+  },
+  {
+    "sample_id": "2010_000502",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 71
+  },
+  {
+    "sample_id": "2010_000530",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10792
+  },
+  {
+    "sample_id": "2010_000552",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15056
+  },
+  {
+    "sample_id": "2010_000559",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15121
+  },
+  {
+    "sample_id": "2010_000573",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 46
+  },
+  {
+    "sample_id": "2010_000639",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4346
+  },
+  {
+    "sample_id": "2010_000666",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2077
+  },
+  {
+    "sample_id": "2010_000679",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 75
+  },
+  {
+    "sample_id": "2010_000682",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 111
+  },
+  {
+    "sample_id": "2010_000683",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18533
+  },
+  {
+    "sample_id": "2010_000724",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5334
+  },
+  {
+    "sample_id": "2010_000738",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5874
+  },
+  {
+    "sample_id": "2010_000788",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 31995
+  },
+  {
+    "sample_id": "2010_000814",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7260
+  },
+  {
+    "sample_id": "2010_000836",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 29
+  },
+  {
+    "sample_id": "2010_000874",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15190
+  },
+  {
+    "sample_id": "2010_000904",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 120149
+  },
+  {
+    "sample_id": "2010_000907",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8616
+  },
+  {
+    "sample_id": "2010_000918",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 62
+  },
+  {
+    "sample_id": "2010_000929",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 79
+  },
+  {
+    "sample_id": "2010_000941",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8676
+  },
+  {
+    "sample_id": "2010_000961",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2103
+  },
+  {
+    "sample_id": "2010_001000",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 40269
+  },
+  {
+    "sample_id": "2010_001010",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17242
+  },
+  {
+    "sample_id": "2010_001011",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1545
+  },
+  {
+    "sample_id": "2010_001016",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 908
+  },
+  {
+    "sample_id": "2010_001024",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 262
+  },
+  {
+    "sample_id": "2010_001036",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 171
+  },
+  {
+    "sample_id": "2010_001061",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4503
+  },
+  {
+    "sample_id": "2010_001069",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4030
+  },
+  {
+    "sample_id": "2010_001070",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3473
+  },
+  {
+    "sample_id": "2010_001079",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 598
+  },
+  {
+    "sample_id": "2010_001124",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 50239
+  },
+  {
+    "sample_id": "2010_001149",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 193
+  },
+  {
+    "sample_id": "2010_001151",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15491
+  },
+  {
+    "sample_id": "2010_001206",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19
+  },
+  {
+    "sample_id": "2010_001256",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2355
+  },
+  {
+    "sample_id": "2010_001264",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 36722
+  },
+  {
+    "sample_id": "2010_001292",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 33647
+  },
+  {
+    "sample_id": "2010_001313",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 727
+  },
+  {
+    "sample_id": "2010_001331",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11514
+  },
+  {
+    "sample_id": "2010_001351",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8190
+  },
+  {
+    "sample_id": "2010_001367",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9155
+  },
+  {
+    "sample_id": "2010_001376",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7527
+  },
+  {
+    "sample_id": "2010_001451",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 48718
+  },
+  {
+    "sample_id": "2010_001522",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6755
+  },
+  {
+    "sample_id": "2010_001534",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13381
+  },
+  {
+    "sample_id": "2010_001557",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1498
+  },
+  {
+    "sample_id": "2010_001563",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 664
+  },
+  {
+    "sample_id": "2010_001577",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18357
+  },
+  {
+    "sample_id": "2010_001579",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10002
+  },
+  {
+    "sample_id": "2010_001656",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19322
+  },
+  {
+    "sample_id": "2010_001692",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7208
+  },
+  {
+    "sample_id": "2010_001699",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2658
+  },
+  {
+    "sample_id": "2010_001734",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 12308
+  },
+  {
+    "sample_id": "2010_001767",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1781
+  },
+  {
+    "sample_id": "2010_001768",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 220
+  },
+  {
+    "sample_id": "2010_001820",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 60
+  },
+  {
+    "sample_id": "2010_001908",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9118
+  },
+  {
+    "sample_id": "2010_001913",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1347
+  },
+  {
+    "sample_id": "2010_001951",
+    "object_id": 1,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 31505
+  },
+  {
+    "sample_id": "2010_001956",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 45560
+  },
+  {
+    "sample_id": "2010_001966",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 36
+  },
+  {
+    "sample_id": "2010_001995",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 32867
+  },
+  {
+    "sample_id": "2010_002017",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5311
+  },
+  {
+    "sample_id": "2010_002025",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8731
+  },
+  {
+    "sample_id": "2010_002106",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23511
+  },
+  {
+    "sample_id": "2010_002137",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1633
+  },
+  {
+    "sample_id": "2010_002142",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 975
+  },
+  {
+    "sample_id": "2010_002146",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6363
+  },
+  {
+    "sample_id": "2010_002161",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14745
+  },
+  {
+    "sample_id": "2010_002228",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13669
+  },
+  {
+    "sample_id": "2010_002232",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 664
+  },
+  {
+    "sample_id": "2010_002251",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2536
+  },
+  {
+    "sample_id": "2010_002305",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5332
+  },
+  {
+    "sample_id": "2010_002348",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18893
+  },
+  {
+    "sample_id": "2010_002390",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 26383
+  },
+  {
+    "sample_id": "2010_002396",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3650
+  },
+  {
+    "sample_id": "2010_002422",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 18111
+  },
+  {
+    "sample_id": "2010_002450",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 396
+  },
+  {
+    "sample_id": "2010_002480",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 71034
+  },
+  {
+    "sample_id": "2010_002512",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4695
+  },
+  {
+    "sample_id": "2010_002531",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8543
+  },
+  {
+    "sample_id": "2010_002546",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 92
+  },
+  {
+    "sample_id": "2010_002623",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51096
+  },
+  {
+    "sample_id": "2010_002682",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 16
+  },
+  {
+    "sample_id": "2010_002691",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11270
+  },
+  {
+    "sample_id": "2010_002693",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4384
+  },
+  {
+    "sample_id": "2010_002701",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 170
+  },
+  {
+    "sample_id": "2010_002763",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3150
+  },
+  {
+    "sample_id": "2010_002792",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 30296
+  },
+  {
+    "sample_id": "2010_002900",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 34524
+  },
+  {
+    "sample_id": "2010_002902",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1290
+  },
+  {
+    "sample_id": "2010_002929",
+    "object_id": 7,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1392
+  },
+  {
+    "sample_id": "2010_003014",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6213
+  },
+  {
+    "sample_id": "2010_003060",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21436
+  },
+  {
+    "sample_id": "2010_003168",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 368
+  },
+  {
+    "sample_id": "2010_003183",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6370
+  },
+  {
+    "sample_id": "2010_003187",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 59126
+  },
+  {
+    "sample_id": "2010_003239",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5162
+  },
+  {
+    "sample_id": "2010_003275",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6240
+  },
+  {
+    "sample_id": "2010_003293",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 246
+  },
+  {
+    "sample_id": "2010_003325",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15023
+  },
+  {
+    "sample_id": "2010_003362",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 6383
+  },
+  {
+    "sample_id": "2010_003381",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3101
+  },
+  {
+    "sample_id": "2010_003402",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9543
+  },
+  {
+    "sample_id": "2010_003409",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 898
+  },
+  {
+    "sample_id": "2010_003418",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 616
+  },
+  {
+    "sample_id": "2010_003446",
+    "object_id": 4,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 462
+  },
+  {
+    "sample_id": "2010_003468",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 20624
+  },
+  {
+    "sample_id": "2010_003473",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 8929
+  },
+  {
+    "sample_id": "2010_003506",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 27689
+  },
+  {
+    "sample_id": "2010_003514",
+    "object_id": 0,
+    "part_id": 15,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 23266
+  },
+  {
+    "sample_id": "2010_003532",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11645
+  },
+  {
+    "sample_id": "2010_003541",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17139
+  },
+  {
+    "sample_id": "2010_003597",
+    "object_id": 5,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1899
+  },
+  {
+    "sample_id": "2010_003675",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 40438
+  },
+  {
+    "sample_id": "2010_003708",
+    "object_id": 2,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 638
+  },
+  {
+    "sample_id": "2010_003746",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 66991
+  },
+  {
+    "sample_id": "2010_003758",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5388
+  },
+  {
+    "sample_id": "2010_003764",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 13674
+  },
+  {
+    "sample_id": "2010_003771",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2128
+  },
+  {
+    "sample_id": "2010_003781",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1799
+  },
+  {
+    "sample_id": "2010_003820",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2105
+  },
+  {
+    "sample_id": "2010_003854",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 197
+  },
+  {
+    "sample_id": "2010_003956",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 20403
+  },
+  {
+    "sample_id": "2010_003971",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3706
+  },
+  {
+    "sample_id": "2010_004104",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 22044
+  },
+  {
+    "sample_id": "2010_004120",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5920
+  },
+  {
+    "sample_id": "2010_004165",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4861
+  },
+  {
+    "sample_id": "2010_004226",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3192
+  },
+  {
+    "sample_id": "2010_004314",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 92
+  },
+  {
+    "sample_id": "2010_004320",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 39149
+  },
+  {
+    "sample_id": "2010_004322",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 84261
+  },
+  {
+    "sample_id": "2010_004337",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 347
+  },
+  {
+    "sample_id": "2010_004369",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 55064
+  },
+  {
+    "sample_id": "2010_004432",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5729
+  },
+  {
+    "sample_id": "2010_004472",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10845
+  },
+  {
+    "sample_id": "2010_004479",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 29161
+  },
+  {
+    "sample_id": "2010_004519",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 17615
+  },
+  {
+    "sample_id": "2010_004550",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 26651
+  },
+  {
+    "sample_id": "2010_004556",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 307
+  },
+  {
+    "sample_id": "2010_004559",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 5708
+  },
+  {
+    "sample_id": "2010_004628",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 752
+  },
+  {
+    "sample_id": "2010_004635",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4746
+  },
+  {
+    "sample_id": "2010_004697",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4601
+  },
+  {
+    "sample_id": "2010_004789",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4328
+  },
+  {
+    "sample_id": "2010_004795",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1638
+  },
+  {
+    "sample_id": "2010_004815",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4864
+  },
+  {
+    "sample_id": "2010_004828",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4906
+  },
+  {
+    "sample_id": "2010_004856",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 19872
+  },
+  {
+    "sample_id": "2010_004861",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 20445
+  },
+  {
+    "sample_id": "2010_004951",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 406
+  },
+  {
+    "sample_id": "2010_004980",
+    "object_id": 0,
+    "part_id": 2,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 24252
+  },
+  {
+    "sample_id": "2010_004994",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4327
+  },
+  {
+    "sample_id": "2010_005021",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 16179
+  },
+  {
+    "sample_id": "2010_005046",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11240
+  },
+  {
+    "sample_id": "2010_005108",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 32399
+  },
+  {
+    "sample_id": "2010_005118",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 508
+  },
+  {
+    "sample_id": "2010_005159",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 83454
+  },
+  {
+    "sample_id": "2010_005160",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 200
+  },
+  {
+    "sample_id": "2010_005166",
+    "object_id": 7,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2273
+  },
+  {
+    "sample_id": "2010_005174",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 27298
+  },
+  {
+    "sample_id": "2010_005206",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 35741
+  },
+  {
+    "sample_id": "2010_005245",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 598
+  },
+  {
+    "sample_id": "2010_005252",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 416
+  },
+  {
+    "sample_id": "2010_005284",
+    "object_id": 7,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 218
+  },
+  {
+    "sample_id": "2010_005344",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 11554
+  },
+  {
+    "sample_id": "2010_005353",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 914
+  },
+  {
+    "sample_id": "2010_005421",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2937
+  },
+  {
+    "sample_id": "2010_005428",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 348
+  },
+  {
+    "sample_id": "2010_005508",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 74858
+  },
+  {
+    "sample_id": "2010_005531",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2282
+  },
+  {
+    "sample_id": "2010_005575",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7232
+  },
+  {
+    "sample_id": "2010_005582",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 3219
+  },
+  {
+    "sample_id": "2010_005606",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10001
+  },
+  {
+    "sample_id": "2010_005626",
+    "object_id": 3,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 4713
+  },
+  {
+    "sample_id": "2010_005644",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 33594
+  },
+  {
+    "sample_id": "2010_005706",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 21045
+  },
+  {
+    "sample_id": "2010_005709",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 10767
+  },
+  {
+    "sample_id": "2010_005719",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 9435
+  },
+  {
+    "sample_id": "2010_005727",
+    "object_id": 0,
+    "part_id": 14,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 14972
+  },
+  {
+    "sample_id": "2010_005788",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1776
+  },
+  {
+    "sample_id": "2010_005871",
+    "object_id": 2,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 1950
+  },
+  {
+    "sample_id": "2010_005899",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 29132
+  },
+  {
+    "sample_id": "2010_005922",
+    "object_id": 1,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 171
+  },
+  {
+    "sample_id": "2010_005991",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 7256
+  },
+  {
+    "sample_id": "2010_005992",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 15518
+  },
+  {
+    "sample_id": "2010_006026",
+    "object_id": 0,
+    "part_id": 0,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 51
+  },
+  {
+    "sample_id": "2010_006054",
+    "object_id": 0,
+    "part_id": 12,
+    "part_name": "head",
+    "raw_part_name": "head",
+    "mask_area": 2534
+  }
+]

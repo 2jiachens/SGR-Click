@@ -2,9 +2,9 @@
 
 This workspace has been cleaned to keep only the files needed to run:
 
-- `start_granularity_recovery_gui.bat`
+- `start_granularity_refine_rerun_gui.bat`
 
-The old SimpleClick-only GUI and the old granularity-refine training pipeline were backed up to GitHub:
+The old SimpleClick-only GUI, the old non-rerun granularity-refine checkpoint line, and the independent semantic-growth experiment line were removed from this workspace. The older SimpleClick code line was backed up to GitHub:
 
 - [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)
 
@@ -14,15 +14,15 @@ Verified in the current local workspace:
 
 - `weights/simpleclick_models/cocolvis_vit_base.pth`
 - `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth`
-- `experiments/granularity_refine/best.pth`
-- `experiments/granularity_refine/latest.pth`
+- `experiments/granularity_refine_rerun/best.pth`
+- `experiments/granularity_refine_rerun/latest.pth`
 - `experiments/granularity_recovery/best.pth`
 - `experiments/granularity_recovery/latest.pth`
 - `third_party/dinov3`
 
 The launcher check currently resolves to:
 
-- base checkpoint: `experiments/granularity_refine/best.pth`
+- rerun base checkpoint: `experiments/granularity_refine_rerun/best.pth`
 - recovery checkpoint: `experiments/granularity_recovery/best.pth`
 
 ## 1. Local files that must stay on disk
@@ -45,19 +45,19 @@ Purpose:
 
 - Builds the click-rooted semantic hierarchy used by the granularity slider.
 
-### Base granularity refine checkpoint
+### Rerun base granularity refine checkpoint
 
 Preferred path:
 
-- `experiments/granularity_refine/best.pth`
+- `experiments/granularity_refine_rerun/best.pth`
 
 Fallback path:
 
-- `experiments/granularity_refine/latest.pth`
+- `experiments/granularity_refine_rerun/latest.pth`
 
 Purpose:
 
-- Refines the low-granularity branch so that the slider keeps the original SimpleClick-style local interaction feel.
+- Refines the low-granularity branch with the rerun checkpoint so that the slider keeps the original SimpleClick-style local interaction feel while avoiding the older base checkpoint line.
 
 ### Granularity recovery checkpoint
 
@@ -94,14 +94,14 @@ You can override the default runtime paths with:
 - `SIMPLECLICK_DINOV3_ENV`
 - `DINOV3_REPO`
 - `DINOV3_WEIGHTS`
-- `BASE_GRANULARITY_CHECKPOINT`
+- `GRANULARITY_REFINE_RERUN_CHECKPOINT`
 - `GRANULARITY_RECOVERY_CHECKPOINT`
 
 ## 3. Minimal runtime entry
 
 The cleaned workspace is centered on:
 
-- launcher: `start_granularity_recovery_gui.bat`
+- launcher: `start_granularity_refine_rerun_gui.bat`
 - GUI entry: `granularity_recovery/demo_granularity_recovery.py`
 - GUI logic: `granularity_recovery/gui_app.py`
 - controller: `granularity_recovery/gui_controller.py`

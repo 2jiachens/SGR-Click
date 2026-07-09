@@ -1,0 +1,42 @@
+{
+  "name": "simpleclick_dinov3_slider_eval",
+  "slider_values": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+  "metrics": {
+    "noc": {
+      "threshold": 0.85,
+      "max_clicks": 20,
+      "report_name": "NoC@85"
+    },
+    "iou_at_click": {
+      "click": 1,
+      "report_name": "IoU@1"
+    }
+  },
+  "standard_datasets": [
+    {"name": "GrabCut", "split": "official", "config_key": "GRABCUT_PATH"},
+    {"name": "Berkeley", "split": "official", "config_key": "BERKELEY_PATH"},
+    {"name": "SBD", "split": "val", "config_key": "SBD_PATH"},
+    {"name": "DAVIS", "split": "official", "config_key": "DAVIS_PATH"},
+    {"name": "PascalVOC", "split": "val", "config_key": "PASCALVOC_PATH"}
+  ],
+  "pascalpart": {
+    "split": "VOC2012 Segmentation val",
+    "largest_instance_policy": "For head, wheel, and torso, only exact PascalPart part_name matches are used. Finer child labels such as eye, fwheel, and bwheel are not folded into the parent class. If multiple matching instances exist for the same image and class, the largest mask area is kept.",
+    "targets": [
+      {"name": "head", "sample_keys": "server_eval_pack/sample_keys/pascalpart_head_largest.json"},
+      {"name": "wheel", "sample_keys": "server_eval_pack/sample_keys/pascalpart_wheel_largest.json"},
+      {"name": "torso", "sample_keys": "server_eval_pack/sample_keys/pascalpart_torso_largest.json"},
+      {"name": "all", "sample_keys": "server_eval_pack/sample_keys/pascalpart_all_random1000.json", "sample_count": 1000, "seed": 20260706}
+    ]
+  },
+  "partimagenet": {
+    "split": "test",
+    "source": "partimagenet_head_body_foot_eval/manifest_test.csv",
+    "targets": [
+      {"name": "head", "manifest": "server_eval_pack/sample_keys/partimagenet_head.csv"},
+      {"name": "body", "manifest": "server_eval_pack/sample_keys/partimagenet_body.csv"},
+      {"name": "foot", "manifest": "server_eval_pack/sample_keys/partimagenet_foot.csv"},
+      {"name": "all", "manifest": "server_eval_pack/sample_keys/partimagenet_all_random1000.csv", "sample_count": 1000, "seed": 20260706}
+    ]
+  }
+}
