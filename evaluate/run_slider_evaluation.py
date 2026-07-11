@@ -5,6 +5,7 @@ import csv
 import gc
 import json
 import random
+import re
 import sys
 import time
 from pathlib import Path
@@ -16,7 +17,7 @@ import numpy as np
 import torch
 from scipy.io import loadmat
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
@@ -39,8 +40,8 @@ PARTIMAGENET_TARGETS = ["head", "body", "foot", "all"]
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--config-path", default="server_eval_pack/config_server_eval.yml")
-    parser.add_argument("--protocol-path", default="server_eval_pack/eval_protocol.json")
+    parser.add_argument("--config-path", default="evaluate/config_server_eval.yml")
+    parser.add_argument("--protocol-path", default="evaluate/protocols/all_sliders.json")
     parser.add_argument("--checkpoint", default="weights/simpleclick_models/cocolvis_vit_base.pth")
     parser.add_argument("--base-granularity-checkpoint", default="experiments/granularity_refine_rerun/best.pth")
     parser.add_argument("--output-dir", default="outputs/server_slider_eval")
@@ -66,11 +67,44 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--refresh-every", type=int, default=8)
     parser.add_argument("--resume", action="store_true", default=True)
     parser.add_argument("--sample-limit", type=int, default=0, help="Debug cap per target; 0 means no cap.")
+    parser.add_argument("--skip-samples-file", default="", help="Optional newline list of target,sample_id entries to skip.")
     return parser.parse_args()
 
 
 def split_csv(text: str) -> List[str]:
     return [item.strip() for item in text.split(",") if item.strip()]
+
+
+def load_skip_samples(path_text: str) -> set[tuple[str, str]]:
+    if not path_text:
+        return set()
+    path = Path(path_text)
+    if not path.exists():
+        return set()
+    skip_samples: set[tuple[str, str]] = set()
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = [part for part in re.split(r"[,\s]+", line, maxsplit=1) if part]
+        if len(parts) >= 2:
+            skip_samples.add((parts[0], parts[1]))
+        elif len(parts) == 1:
+            skip_samples.add(("", parts[0]))
+    return skip_samples
+
+
+def filter_skip_samples(target_name: str, samples: List[Dict[str, object]], skip_samples: set[tuple[str, str]]) -> List[Dict[str, object]]:
+    if not skip_samples:
+        return samples
+    kept = []
+    for sample in samples:
+        sample_id = str(sample.get("sample_id", ""))
+        if (target_name, sample_id) in skip_samples or ("", sample_id) in skip_samples:
+            print(f"[skip-list] {target_name} sample={sample_id}", flush=True)
+            continue
+        kept.append(sample)
+    return kept
 
 
 def read_image(path: Path) -> np.ndarray:
@@ -116,7 +150,7 @@ def iter_standard_samples(dataset_name: str, cfg) -> Iterator[Dict[str, object]]
 
 
 def iter_pascalpart_samples(target: str, cfg) -> Iterator[Dict[str, object]]:
-    keys_path = REPO_ROOT / "server_eval_pack" / "sample_keys" / f"pascalpart_{target}_{'largest' if target != 'all' else 'random1000'}.json"
+    keys_path = REPO_ROOT / "evaluate" / "sample_keys" / f"pascalpart_{target}_{'largest' if target != 'all' else 'random1000'}.json"
     payload = json.loads(keys_path.read_text(encoding="utf-8"))
     dataset_root = (REPO_ROOT / cfg.PASCALPART_PATH).resolve()
     voc_images_dir = (REPO_ROOT / cfg.PASCALPART_VOC_IMAGES_DIR).resolve()
@@ -135,7 +169,7 @@ def iter_pascalpart_samples(target: str, cfg) -> Iterator[Dict[str, object]]:
 
 def iter_partimagenet_samples(target: str, cfg) -> Iterator[Dict[str, object]]:
     name = f"partimagenet_{target if target != 'all' else 'all_random1000'}.csv"
-    csv_path = REPO_ROOT / "server_eval_pack" / "sample_keys" / name
+    csv_path = REPO_ROOT / "evaluate" / "sample_keys" / name
     eval_root = (REPO_ROOT / cfg.PARTIMAGENET_EVAL_PATH).resolve()
     with csv_path.open(encoding="utf-8") as f:
         for row in csv.DictReader(f):
@@ -225,6 +259,7 @@ def evaluate_target(
         return
 
     samples = list(sample_iter)
+    samples = filter_skip_samples(target_name, samples, load_skip_samples(args.skip_samples_file))
     if args.sample_limit > 0:
         samples = samples[: args.sample_limit]
     noc_thresholds = [float(v) for v in split_csv(args.noc_thresholds)]
@@ -253,6 +288,11 @@ def evaluate_target(
                     torch.cuda.ipc_collect()
                 controller = build_controller(runtime_args, simpleclick_model, granularity_refiner, base_granularity_predictor)
 
+            print(
+                f"[sample start] {target_name} {slider_tag} {index}/{len(samples)} "
+                f"sample={sample.get('sample_id')}",
+                flush=True,
+            )
             try:
                 result = evaluate_fixed_granularity(
                     controller,

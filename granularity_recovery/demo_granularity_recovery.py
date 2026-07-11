@@ -18,7 +18,6 @@ from isegm.inference.dino_granularity import DinoGranularityRefiner
 from isegm.inference.granularity_refine_inference import GranularityRefineInference
 from granularity_recovery.gui_app import GranularityRecoveryDemoApp
 from granularity_recovery.gui_controller import GranularityRecoveryController
-from granularity_recovery.inference import GranularityRecoveryInference
 
 
 def resolve_default_dinov3_repo():
@@ -58,20 +57,6 @@ def resolve_default_base_checkpoint():
     return None
 
 
-def resolve_default_recovery_checkpoint():
-    env_path = os.environ.get("GRANULARITY_RECOVERY_CHECKPOINT")
-    if env_path:
-        return env_path
-    candidates = [
-        REPO_ROOT / "experiments" / "experiments" / "granularity_recovery" / "best.pth",
-        REPO_ROOT / "experiments" / "granularity_recovery" / "best.pth",
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            return str(candidate)
-    return None
-
-
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", type=str, required=True)
@@ -91,7 +76,6 @@ def parse_args():
     parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.04)
     parser.add_argument("--granularity-slic-compactness", type=float, default=6.0)
     parser.add_argument("--base-granularity-checkpoint", type=str, default=None)
-    parser.add_argument("--recovery-checkpoint", type=str, default=None)
     args = parser.parse_args()
 
     if args.dinov3_repo is None:
@@ -100,8 +84,6 @@ def parse_args():
         args.dinov3_weights = resolve_default_dinov3_weights(args.dinov3_model)
     if args.base_granularity_checkpoint is None:
         args.base_granularity_checkpoint = resolve_default_base_checkpoint()
-    if args.recovery_checkpoint is None:
-        args.recovery_checkpoint = resolve_default_recovery_checkpoint()
     if args.cpu:
         args.device = torch.device("cpu")
     else:
@@ -137,13 +119,6 @@ def main():
             checkpoint_path=args.base_granularity_checkpoint,
             device=args.device,
         )
-    recovery_predictor = None
-    if args.recovery_checkpoint is not None and Path(args.recovery_checkpoint).exists():
-        recovery_predictor = GranularityRecoveryInference(
-            checkpoint_path=args.recovery_checkpoint,
-            device=args.device,
-        )
-
     root = tk.Tk()
     root.minsize(960, 480)
     app_holder = {}
@@ -169,7 +144,6 @@ def main():
         update_image_callback=lambda reset_canvas=False: app_holder["app"]._update_image(reset_canvas=reset_canvas),
         granularity_refiner=granularity_refiner,
         base_granularity_predictor=base_granularity_predictor,
-        recovery_predictor=recovery_predictor,
     )
     app = GranularityRecoveryDemoApp(root, controller, limit_longest_size=args.limit_longest_size)
     app_holder["app"] = app

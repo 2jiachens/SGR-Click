@@ -273,7 +273,6 @@ def build_controller(args, simpleclick_model, granularity_refiner, base_granular
         update_image_callback=lambda reset_canvas=False: None,
         granularity_refiner=granularity_refiner,
         base_granularity_predictor=base_granularity_predictor,
-        recovery_predictor=None,
         prob_thresh=args.pred_thresh,
     )
     return controller

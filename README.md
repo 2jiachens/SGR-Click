@@ -9,7 +9,6 @@ The current runnable line is:
 - original SimpleClick interactive backbone
 - DINOv3 click-rooted semantic hierarchy
 - rerun base granularity refine checkpoint for low-granularity interaction feel
-- granularity recovery checkpoint for high-granularity whole-object recovery
 
 ## Main entry
 
@@ -47,7 +46,19 @@ The minimal current path is:
 - GUI/controller: `granularity_recovery/gui_app.py`, `granularity_recovery/gui_controller.py`
 - DINO hierarchy: `isegm/inference/dino_granularity.py`
 - base branch inference: `isegm/inference/granularity_refine_inference.py`
-- recovery branch inference: `granularity_recovery/inference.py`
+
+## Evaluation
+
+The cleaned evaluation entry is kept under:
+
+- `evaluate/`
+
+It replaces the older scattered server-eval helper folders with:
+
+- fixed sample lists
+- slider protocols
+- server command templates
+- merged metric scripts
 
 ## Old version backup
 

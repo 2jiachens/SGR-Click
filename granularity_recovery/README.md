@@ -6,15 +6,11 @@ This folder now keeps only the runtime files required by the current GUI launche
 
 Files:
 
-- `model.py`
-  Recovery U-Net used by the high-granularity enhancement branch.
-- `inference.py`
-  Loads the recovery checkpoint.
 - `granularity_mapping.py`
   Splits the display slider into hierarchy-space and model-space granularity values.
 - `gui_controller.py`
   Keeps the rerun base-granularity feel for `g <= 0.5`
-  and applies recovery enhancement for `g > 0.5`.
+  and uses the same base branch over the full slider range.
 - `gui_app.py`
   Standalone Tk GUI.
 - `demo_granularity_recovery.py`

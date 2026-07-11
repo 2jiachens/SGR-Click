@@ -16,14 +16,11 @@ Verified in the current local workspace:
 - `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth`
 - `experiments/granularity_refine_rerun/best.pth`
 - `experiments/granularity_refine_rerun/latest.pth`
-- `experiments/granularity_recovery/best.pth`
-- `experiments/granularity_recovery/latest.pth`
 - `third_party/dinov3`
 
 The launcher check currently resolves to:
 
 - rerun base checkpoint: `experiments/granularity_refine_rerun/best.pth`
-- recovery checkpoint: `experiments/granularity_recovery/best.pth`
 
 ## 1. Local files that must stay on disk
 
@@ -59,20 +56,6 @@ Purpose:
 
 - Refines the low-granularity branch with the rerun checkpoint so that the slider keeps the original SimpleClick-style local interaction feel while avoiding the older base checkpoint line.
 
-### Granularity recovery checkpoint
-
-Preferred path:
-
-- `experiments/granularity_recovery/best.pth`
-
-Fallback path:
-
-- `experiments/granularity_recovery/latest.pth`
-
-Purpose:
-
-- Handles the high-granularity whole-object recovery branch used after the semantic pivot.
-
 ### Local DINOv3 repository
 
 Preferred path:
@@ -95,7 +78,6 @@ You can override the default runtime paths with:
 - `DINOV3_REPO`
 - `DINOV3_WEIGHTS`
 - `GRANULARITY_REFINE_RERUN_CHECKPOINT`
-- `GRANULARITY_RECOVERY_CHECKPOINT`
 
 ## 3. Minimal runtime entry
 
@@ -107,7 +89,6 @@ The cleaned workspace is centered on:
 - controller: `granularity_recovery/gui_controller.py`
 - DINO hierarchy builder: `isegm/inference/dino_granularity.py`
 - base refine inference: `isegm/inference/granularity_refine_inference.py`
-- recovery inference: `granularity_recovery/inference.py`
 
 ## 4. If you ever need the old version again
 

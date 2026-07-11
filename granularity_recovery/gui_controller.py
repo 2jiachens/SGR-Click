@@ -20,7 +20,6 @@ class GranularityRecoveryController:
         update_image_callback,
         granularity_refiner=None,
         base_granularity_predictor=None,
-        recovery_predictor=None,
         prob_thresh=0.5,
     ):
         self.net = net
@@ -44,7 +43,6 @@ class GranularityRecoveryController:
         self.predictor_params = predictor_params
         self.granularity_refiner = granularity_refiner
         self.base_granularity_predictor = base_granularity_predictor
-        self.recovery_predictor = recovery_predictor
         self.reset_predictor()
 
     def set_image(self, image):
@@ -416,31 +414,11 @@ class GranularityRecoveryController:
         )
 
     def _apply_recovery_model(self, simple_pred, hierarchy_mask, granularity, display_granularity=None):
-        base_prediction = self._apply_base_granularity_model(
+        return self._apply_base_granularity_model(
             simple_pred,
             hierarchy_mask,
             granularity,
             display_granularity=display_granularity,
-        )
-        if self.recovery_predictor is None:
-            return base_prediction.astype(np.float32)
-        positive_clicks = self._positive_clicks()
-        first_click = self._first_positive_click()
-        if first_click is None:
-            return base_prediction.astype(np.float32)
-        recovered = self.recovery_predictor.predict(
-            self.image,
-            np.clip(base_prediction.astype(np.float32), 0.0, 1.0),
-            hierarchy_mask.astype(np.float32),
-            first_click,
-            float(granularity),
-        )
-        return self._constrain_recovery_prediction(
-            recovered,
-            base_prediction,
-            hierarchy_mask,
-            positive_clicks,
-            display_granularity if display_granularity is not None else granularity,
         )
 
     @staticmethod
@@ -502,15 +480,6 @@ class GranularityRecoveryController:
                 kept |= labels == label
         return kept if np.any(kept) else mask
 
-    def _semantic_growth_support(self, hierarchy_mask, base_support, positive_clicks):
-        hierarchy_binary = hierarchy_mask > 0.5
-        if not np.any(hierarchy_binary):
-            return base_support
-        kept = self._keep_positive_components(hierarchy_binary, base_support, positive_clicks)
-        if not np.any(kept):
-            return base_support
-        return np.logical_or(kept, base_support)
-
     @staticmethod
     def _click_local_core(mask, positive_clicks, display_granularity):
         if not positive_clicks:
@@ -563,36 +532,6 @@ class GranularityRecoveryController:
 
         prediction = prediction.astype(np.float32)
         constrained = prediction * allowed_support.astype(np.float32)
-        positive_region = constrained > self.prob_thresh
-        if np.any(positive_region):
-            positive_region = self._keep_positive_components(positive_region, allowed_support, positive_clicks)
-            constrained *= positive_region.astype(np.float32)
-        return constrained.astype(np.float32)
-
-    def _constrain_recovery_prediction(self, prediction, base_prediction, hierarchy_mask, positive_clicks, granularity):
-        base_support = self._keep_positive_components(
-            base_prediction > self.prob_thresh,
-            hierarchy_mask > 0.5,
-            positive_clicks,
-        )
-        semantic_support = self._semantic_growth_support(hierarchy_mask, base_support, positive_clicks)
-        hierarchy_support = self._keep_positive_components(
-            hierarchy_mask > 0.5,
-            semantic_support,
-            positive_clicks,
-        )
-        if not np.any(semantic_support) and not np.any(hierarchy_support):
-            return base_prediction.astype(np.float32)
-
-        relax = float(np.clip((granularity - 0.65) / 0.35, 0.0, 1.0))
-        prediction = prediction.astype(np.float32)
-        support_weight = semantic_support.astype(np.float32)
-        if np.any(hierarchy_support):
-            support_weight = np.maximum(support_weight, hierarchy_support.astype(np.float32) * relax)
-        constrained = prediction * support_weight
-        constrained = np.where(base_support, np.maximum(constrained, base_prediction.astype(np.float32)), constrained)
-
-        allowed_support = semantic_support if relax < 0.05 else hierarchy_support
         positive_region = constrained > self.prob_thresh
         if np.any(positive_region):
             positive_region = self._keep_positive_components(positive_region, allowed_support, positive_clicks)

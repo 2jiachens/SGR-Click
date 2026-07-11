@@ -10,6 +10,8 @@ paper/
 1/
 five_dataset_noc_eval/
 part_noc85_eval/
+partimagenet_head_body_foot_eval/
+eval_archives/
 model_upgrade_plan/
 pascalpart_training_extension/
 server_logs/
