@@ -70,11 +70,8 @@ def parse_args():
                         choices=["dinov3_vits16", "dinov3_vitb16", "dinov3_vitl16"])
     parser.add_argument("--dinov3-weights", type=str, default=None)
     parser.add_argument("--dinov3-image-size", type=int, default=768)
-    parser.add_argument("--granularity-work-size", type=int, default=512)
-    parser.add_argument("--granularity-segments", type=int, default=1000)
     parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
     parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.04)
-    parser.add_argument("--granularity-slic-compactness", type=float, default=6.0)
     parser.add_argument("--base-granularity-checkpoint", type=str, default=None)
     args = parser.parse_args()
 
@@ -105,11 +102,8 @@ def main():
         device=args.device,
         model_name=args.dinov3_model,
         image_size=args.dinov3_image_size,
-        work_size=args.granularity_work_size,
-        n_segments=args.granularity_segments,
         candidate_threshold=args.granularity_candidate_threshold,
         max_hole_ratio=args.granularity_max_hole_ratio,
-        slic_compactness=args.granularity_slic_compactness,
         cluster_tau=0.60,
     )
 

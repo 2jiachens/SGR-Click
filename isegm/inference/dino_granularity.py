@@ -22,11 +22,8 @@ class DinoGranularityRefiner:
         device: torch.device,
         model_name: str = "dinov3_vitl16",
         image_size: int = 768,
-        work_size: int = 512,
-        n_segments: int = 1000,
         candidate_threshold: float = 0.50,
         max_hole_ratio: float = 0.04,
-        slic_compactness: float = 6.0,
         positional_debias_components: int = 500,
         cluster_tau: float = 0.60,
     ):
@@ -35,11 +32,8 @@ class DinoGranularityRefiner:
         self.device = device
         self.model_name = model_name
         self.image_size = image_size
-        self.work_size = work_size
-        self.n_segments = n_segments
         self.candidate_threshold = candidate_threshold
         self.max_hole_ratio = max_hole_ratio
-        self.slic_compactness = slic_compactness
         self.positional_debias_components = positional_debias_components
         self.cluster_tau = cluster_tau
 
