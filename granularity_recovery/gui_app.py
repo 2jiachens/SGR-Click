@@ -34,12 +34,6 @@ def _write_image(filename, image):
 
 
 class GranularityRecoveryDemoApp(ttk.Frame):
-    GRANULARITY_DETAIL_PRESETS = {
-        "Coarse": 0.56,
-        "Balanced": 0.60,
-        "Fine": 0.66,
-    }
-
     def __init__(self, master, controller, limit_longest_size: int = 800):
         super().__init__(master)
         self.master = master
@@ -88,7 +82,6 @@ class GranularityRecoveryDemoApp(ttk.Frame):
             "brs_mode": tk.StringVar(value="NoBRS"),
             "prob_thresh": tk.DoubleVar(value=0.5),
             "granularity": tk.DoubleVar(value=0.0),
-            "granularity_detail": tk.StringVar(value="Balanced"),
             "lbfgs_max_iters": tk.IntVar(value=20),
             "alpha_blend": tk.DoubleVar(value=0.5),
             "click_radius": tk.IntVar(value=3),
@@ -234,18 +227,6 @@ class GranularityRecoveryDemoApp(ttk.Frame):
 
         self.granularity_frame = FocusLabelFrame(master, text="DINOv3 granularity")
         self.granularity_frame.pack(side=tk.TOP, fill=tk.X, padx=10, pady=3)
-        detail_row = tk.Frame(self.granularity_frame)
-        detail_row.pack(fill=tk.X, padx=10, pady=(6, 0))
-        tk.Label(detail_row, text="Segmentation detail").pack(side=tk.LEFT)
-        self.granularity_detail_menu = tk.OptionMenu(
-            detail_row,
-            self.state["granularity_detail"],
-            self.state["granularity_detail"].get(),
-            *self.GRANULARITY_DETAIL_PRESETS.keys(),
-            command=self._change_granularity_detail,
-        )
-        self.granularity_detail_menu.config(width=8)
-        self.granularity_detail_menu.pack(side=tk.RIGHT)
         self.granularity_scale = FocusHorizontalScale(
             self.granularity_frame,
             from_=0,
@@ -375,11 +356,6 @@ class GranularityRecoveryDemoApp(ttk.Frame):
         if self.controller.granularity_ready or self.controller.is_incomplete_mask:
             self.controller.set_granularity(float(value) / 100.0)
 
-    def _change_granularity_detail(self, *_args):
-        detail_name = self.state["granularity_detail"].get()
-        cluster_tau = self.GRANULARITY_DETAIL_PRESETS[detail_name]
-        self.controller.set_granularity_detail(cluster_tau)
-
     def _update_blend_alpha(self, _value):
         self._update_image()
 
@@ -477,9 +453,7 @@ class GranularityRecoveryDemoApp(ttk.Frame):
         self.zoomin_options_frame.set_frame_state(before_1st_click_state)
         self.brs_options_frame.set_frame_state(before_1st_click_state)
         granularity_state = tk.NORMAL if self.controller.granularity_ready else tk.DISABLED
-        detail_state = tk.NORMAL if self.controller.granularity_refiner is not None and self.controller.image is not None else tk.DISABLED
         self.granularity_scale.configure(state=granularity_state)
-        self.granularity_detail_menu.configure(state=detail_state)
 
         if self.state["brs_mode"].get() == "NoBRS":
             self.net_clicks_entry.configure(state=tk.DISABLED)

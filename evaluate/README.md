@@ -40,7 +40,9 @@ PartImageNet:
 
 ## Main Files
 
-- `run_slider_evaluation.py`: evaluation runner.
+- `run_evaluation.py`: unified evaluation entry.
+  Use `--task slider` for the full multi-dataset slider protocol.
+  Use `--task pascalpart` for the focused PascalPart NoC workflow.
 - `merge_slider_metrics.py`: post-hoc metric merger that applies the per-image
   best-slider rule.
 - `config_server_eval.yml`: server dataset path config.
@@ -88,7 +90,6 @@ The repository should not include large artifacts. Before running evaluation,
 place these on the server:
 
 - checkpoints under `weights/simpleclick_models/`
-- granularity refiner under `experiments/granularity_refine_rerun/best.pth`
+- granularity recovery checkpoint under `experiments/granularity_recovery/best.pth`
 - datasets under the paths configured in `config_server_eval.yml`
 - PartImageNet evaluation subset at `partimagenet_head_body_foot_eval/`
-

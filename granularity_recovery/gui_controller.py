@@ -19,7 +19,7 @@ class GranularityRecoveryController:
         predictor_params,
         update_image_callback,
         granularity_refiner=None,
-        base_granularity_predictor=None,
+        granularity_predictor=None,
         prob_thresh=0.5,
     ):
         self.net = net
@@ -42,7 +42,7 @@ class GranularityRecoveryController:
         self.update_image_callback = update_image_callback
         self.predictor_params = predictor_params
         self.granularity_refiner = granularity_refiner
-        self.base_granularity_predictor = base_granularity_predictor
+        self.granularity_predictor = granularity_predictor
         self.reset_predictor()
 
     def set_image(self, image):
@@ -125,20 +125,12 @@ class GranularityRecoveryController:
                 hierarchy_mask = self._rebuild_granularity_from_prediction(simple_pred)
                 if display_granularity > 0.0:
                     hierarchy_mask = self.granularity_refiner.mask_at(hierarchy_granularity)
-                if display_granularity <= 0.5:
-                    pred = self._apply_base_granularity_model(
-                        simple_pred,
-                        hierarchy_mask,
-                        model_granularity,
-                        display_granularity=display_granularity,
-                    )
-                else:
-                    pred = self._apply_recovery_model(
-                        simple_pred,
-                        hierarchy_mask,
-                        model_granularity,
-                        display_granularity=display_granularity,
-                    )
+                pred = self._apply_granularity_model(
+                    simple_pred,
+                    hierarchy_mask,
+                    model_granularity,
+                    display_granularity=display_granularity,
+                )
                 click_context = {
                     "mode": "granularity",
                     "simple_pred": simple_pred.copy(),
@@ -200,16 +192,6 @@ class GranularityRecoveryController:
         current_total, _ = self.probs_history[-1]
         self.probs_history[-1] = (current_total, mask.astype(np.float32))
         self.update_image_callback()
-
-    def set_granularity_detail(self, cluster_tau: float):
-        if self.granularity_refiner is None:
-            return
-        changed = self.granularity_refiner.set_cluster_tau(cluster_tau)
-        if not changed or not self._should_use_granularity_refiner() or not self.simple_probs_history:
-            return
-        self._last_slider_granularity = None
-        self._last_slider_mask = None
-        self.set_granularity(self._requested_granularity)
 
     def undo_click(self):
         if not self.states:
@@ -343,14 +325,7 @@ class GranularityRecoveryController:
         display_granularity = float(np.clip(display_granularity, 0.0, 1.0))
         hierarchy_granularity, model_granularity = self._split_granularity(display_granularity)
         hierarchy_mask = self.granularity_refiner.mask_at(hierarchy_granularity)
-        if display_granularity <= 0.5:
-            return self._apply_base_granularity_model(
-                simple_pred,
-                hierarchy_mask,
-                model_granularity,
-                display_granularity=display_granularity,
-            )
-        return self._apply_recovery_model(
+        return self._apply_granularity_model(
             simple_pred,
             hierarchy_mask,
             model_granularity,
@@ -363,10 +338,10 @@ class GranularityRecoveryController:
         if (
             self._last_slider_granularity is not None
             and self._last_slider_mask is not None
-            and display_granularity >= self._last_slider_granularity - 1e-6
+            and abs(display_granularity - self._last_slider_granularity) <= 1e-6
             and self._last_slider_mask.shape == mask.shape
         ):
-            mask = np.maximum(mask, self._last_slider_mask.astype(np.float32))
+            return self._last_slider_mask.astype(np.float32).copy()
         self._last_slider_granularity = display_granularity
         self._last_slider_mask = mask.copy()
         return mask
@@ -383,18 +358,21 @@ class GranularityRecoveryController:
         clicks = self.clicker.get_clicks()
         return len(clicks) == 1 and clicks[0].is_positive and self.current_object_prob is not None
 
-    def _apply_base_granularity_model(self, simple_pred, hierarchy_mask, granularity, display_granularity=None):
-        probability = np.clip(simple_pred.astype(np.float32), 0.0, 1.0)
+    def _apply_granularity_model(self, simple_pred, hierarchy_mask, granularity, display_granularity=None):
+        simple_prob = np.clip(simple_pred.astype(np.float32), 0.0, 1.0)
         positive_clicks = self._positive_clicks()
         first_click = self._first_positive_click()
         if first_click is None:
             return hierarchy_mask.astype(np.float32)
-        if self.base_granularity_predictor is None:
+        if self.granularity_predictor is None:
             refined = hierarchy_mask.astype(np.float32)
         else:
-            refined = self.base_granularity_predictor.predict(
+            anchor_prob = simple_prob
+            if display_granularity is not None and display_granularity > 0.5:
+                anchor_prob = np.clip(hierarchy_mask.astype(np.float32), 0.0, 1.0)
+            refined = self.granularity_predictor.predict(
                 self.image,
-                probability,
+                anchor_prob,
                 hierarchy_mask.astype(np.float32),
                 first_click,
                 float(granularity),
@@ -405,19 +383,11 @@ class GranularityRecoveryController:
                 anchor_ratio * refined.astype(np.float32)
                 + (1.0 - anchor_ratio) * hierarchy_mask.astype(np.float32)
             )
-        return self._constrain_base_prediction(
+        return self._constrain_granularity_prediction(
             refined,
-            probability,
+            simple_prob,
             positive_clicks,
             hierarchy_mask=hierarchy_mask,
-            display_granularity=display_granularity,
-        )
-
-    def _apply_recovery_model(self, simple_pred, hierarchy_mask, granularity, display_granularity=None):
-        return self._apply_base_granularity_model(
-            simple_pred,
-            hierarchy_mask,
-            granularity,
             display_granularity=display_granularity,
         )
 
@@ -509,7 +479,7 @@ class GranularityRecoveryController:
             local_core = component
         return local_core.astype(bool)
 
-    def _constrain_base_prediction(self, prediction, probability, positive_clicks, hierarchy_mask=None, display_granularity=None):
+    def _constrain_granularity_prediction(self, prediction, probability, positive_clicks, hierarchy_mask=None, display_granularity=None):
         simple_support = self._click_connected_probability_component(probability, positive_clicks, 0.49)
         allowed_support = simple_support
         if hierarchy_mask is not None and display_granularity is not None and display_granularity < 0.18:

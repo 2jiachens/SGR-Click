@@ -13,14 +13,14 @@ if defined SIMPLECLICK_DINOV3_ENV (
 set "PYTHON=%ENV_DIR%\python.exe"
 set "CHECKPOINT=weights\simpleclick_models\cocolvis_vit_base.pth"
 set "DINOV3_MODEL=dinov3_vitl16"
-set "BASE_GRANULARITY_CHECKPOINT="
+set "RECOVERY_CHECKPOINT="
 
-if defined GRANULARITY_REFINE_RERUN_CHECKPOINT (
-    set "BASE_GRANULARITY_CHECKPOINT=%GRANULARITY_REFINE_RERUN_CHECKPOINT%"
-) else if exist "%PROJECT_DIR%\experiments\granularity_refine_rerun\best.pth" (
-    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine_rerun\best.pth"
-) else if exist "%PROJECT_DIR%\experiments\granularity_refine_rerun\latest.pth" (
-    set "BASE_GRANULARITY_CHECKPOINT=experiments\granularity_refine_rerun\latest.pth"
+if defined GRANULARITY_RECOVERY_CHECKPOINT (
+    set "RECOVERY_CHECKPOINT=%GRANULARITY_RECOVERY_CHECKPOINT%"
+) else if exist "%PROJECT_DIR%\experiments\granularity_recovery\best.pth" (
+    set "RECOVERY_CHECKPOINT=experiments\granularity_recovery\best.pth"
+) else if exist "%PROJECT_DIR%\experiments\granularity_recovery\latest.pth" (
+    set "RECOVERY_CHECKPOINT=experiments\granularity_recovery\latest.pth"
 )
 
 if not exist "%PYTHON%" (
@@ -46,19 +46,21 @@ if not exist "%PROJECT_DIR%\%CHECKPOINT%" (
     exit /b 1
 )
 
-if "%BASE_GRANULARITY_CHECKPOINT%"=="" (
-    echo Rerun base checkpoint not found under:
-    echo %PROJECT_DIR%\experiments\granularity_refine_rerun
+if "%RECOVERY_CHECKPOINT%"=="" (
+    echo Granularity recovery checkpoint not found under:
+    echo %PROJECT_DIR%\experiments\granularity_recovery
     pause
     exit /b 1
 )
 
-if not exist "%PROJECT_DIR%\%BASE_GRANULARITY_CHECKPOINT%" (
-    echo Rerun base checkpoint not found:
-    echo %PROJECT_DIR%\%BASE_GRANULARITY_CHECKPOINT%
+if exist "%RECOVERY_CHECKPOINT%" goto recovery_checkpoint_ready
+if not exist "%PROJECT_DIR%\%RECOVERY_CHECKPOINT%" (
+    echo Granularity recovery checkpoint not found:
+    echo %RECOVERY_CHECKPOINT%
     pause
     exit /b 1
 )
+:recovery_checkpoint_ready
 
 set "PATH=%ENV_DIR%;%ENV_DIR%\Library\bin;%ENV_DIR%\Scripts;%PATH%"
 set "PYTHONUTF8=1"
@@ -66,14 +68,14 @@ set "PYTHONPATH=%PROJECT_DIR%;%PYTHONPATH%"
 
 if /i "%~1"=="--check" (
     echo Granularity Recovery GUI launcher is ready.
-    echo Using rerun base checkpoint: %BASE_GRANULARITY_CHECKPOINT%
+    echo Using recovery checkpoint: %RECOVERY_CHECKPOINT%
     exit /b 0
 )
 
 pushd "%PROJECT_DIR%"
 "%PYTHON%" -m granularity_recovery.demo_granularity_recovery ^
   --checkpoint="%CHECKPOINT%" ^
-  --base-granularity-checkpoint="%BASE_GRANULARITY_CHECKPOINT%" ^
+  --granularity-recovery-checkpoint="%RECOVERY_CHECKPOINT%" ^
   --dinov3-model=%DINOV3_MODEL% ^
   --gpu 0
 set "EXIT_CODE=%ERRORLEVEL%"

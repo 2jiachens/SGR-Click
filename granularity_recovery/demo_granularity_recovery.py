@@ -15,9 +15,9 @@ if str(REPO_ROOT) not in sys.path:
 from isegm.utils import exp
 from isegm.inference import utils
 from isegm.inference.dino_granularity import DinoGranularityRefiner
-from isegm.inference.granularity_refine_inference import GranularityRefineInference
 from granularity_recovery.gui_app import GranularityRecoveryDemoApp
 from granularity_recovery.gui_controller import GranularityRecoveryController
+from granularity_recovery.inference import GranularityRecoveryInference
 
 
 def resolve_default_dinov3_repo():
@@ -40,16 +40,13 @@ def resolve_default_dinov3_weights(model_name):
     return str(weights_dir / default_names[model_name])
 
 
-def resolve_default_base_checkpoint():
-    env_path = os.environ.get("GRANULARITY_REFINE_RERUN_CHECKPOINT")
-    if env_path:
-        return env_path
-    env_path = os.environ.get("GRANULARITY_REFINE_CHECKPOINT")
+def resolve_default_recovery_checkpoint():
+    env_path = os.environ.get("GRANULARITY_RECOVERY_CHECKPOINT")
     if env_path:
         return env_path
     candidates = [
-        REPO_ROOT / "experiments" / "granularity_refine_rerun" / "best.pth",
-        REPO_ROOT / "experiments" / "granularity_refine_rerun" / "latest.pth",
+        REPO_ROOT / "experiments" / "granularity_recovery" / "best.pth",
+        REPO_ROOT / "experiments" / "granularity_recovery" / "latest.pth",
     ]
     for candidate in candidates:
         if candidate.exists():
@@ -71,16 +68,16 @@ def parse_args():
     parser.add_argument("--dinov3-weights", type=str, default=None)
     parser.add_argument("--dinov3-image-size", type=int, default=768)
     parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
-    parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.04)
-    parser.add_argument("--base-granularity-checkpoint", type=str, default=None)
+    parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.02)
+    parser.add_argument("--granularity-recovery-checkpoint", type=str, default=None)
     args = parser.parse_args()
 
     if args.dinov3_repo is None:
         args.dinov3_repo = resolve_default_dinov3_repo()
     if args.dinov3_weights is None:
         args.dinov3_weights = resolve_default_dinov3_weights(args.dinov3_model)
-    if args.base_granularity_checkpoint is None:
-        args.base_granularity_checkpoint = resolve_default_base_checkpoint()
+    if args.granularity_recovery_checkpoint is None:
+        args.granularity_recovery_checkpoint = resolve_default_recovery_checkpoint()
     if args.cpu:
         args.device = torch.device("cpu")
     else:
@@ -107,12 +104,13 @@ def main():
         cluster_tau=0.60,
     )
 
-    base_granularity_predictor = None
-    if args.base_granularity_checkpoint is not None and Path(args.base_granularity_checkpoint).exists():
-        base_granularity_predictor = GranularityRefineInference(
-            checkpoint_path=args.base_granularity_checkpoint,
+    granularity_predictor = None
+    if args.granularity_recovery_checkpoint is not None and Path(args.granularity_recovery_checkpoint).exists():
+        granularity_predictor = GranularityRecoveryInference(
+            checkpoint_path=args.granularity_recovery_checkpoint,
             device=args.device,
         )
+        
     root = tk.Tk()
     root.minsize(960, 480)
     app_holder = {}
@@ -137,7 +135,7 @@ def main():
         },
         update_image_callback=lambda reset_canvas=False: app_holder["app"]._update_image(reset_canvas=reset_canvas),
         granularity_refiner=granularity_refiner,
-        base_granularity_predictor=base_granularity_predictor,
+        granularity_predictor=granularity_predictor,
     )
     app = GranularityRecoveryDemoApp(root, controller, limit_longest_size=args.limit_longest_size)
     app_holder["app"] = app

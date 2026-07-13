@@ -54,14 +54,14 @@ set "PYTHONPATH=%PROJECT_DIR%;%PYTHONPATH%"
 if /i "%~1"=="--check" (
     echo SimpleClick + DINOv3 GUI launcher is ready.
     echo Using SimpleClick checkpoint: %CHECKPOINT%
-    echo Trained granularity refine checkpoint: disabled
+    echo Trained granularity recovery checkpoint: disabled
     exit /b 0
 )
 
 pushd "%PROJECT_DIR%"
 "%PYTHON%" -m granularity_recovery.demo_granularity_recovery ^
   --checkpoint="%CHECKPOINT%" ^
-  --base-granularity-checkpoint="%DISABLED_TRAINED_CHECKPOINT%" ^
+  --granularity-recovery-checkpoint="%DISABLED_TRAINED_CHECKPOINT%" ^
   --dinov3-model=%DINOV3_MODEL% ^
   --gpu 0
 set "EXIT_CODE=%ERRORLEVEL%"

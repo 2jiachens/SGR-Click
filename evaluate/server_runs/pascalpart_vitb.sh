@@ -2,7 +2,7 @@
 set -euo pipefail
 cd /root/code/simpleclick+dinov3
 
-python -u evaluate/run_slider_evaluation.py \
+python -u evaluate/run_evaluation.py --task slider \
   --config-path evaluate/config_server_eval.yml \
   --protocol-path evaluate/protocols/all_sliders.json \
   --output-dir outputs/server_slider_eval \

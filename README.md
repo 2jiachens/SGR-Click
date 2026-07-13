@@ -2,26 +2,26 @@
 
 This local workspace has been cleaned to keep only the code needed for the current GUI entry:
 
-- `start_granularity_refine_rerun_gui.bat`
+- `start_granularity_recovery_gui.bat`
 
 The current runnable line is:
 
 - original SimpleClick interactive backbone
 - DINOv3 click-rooted semantic hierarchy
-- rerun base granularity refine checkpoint for low-granularity interaction feel
+- granularity recovery checkpoint for full-range slider interaction
 
 ## Main entry
 
 Run:
 
 ```powershell
-start_granularity_refine_rerun_gui.bat
+start_granularity_recovery_gui.bat
 ```
 
 Or check the launcher without starting the GUI:
 
 ```powershell
-start_granularity_refine_rerun_gui.bat --check
+start_granularity_recovery_gui.bat --check
 ```
 
 ## Required local runtime files
@@ -41,11 +41,11 @@ That file records:
 
 The minimal current path is:
 
-- launcher: `start_granularity_refine_rerun_gui.bat`
+- launcher: `start_granularity_recovery_gui.bat`
 - GUI entry: `granularity_recovery/demo_granularity_recovery.py`
 - GUI/controller: `granularity_recovery/gui_app.py`, `granularity_recovery/gui_controller.py`
 - DINO hierarchy: `isegm/inference/dino_granularity.py`
-- base branch inference: `isegm/inference/granularity_refine_inference.py`
+- recovery inference: `granularity_recovery/inference.py`
 
 ## Evaluation
 

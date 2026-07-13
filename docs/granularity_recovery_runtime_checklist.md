@@ -2,7 +2,7 @@
 
 This workspace has been cleaned to keep only the files needed to run:
 
-- `start_granularity_refine_rerun_gui.bat`
+- `start_granularity_recovery_gui.bat`
 
 The old SimpleClick-only GUI, the old non-rerun granularity-refine checkpoint line, and the independent semantic-growth experiment line were removed from this workspace. The older SimpleClick code line was backed up to GitHub:
 
@@ -14,13 +14,13 @@ Verified in the current local workspace:
 
 - `weights/simpleclick_models/cocolvis_vit_base.pth`
 - `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth`
-- `experiments/granularity_refine_rerun/best.pth`
-- `experiments/granularity_refine_rerun/latest.pth`
+- `experiments/granularity_recovery/best.pth`
+- `experiments/granularity_recovery/latest.pth`
 - `third_party/dinov3`
 
 The launcher check currently resolves to:
 
-- rerun base checkpoint: `experiments/granularity_refine_rerun/best.pth`
+- recovery checkpoint: `experiments/granularity_recovery/best.pth`
 
 ## 1. Local files that must stay on disk
 
@@ -42,19 +42,19 @@ Purpose:
 
 - Builds the click-rooted semantic hierarchy used by the granularity slider.
 
-### Rerun base granularity refine checkpoint
+### Granularity recovery checkpoint
 
 Preferred path:
 
-- `experiments/granularity_refine_rerun/best.pth`
+- `experiments/granularity_recovery/best.pth`
 
 Fallback path:
 
-- `experiments/granularity_refine_rerun/latest.pth`
+- `experiments/granularity_recovery/latest.pth`
 
 Purpose:
 
-- Refines the low-granularity branch with the rerun checkpoint so that the slider keeps the original SimpleClick-style local interaction feel while avoiding the older base checkpoint line.
+- Drives the single-network granularity recovery path across the slider range.
 
 ### Local DINOv3 repository
 
@@ -77,18 +77,18 @@ You can override the default runtime paths with:
 - `SIMPLECLICK_DINOV3_ENV`
 - `DINOV3_REPO`
 - `DINOV3_WEIGHTS`
-- `GRANULARITY_REFINE_RERUN_CHECKPOINT`
+- `GRANULARITY_RECOVERY_CHECKPOINT`
 
 ## 3. Minimal runtime entry
 
 The cleaned workspace is centered on:
 
-- launcher: `start_granularity_refine_rerun_gui.bat`
+- launcher: `start_granularity_recovery_gui.bat`
 - GUI entry: `granularity_recovery/demo_granularity_recovery.py`
 - GUI logic: `granularity_recovery/gui_app.py`
 - controller: `granularity_recovery/gui_controller.py`
 - DINO hierarchy builder: `isegm/inference/dino_granularity.py`
-- base refine inference: `isegm/inference/granularity_refine_inference.py`
+- recovery inference: `granularity_recovery/inference.py`
 
 ## 4. If you ever need the old version again
 
