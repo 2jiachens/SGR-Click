@@ -1,14 +1,15 @@
 # Granularity Recovery Runtime Checklist
 
-This workspace has been cleaned to keep only the files needed to run:
+This file records the local artifacts required to run the current maintained GUI:
 
 - `start_granularity_recovery_gui.bat`
 
-The old SimpleClick-only GUI, the old non-rerun granularity-refine checkpoint line, and the independent semantic-growth experiment line were removed from this workspace. The older SimpleClick code line was backed up to GitHub:
+Older local experiment lines were removed from this repository. A backup of the
+older code line remains available at:
 
 - [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)
 
-## 0. Verified current local snapshot
+## 0. Verified Local Snapshot
 
 Verified in the current local workspace:
 
@@ -22,11 +23,11 @@ The launcher check currently resolves to:
 
 - recovery checkpoint: `experiments/granularity_recovery/best.pth`
 
-## 1. Local files that must stay on disk
+## 1. Local Files That Must Stay On Disk
 
 These files are required locally and are intentionally not pushed to git:
 
-### Base interactive segmentation checkpoint
+### Base Interactive Segmentation Checkpoint
 
 - `weights/simpleclick_models/cocolvis_vit_base.pth`
 
@@ -34,7 +35,7 @@ Purpose:
 
 - Original SimpleClick one-click / multi-click segmentation backbone.
 
-### DINOv3 weights
+### DINOv3 Weights
 
 - `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth`
 
@@ -42,7 +43,7 @@ Purpose:
 
 - Builds the click-rooted semantic hierarchy used by the granularity slider.
 
-### Granularity recovery checkpoint
+### Granularity Recovery Checkpoint
 
 Preferred path:
 
@@ -56,7 +57,7 @@ Purpose:
 
 - Drives the single-network granularity recovery path across the slider range.
 
-### Local DINOv3 repository
+### Local DINOv3 Repository
 
 Preferred path:
 
@@ -70,7 +71,7 @@ Purpose:
 
 - Provides the DINOv3 code used by `isegm/inference/dino_granularity.py`.
 
-## 2. Optional environment overrides
+## 2. Optional Environment Overrides
 
 You can override the default runtime paths with:
 
@@ -79,9 +80,9 @@ You can override the default runtime paths with:
 - `DINOV3_WEIGHTS`
 - `GRANULARITY_RECOVERY_CHECKPOINT`
 
-## 3. Minimal runtime entry
+## 3. Minimal Runtime Entry
 
-The cleaned workspace is centered on:
+The current maintained runtime path is:
 
 - launcher: `start_granularity_recovery_gui.bat`
 - GUI entry: `granularity_recovery/demo_granularity_recovery.py`
@@ -89,8 +90,9 @@ The cleaned workspace is centered on:
 - controller: `granularity_recovery/gui_controller.py`
 - DINO hierarchy builder: `isegm/inference/dino_granularity.py`
 - recovery inference: `granularity_recovery/inference.py`
+- model definition: `granularity_recovery/model.py`
 
-## 4. If you ever need the old version again
+## 4. If You Need the Older Version Again
 
 Use the GitHub backup instead of trying to recover deleted local files:
 

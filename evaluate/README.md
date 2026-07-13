@@ -1,25 +1,27 @@
-# Evaluation Rules
+# Evaluation
 
-This directory contains the evaluation protocol used for the three-server runs.
-It is intentionally code-and-rule only: datasets, checkpoints, and generated
-outputs are not stored here.
+This directory stores the maintained evaluation protocol for the paper-facing
+granularity recovery pipeline. It contains only code, rules, and fixed sample
+lists. Datasets, checkpoints, and generated results are expected to live
+outside the repository.
 
 ## Metrics
 
-All targets are evaluated at slider values from 0% to 100% in 10% increments
-unless a split protocol says otherwise.
+All targets are evaluated at multiple slider values unless a specific protocol
+overrides the grid.
 
-The reported metrics are aggregated across sliders per image:
+Reported metrics use the same per-instance aggregation rule adopted by the
+project:
 
-- `NoC@85`: for each image/object, take the best click count that reaches IoU
-  0.85 across all evaluated sliders, then average over images.
-- `NoC@90`: same rule at IoU 0.90.
-- `IoU@1`: for each image/object, take the maximum first-click IoU across all
-  evaluated sliders, then average over images.
+- `NoC@85`: for each object, take the minimum click count that reaches IoU
+  `0.85` over all tested slider values, then average across objects.
+- `NoC@90`: identical aggregation at IoU `0.90`.
+- `IoU@1`: for each object, record the best first-click IoU over all tested
+  slider values, then average across objects.
 
-The click cap is 20.
+The default click cap is `20`.
 
-## Dataset Targets
+## Supported Targets
 
 Standard datasets:
 
@@ -29,44 +31,31 @@ Standard datasets:
 PascalPart:
 
 - `head`, `wheel`, `torso`, `all`
-- Class targets use exact largest-part samples. For example, `head` does not
-  include finer child parts such as `eye`.
-- `all` is a fixed random-1000 sample list.
+- Category subsets follow fixed sample keys.
+- Part labels use the intended semantic target rather than finer descendants.
 
 PartImageNet:
 
 - `head`, `body`, `foot`, `all`
-- `all` is a fixed random-1000 sample list.
+- `all` uses a fixed random-1000 sample list.
 
 ## Main Files
 
-- `run_evaluation.py`: unified evaluation entry.
-  Use `--task slider` for the full multi-dataset slider protocol.
-  Use `--task pascalpart` for the focused PascalPart NoC workflow.
-- `merge_slider_metrics.py`: post-hoc metric merger that applies the per-image
-  best-slider rule.
-- `config_server_eval.yml`: server dataset path config.
-- `protocols/`: slider protocols.
-- `sample_keys/`: fixed target sample lists.
-- `server_runs/`: command templates matching the final three-server split.
+- `run_evaluation.py`: main evaluation entry for the current repository.
+- `merge_slider_metrics.py`: merges partial runs and applies the best-slider
+  aggregation rule.
+- `config_server_eval.yml`: dataset and checkpoint paths for server-side runs.
+- `protocols/`: predefined slider schedules and dataset protocols.
+- `sample_keys/`: fixed sample subsets for reproducible part evaluation.
+- `server_runs/`: command templates used for split server execution.
 
-## Three-Server Split Used
+## Split Evaluation Notes
 
-The final distributed rule is:
+The repository keeps the previous multi-server split command templates for
+large-scale runs. If a dataset is evaluated across several slider shards, merge
+the partial outputs with `merge_slider_metrics.py` after all jobs finish.
 
-- Server 1:
-  - `SBD` head split: `g000-g040`
-  - `PartImageNet/body`: `g000-g070`
-  - `PartImageNet/body`: `g090`
-- Server 2:
-  - `PartImageNet/head`: all sliders
-  - `PartImageNet/body`: `g080`
-- Server 3:
-  - `SBD` tail split: `g050-g100`
-  - `PartImageNet/foot,all`: all sliders
-  - `PartImageNet/body`: `g100`
-
-After the split runs finish, merge `PartImageNet/body` with:
+Example:
 
 ```bash
 python evaluate/merge_slider_metrics.py \
@@ -76,20 +65,12 @@ python evaluate/merge_slider_metrics.py \
   outputs/server_slider_eval_vitl_part_body_g100/PartImageNet__body
 ```
 
-For SBD ViT-L split results:
+## External Artifacts
 
-```bash
-python evaluate/merge_slider_metrics.py \
-  outputs/server_slider_eval_vitl/SBD \
-  outputs/server_slider_eval_vitl_sbd_tail/SBD
-```
+Before running evaluation, prepare:
 
-## Required External Artifacts
-
-The repository should not include large artifacts. Before running evaluation,
-place these on the server:
-
-- checkpoints under `weights/simpleclick_models/`
-- granularity recovery checkpoint under `experiments/granularity_recovery/best.pth`
-- datasets under the paths configured in `config_server_eval.yml`
-- PartImageNet evaluation subset at `partimagenet_head_body_foot_eval/`
+- base interactive-segmentation checkpoints under `weights/simpleclick_models/`
+- the trained recovery checkpoint under `experiments/granularity_recovery/`
+- dataset roots referenced by `config_server_eval.yml`
+- optional fixed evaluation subsets such as the PartImageNet export used in the
+  paper experiments

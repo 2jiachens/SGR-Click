@@ -1,67 +1,97 @@
 # SimpleClick DINOv3 Granularity Recovery
 
-This local workspace has been cleaned to keep only the code needed for the current GUI entry:
+This repository contains the current code line for click-grounded semantic
+granularity control built on top of SimpleClick and DINOv3.
+
+The maintained runtime entry is:
 
 - `start_granularity_recovery_gui.bat`
 
-The current runnable line is:
+The current pipeline is:
 
-- original SimpleClick interactive backbone
+- SimpleClick interactive backbone
 - DINOv3 click-rooted semantic hierarchy
-- granularity recovery checkpoint for full-range slider interaction
+- a single granularity-recovery network for full-range slider control
 
-## Main entry
+## Repository Layout
 
-Run:
+- `granularity_recovery/`
+  runtime GUI, dataset builder, training code, inference wrapper, and model
+- `evaluate/`
+  evaluation entrypoints, slider protocols, fixed sample lists, and server run templates
+- `isegm/`
+  SimpleClick-based interaction, model, and utility code
+- `models/`
+  model config files used by the interactive backbone
+- `docs/`
+  runtime checklist and training notes
+- `paper/`
+  local paper drafts and figures
+
+Detailed directory notes:
+
+- [docs/repository_layout.md](docs/repository_layout.md)
+
+## Quick Start
+
+Launch the GUI:
 
 ```powershell
 start_granularity_recovery_gui.bat
 ```
 
-Or check the launcher without starting the GUI:
+Check the launcher without opening the GUI:
 
 ```powershell
 start_granularity_recovery_gui.bat --check
 ```
 
-## Required local runtime files
+## Required Local Artifacts
 
-Read:
+This repository does not include large checkpoints or datasets.
+
+Required local files are documented in:
 
 - [docs/granularity_recovery_runtime_checklist.md](docs/granularity_recovery_runtime_checklist.md)
 
-That file records:
+That checklist records:
 
-- which local checkpoints must remain on disk
+- which checkpoints must remain on disk
 - which environment variables can override default paths
-- which old files were intentionally removed from this workspace
-- where the old backup repository lives
+- where the local DINOv3 repository is expected
 
-## Current code path
+## Training and Data Generation
 
-The minimal current path is:
+The main recovery training code lives in:
 
-- launcher: `start_granularity_recovery_gui.bat`
-- GUI entry: `granularity_recovery/demo_granularity_recovery.py`
-- GUI/controller: `granularity_recovery/gui_app.py`, `granularity_recovery/gui_controller.py`
-- DINO hierarchy: `isegm/inference/dino_granularity.py`
-- recovery inference: `granularity_recovery/inference.py`
+- [granularity_recovery/build_granularity_recovery_dataset.py](granularity_recovery/build_granularity_recovery_dataset.py)
+- [granularity_recovery/train_granularity_recovery.py](granularity_recovery/train_granularity_recovery.py)
+- [granularity_recovery/dataset.py](granularity_recovery/dataset.py)
+
+Supporting notes:
+
+- [docs/granularity_refine_training_plan.md](docs/granularity_refine_training_plan.md)
+- [docs/server_training.md](docs/server_training.md)
 
 ## Evaluation
 
-The cleaned evaluation entry is kept under:
+The maintained evaluation entry is:
 
-- `evaluate/`
+- [evaluate/run_evaluation.py](evaluate/run_evaluation.py)
 
-It replaces the older scattered server-eval helper folders with:
+This directory also contains:
 
 - fixed sample lists
 - slider protocols
+- result-merging scripts
 - server command templates
-- merged metric scripts
 
-## Old version backup
+See:
 
-The deleted old line has already been backed up to:
+- [evaluate/README.md](evaluate/README.md)
+
+## Backup of Older Code Line
+
+An older backup repository remains available at:
 
 - [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)
