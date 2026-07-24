@@ -117,6 +117,24 @@ class DinoGranularityRefiner:
             parameter.requires_grad = False
 
     @torch.inference_mode()
+    def warmup(self):
+        """Load DINOv3 and precompute image-independent startup state."""
+        self._load_encoder()
+        channels = getattr(self.encoder, "embed_dim", None)
+        if channels is None:
+            patch_embed = getattr(self.encoder, "patch_embed", None)
+            projection = getattr(patch_embed, "proj", None)
+            channels = getattr(projection, "out_channels", None)
+        if channels is not None:
+            self._build_positional_basis(
+                self.image_size,
+                self.image_size,
+                int(channels),
+            )
+        if self.device.type == "cuda":
+            torch.cuda.synchronize(self.device)
+
+    @torch.inference_mode()
     def _build_positional_basis(self, input_height: int, input_width: int, channels: int) -> torch.Tensor:
         cache_key = (input_height, input_width, channels)
         if cache_key in self._positional_basis_cache:
@@ -733,6 +751,7 @@ class DinoGranularityRefiner:
                 )
         self._hole_area_limit = max(64, int(original_candidate.sum() * self.max_hole_ratio))
         original_candidate = self._fill_small_holes(original_candidate, self._hole_area_limit)
+        self._original_candidate = original_candidate.copy()
         probability_patch = cv2.resize(
             simple_probability.astype(np.float32),
             (semantic_feature.shape[2], semantic_feature.shape[1]),
@@ -961,7 +980,14 @@ class DinoGranularityRefiner:
                 patch_mask |= component_pixel_masks[component_idx]
             return self._component_mask(patch_mask, click_y, click_x)
 
-        max_overdrive_area = float(grid_h * grid_w) * 0.78
+        image_patch_area = float(grid_h * grid_w)
+        candidate_patch_area = max(float(candidate_patch.sum()), 1.0)
+        # Open the high-granularity search beyond SimpleClick without allowing a
+        # small clicked component to grow through most of the image background.
+        max_overdrive_area = min(
+            image_patch_area * 0.62,
+            max(candidate_patch_area * 12.0, candidate_patch_area + image_patch_area * 0.15),
+        )
         while frontier:
             region_feature = _current_region_feature()
             region_area = _current_region_area()
@@ -1011,6 +1037,52 @@ class DinoGranularityRefiner:
         elif level_areas[-1] < float(original_candidate.sum()) * 0.95:
             level_masks.append(original_candidate.copy())
             level_areas.append(float(original_candidate.sum()))
+
+        if semantic_overdrive and len(level_masks) > self._root_level_count:
+            root_index = max(0, self._root_level_count - 1)
+            root_area = max(float(level_areas[root_index]), 1.0)
+            candidate_area = max(float(original_candidate.sum()), 1.0)
+            candidate_to_root = candidate_area / root_area
+
+            if candidate_to_root >= 2.5:
+                # A first-click prediction spanning several root blocks is
+                # already an object-level proposal. End at the semantic stage
+                # that best agrees with it instead of growing into background.
+                best_index = root_index
+                best_score = -1.0
+                for level_index in range(root_index, len(level_masks)):
+                    current = level_masks[level_index]
+                    intersection = float(np.logical_and(current, original_candidate).sum())
+                    union = float(np.logical_or(current, original_candidate).sum())
+                    iou = intersection / max(union, 1.0)
+                    outside_ratio = float(np.logical_and(current, np.logical_not(original_candidate)).sum()) / max(
+                        float(current.sum()),
+                        1.0,
+                    )
+                    score = iou - 0.20 * outside_ratio
+                    if score > best_score + 1e-8:
+                        best_score = score
+                        best_index = level_index
+                level_masks = level_masks[:best_index + 1]
+                level_areas = level_areas[:best_index + 1]
+            else:
+                # For genuinely local first-click masks, retain open semantic
+                # completion but stop when growth leaves a stable plateau via a
+                # sudden large component, which is usually background.
+                increments = np.diff(np.asarray(level_areas, dtype=np.float64))
+                stop_index = len(level_masks)
+                minimum_region_area = max(candidate_area * 4.0, root_area * 6.0)
+                for level_index in range(root_index + 7, len(level_masks)):
+                    previous = increments[max(root_index, level_index - 6):level_index - 1]
+                    if previous.size < 4 or float(level_areas[level_index - 1]) < minimum_region_area:
+                        continue
+                    typical_increment = max(float(np.median(previous)), image.shape[0] * image.shape[1] * 0.001)
+                    current_increment = float(increments[level_index - 1])
+                    if current_increment > max(4.0 * typical_increment, image.shape[0] * image.shape[1] * 0.01):
+                        stop_index = level_index
+                        break
+                level_masks = level_masks[:stop_index]
+                level_areas = level_areas[:stop_index]
 
         level_masks, self._level_areas = self._enforce_monotonic_levels(level_masks)
         self._root_level_count = min(self._root_level_count, len(level_masks))

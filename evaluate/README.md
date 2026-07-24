@@ -21,6 +21,34 @@ project:
 
 The default click cap is `20`.
 
+## ESS-10 Protocol
+
+`--ess10` enables a separate effective-semantic-state oracle for staircase
+outputs. It scans the DINO hierarchy over the semantic slider range
+`[0.5, 1.0]`, records the first display value of every distinct semantic stage,
+and retains at most ten stages with the largest hierarchy-mask transitions.
+The 0.5 root state and a distinct endpoint stage are retained. If fewer than
+ten semantic stages exist, only the unused slots are filled uniformly below
+0.5. Candidate construction does not inspect GT; GT is used only for the
+standard first click and final metric computation.
+
+ESS-10 writes a resumable `ess10.json` for each target and must use a separate
+output directory:
+
+```bash
+python -u evaluate/run_evaluation.py \
+  --task slider \
+  --config-path evaluate/config_server_eval.yml \
+  --checkpoint weights/simpleclick_models/cocolvis_vit_base.pth \
+  --granularity-recovery-checkpoint experiments/granularity_recovery/best.pth \
+  --ess10 --ess10-scan-step 0.01 --ess10-max-states 10 \
+  --output-dir /root/autodl-tmp/eval_outputs/granularity_recovery_main_ess10_vitb
+```
+
+Keep the fixed `{0.1, ..., 1.0}` protocol for direct comparison with UniGraCo.
+ESS-10 is a staircase-aware supplementary protocol unless the same state
+selection rule is also applied to the competing method.
+
 ## Supported Targets
 
 Standard datasets:

@@ -14,6 +14,11 @@ set "PYTHON=%ENV_DIR%\python.exe"
 set "CHECKPOINT=weights\simpleclick_models\cocolvis_vit_base.pth"
 set "DINOV3_MODEL=dinov3_vitl16"
 set "RECOVERY_CHECKPOINT="
+set "REFINE_STRENGTH=0.65"
+
+if defined GRANULARITY_RECOVERY_REFINE_STRENGTH (
+    set "REFINE_STRENGTH=%GRANULARITY_RECOVERY_REFINE_STRENGTH%"
+)
 
 if defined GRANULARITY_RECOVERY_CHECKPOINT (
     set "RECOVERY_CHECKPOINT=%GRANULARITY_RECOVERY_CHECKPOINT%"
@@ -77,6 +82,7 @@ pushd "%PROJECT_DIR%"
   --checkpoint="%CHECKPOINT%" ^
   --granularity-recovery-checkpoint="%RECOVERY_CHECKPOINT%" ^
   --dinov3-model=%DINOV3_MODEL% ^
+  --refine-strength=%REFINE_STRENGTH% ^
   --gpu 0
 set "EXIT_CODE=%ERRORLEVEL%"
 popd

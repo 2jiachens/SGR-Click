@@ -21,7 +21,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
+from evaluate.ess10 import MaskState, collapse_exact_semantic_stages, select_semantic_transition_states
 from granularity_recovery.gui_controller import GranularityRecoveryController
+from granularity_recovery.granularity_mapping import split_display_granularity
 from granularity_recovery.inference import GranularityRecoveryInference
 from isegm.inference import utils
 from isegm.inference.clicker import Clicker
@@ -41,6 +43,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--protocol-path", default="evaluate/protocols/all_sliders.json")
     parser.add_argument("--checkpoint", default="weights/simpleclick_models/cocolvis_vit_base.pth")
     parser.add_argument("--granularity-recovery-checkpoint", default="experiments/granularity_recovery/best.pth")
+    parser.add_argument(
+        "--disable-granularity-recovery",
+        action="store_true",
+        help="Evaluate the SimpleClick + DINOv3 hierarchy baseline without the learned recovery module.",
+    )
     parser.add_argument("--output-dir", default="outputs/server_slider_eval")
     parser.add_argument("--save-json", default=None)
     parser.add_argument("--datasets", default=",".join(STANDARD_DATASETS))
@@ -76,7 +83,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dinov3-weights", default=None)
     parser.add_argument("--dinov3-image-size", type=int, default=768)
     parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
-    parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.04)
+    parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.02)
+    parser.add_argument("--refine-strength", type=float, default=0.65)
+    parser.add_argument("--ess10", action="store_true", default=False,
+                        help="Evaluate at most ten distinct mask states selected without GT.")
+    parser.add_argument("--ess10-scan-step", type=float, default=0.01)
+    parser.add_argument("--ess10-max-states", type=int, default=10)
     parser.add_argument("--refresh-every", type=int, default=8)
     parser.add_argument("--resume", action="store_true", default=True)
     args = parser.parse_args()
@@ -141,10 +153,12 @@ def build_runtime_components(args):
         max_hole_ratio=args.granularity_max_hole_ratio,
         cluster_tau=0.60,
     )
-    granularity_predictor = GranularityRecoveryInference(
-        checkpoint_path=args.granularity_recovery_checkpoint,
-        device=args.device,
-    )
+    granularity_predictor = None
+    if not args.disable_granularity_recovery:
+        granularity_predictor = GranularityRecoveryInference(
+            checkpoint_path=args.granularity_recovery_checkpoint,
+            device=args.device,
+        )
     return granularity_refiner, granularity_predictor
 
 
@@ -171,6 +185,7 @@ def build_controller(args, simpleclick_model, granularity_refiner, granularity_p
         granularity_refiner=granularity_refiner,
         granularity_predictor=granularity_predictor,
         prob_thresh=args.pred_thresh,
+        refine_strength=args.refine_strength,
     )
 
 
@@ -231,6 +246,130 @@ def evaluate_fixed_granularity(
     }
 
 
+def discover_ess10_granularities(
+    controller: GranularityRecoveryController,
+    image: np.ndarray,
+    gt_mask: np.ndarray,
+    scan_step: float,
+    max_states: int,
+) -> Dict[str, object]:
+    if not 0.0 < scan_step <= 1.0:
+        raise ValueError("ess10 scan step must be in (0, 1].")
+
+    controller.set_image(image)
+    first_clicker = Clicker(gt_mask=gt_mask)
+    first_clicker.make_next_click(np.zeros_like(gt_mask, dtype=bool))
+    first_click = first_clicker.clicks_list[-1]
+    y, x = first_click.coords
+    controller._requested_granularity = 0.5
+    controller.add_click(int(x), int(y), bool(first_click.is_positive))
+
+    if controller.granularity_refiner is None or not controller.granularity_refiner.ready:
+        raise RuntimeError("ESS-10 requires a ready DINOv3 semantic hierarchy.")
+
+    scan_count = max(2, int(np.ceil(0.5 / scan_step)) + 1)
+    scan_values = np.unique(np.concatenate((
+        np.linspace(0.5, 1.0, scan_count, dtype=np.float64),
+        np.asarray([0.5, 1.0], dtype=np.float64),
+    )))
+    states = []
+    for granularity in scan_values:
+        hierarchy_granularity, _ = split_display_granularity(float(granularity))
+        semantic_mask = controller.granularity_refiner.mask_at(hierarchy_granularity)
+        states.append(MaskState(
+            granularity=float(granularity),
+            mask=(semantic_mask > controller.prob_thresh).copy(),
+        ))
+
+    semantic_stages = collapse_exact_semantic_stages(states)
+    if semantic_stages[-1].granularity < 1.0 - 1e-8:
+        semantic_stages.append(states[-1])
+    selected = select_semantic_transition_states(semantic_stages, max_states=max_states)
+    low_fill_granularities = []
+    remaining_slots = max_states - len(selected)
+    if remaining_slots > 0:
+        low_fill_granularities = [
+            float(value)
+            for value in np.linspace(0.0, 0.5, remaining_slots + 2, dtype=np.float64)[1:-1]
+        ]
+    selected_granularities = sorted({
+        *low_fill_granularities,
+        *(float(state.granularity) for state in selected),
+    })
+    controller.reset_last_object(update_image=False)
+    return {
+        "scan_count": len(states),
+        "effective_state_count": len(semantic_stages),
+        "semantic_stage_granularities": [float(state.granularity) for state in semantic_stages],
+        "low_fill_granularities": low_fill_granularities,
+        "selected_granularities": selected_granularities,
+    }
+
+
+def evaluate_ess10_sample(
+    controller: GranularityRecoveryController,
+    image: np.ndarray,
+    gt_mask: np.ndarray,
+    thresholds: List[float],
+    args: argparse.Namespace,
+) -> Dict[str, object]:
+    discovery = discover_ess10_granularities(
+        controller,
+        image,
+        gt_mask,
+        scan_step=args.ess10_scan_step,
+        max_states=args.ess10_max_states,
+    )
+    stop_threshold = max([args.iou_threshold, *thresholds])
+    candidates = [
+        evaluate_fixed_granularity(
+            controller,
+            image,
+            gt_mask,
+            granularity=granularity,
+            max_clicks=args.max_clicks,
+            iou_threshold=stop_threshold,
+        )
+        for granularity in discovery["selected_granularities"]
+    ]
+
+    oracle_noc = {}
+    oracle_noc_granularity = {}
+    for threshold in thresholds:
+        key = threshold_key(threshold)
+        selected = min(
+            candidates,
+            key=lambda candidate: (
+                compute_realized_noc(candidate["ious"], threshold, args.max_clicks),
+                -max([float(iou) for iou in candidate["ious"]], default=0.0),
+                float(candidate["granularity"]),
+            ),
+        )
+        oracle_noc[key] = compute_realized_noc(selected["ious"], threshold, args.max_clicks)
+        oracle_noc_granularity[key] = float(selected["granularity"])
+
+    best_iou_candidate = max(
+        candidates,
+        key=lambda candidate: (float(candidate["iou_at_1"]), -float(candidate["granularity"])),
+    )
+    compact_candidates = []
+    for candidate in candidates:
+        compact_candidates.append({
+            "granularity": float(candidate["granularity"]),
+            "ious": [float(iou) for iou in candidate["ious"]],
+            "realized_noc": int(candidate["realized_noc"]),
+            "iou_at_1": float(candidate["iou_at_1"]),
+        })
+    return {
+        **discovery,
+        "oracle_noc": oracle_noc,
+        "oracle_noc_granularity": oracle_noc_granularity,
+        "best_iou_at_1": float(best_iou_candidate["iou_at_1"]),
+        "best_iou_at_1_granularity": float(best_iou_candidate["granularity"]),
+        "candidates": compact_candidates,
+    }
+
+
 def load_runtime(args: argparse.Namespace, cfg):
     runtime_args = SimpleNamespace(**vars(args))
     checkpoint_path = utils.find_checkpoint(cfg.INTERACTIVE_MODELS_PATH, args.checkpoint)
@@ -270,6 +409,26 @@ def filter_skip_samples(target_name: str, samples: List[Dict[str, object]], skip
             continue
         kept.append(sample)
     return kept
+
+
+def evaluation_sample_key(sample: Dict[str, object]) -> str:
+    identity = {
+        "sample_id": sample.get("sample_id"),
+        "object_id": sample.get("object_id"),
+        "part_id": sample.get("part_id"),
+        "part_name": sample.get("part_name"),
+        "source_values": sample.get("source_values"),
+    }
+    return json.dumps(identity, ensure_ascii=False, sort_keys=True)
+
+
+def write_json_atomic(path: Path, payload: object) -> None:
+    temporary_path = path.with_suffix(path.suffix + ".tmp")
+    temporary_path.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    temporary_path.replace(path)
 
 
 def load_pascalpart_mask(sample: Dict[str, object], dataset_root: Path, voc_images_dir: Path) -> tuple[np.ndarray, np.ndarray]:
@@ -380,6 +539,146 @@ def fmt_metric(value: object) -> str:
     return "nan" if value is None else f"{float(value):.4f}"
 
 
+def summarize_ess10(records: List[Dict[str, object]], thresholds: List[float], max_clicks: int) -> Dict[str, object]:
+    summary = {
+        "samples": len(records),
+        "protocol": "ESS-10",
+        "max_states": 10,
+    }
+    if not records:
+        summary.update({
+            "iou_at_1": None,
+            "mean_effective_states": None,
+            "mean_selected_states": None,
+        })
+        for threshold in thresholds:
+            summary[f"noc{threshold_key(threshold)}"] = None
+        return summary
+
+    summary.update({
+        "iou_at_1": float(np.mean([record["best_iou_at_1"] for record in records])),
+        "mean_effective_states": float(np.mean([record["effective_state_count"] for record in records])),
+        "mean_selected_states": float(np.mean([len(record["selected_granularities"]) for record in records])),
+    })
+    for threshold in thresholds:
+        key = threshold_key(threshold)
+        values = [int(record["oracle_noc"][key]) for record in records]
+        summary[f"noc{key}"] = float(np.mean(values))
+        summary[f"failures_at_max_clicks_{key}"] = int(sum(
+            not any(
+                any(float(iou) >= threshold for iou in candidate["ious"])
+                for candidate in record["candidates"]
+            )
+            for record in records
+        ))
+    return summary
+
+
+def evaluate_target_ess10(
+    target_name: str,
+    sample_iter: Iterable[Dict[str, object]],
+    args: argparse.Namespace,
+    runtime_args,
+    simpleclick_model,
+    granularity_refiner,
+    granularity_predictor,
+    controller,
+    output_dir: Path,
+) -> None:
+    target_dir = output_dir / target_name.replace("/", "__")
+    target_dir.mkdir(parents=True, exist_ok=True)
+    result_path = target_dir / "ess10.json"
+    partial_path = target_dir / "ess10.partial.json"
+    if args.resume and result_path.exists():
+        print(f"[resume skip ESS-10 target] {target_name} -> {result_path}", flush=True)
+        return
+
+    samples = list(sample_iter)
+    samples = filter_skip_samples(target_name, samples, load_skip_samples(args.skip_samples_file))
+    if args.sample_limit > 0:
+        samples = samples[: args.sample_limit]
+    thresholds = [float(value) for value in split_csv(args.noc_thresholds)]
+    records = []
+    skipped = []
+    if args.resume and partial_path.exists():
+        payload = json.loads(partial_path.read_text(encoding="utf-8"))
+        records = list(payload.get("samples", []))
+        skipped = list(payload.get("skipped", []))
+    completed_keys = {
+        evaluation_sample_key(record)
+        for record in [*records, *skipped]
+    }
+
+    print(
+        f"[ESS-10 target start] {target_name} samples={len(samples)} "
+        f"semantic_range=0.50:1.00 scan_step={args.ess10_scan_step}",
+        flush=True,
+    )
+    start = time.time()
+    newly_processed = 0
+    for index, sample in enumerate(samples, start=1):
+        if evaluation_sample_key(sample) in completed_keys:
+            continue
+        if args.refresh_every > 0 and index > 1 and (index - 1) % args.refresh_every == 0:
+            del controller
+            gc.collect()
+            if runtime_args.device.type == "cuda":
+                torch.cuda.empty_cache()
+                torch.cuda.ipc_collect()
+            controller = build_controller(runtime_args, simpleclick_model, granularity_refiner, granularity_predictor)
+
+        print(f"[ESS-10 sample start] {target_name} {index}/{len(samples)} sample={sample.get('sample_id')}", flush=True)
+        try:
+            result = evaluate_ess10_sample(
+                controller,
+                sample["image"],
+                sample["gt_mask"],
+                thresholds,
+                args,
+            )
+            record = {key: value for key, value in sample.items() if key not in {"image", "gt_mask"}}
+            record.update(result)
+            records.append(record)
+            completed_keys.add(evaluation_sample_key(record))
+            noc_text = " ".join(
+                f"NoC@{threshold_key(threshold)}={record['oracle_noc'][threshold_key(threshold)]}"
+                for threshold in thresholds
+            )
+            print(
+                f"[ESS-10 {target_name} {index}/{len(samples)}] sample={sample.get('sample_id')} "
+                f"effective={record['effective_state_count']} selected={len(record['selected_granularities'])} "
+                f"IoU@1={record['best_iou_at_1']:.4f} {noc_text}",
+                flush=True,
+            )
+        except Exception as error:
+            skipped_record = {
+                key: value for key, value in sample.items() if key not in {"image", "gt_mask"}
+            }
+            skipped_record["error"] = str(error)
+            skipped.append(skipped_record)
+            completed_keys.add(evaluation_sample_key(skipped_record))
+            print(f"[ESS-10 skip] {target_name} sample={sample.get('sample_id')} error={error}", flush=True)
+
+        newly_processed += 1
+        if newly_processed % 5 == 0:
+            write_json_atomic(partial_path, {"samples": records, "skipped": skipped})
+        if runtime_args.device.type == "cuda":
+            torch.cuda.empty_cache()
+
+    summary = summarize_ess10(records, thresholds, args.max_clicks)
+    summary.update({
+        "target": target_name,
+        "scan_step": args.ess10_scan_step,
+        "semantic_start": 0.5,
+        "configured_max_states": args.ess10_max_states,
+        "elapsed_sec": time.time() - start,
+        "skipped": len(skipped),
+    })
+    write_json_atomic(result_path, {"summary": summary, "samples": records, "skipped": skipped})
+    partial_path.unlink(missing_ok=True)
+    print(f"[ESS-10 target done] {target_name} -> {result_path}", flush=True)
+
+
 def evaluate_target(
     target_name: str,
     sample_iter: Iterable[Dict[str, object]],
@@ -411,6 +710,7 @@ def evaluate_target(
     for slider in slider_values:
         slider_tag = f"g{int(round(slider * 100)):03d}"
         result_path = target_dir / f"{slider_tag}.json"
+        partial_path = target_dir / f"{slider_tag}.partial.json"
         if args.resume and result_path.exists():
             payload = json.loads(result_path.read_text(encoding="utf-8"))
             target_summaries[slider_tag] = payload["summary"]
@@ -419,8 +719,24 @@ def evaluate_target(
 
         records = []
         skipped = []
+        if args.resume and partial_path.exists():
+            partial_payload = json.loads(partial_path.read_text(encoding="utf-8"))
+            records = list(partial_payload.get("samples", []))
+            skipped = list(partial_payload.get("skipped", []))
+            print(
+                f"[resume partial slider] {target_name} {slider_tag} "
+                f"records={len(records)} skipped={len(skipped)}",
+                flush=True,
+            )
+        completed_keys = {
+            evaluation_sample_key(record)
+            for record in [*records, *skipped]
+        }
+        newly_processed = 0
         start = time.time()
         for index, sample in enumerate(samples, start=1):
+            if evaluation_sample_key(sample) in completed_keys:
+                continue
             if args.refresh_every > 0 and index > 1 and (index - 1) % args.refresh_every == 0:
                 del controller
                 gc.collect()
@@ -442,6 +758,7 @@ def evaluate_target(
                 record = {k: v for k, v in sample.items() if k not in {"image", "gt_mask"}}
                 record.update(result)
                 records.append(record)
+                completed_keys.add(evaluation_sample_key(record))
                 ious = result["ious"]
                 print(
                     f"[{target_name} {slider_tag} {index}/{len(samples)}] sample={sample.get('sample_id')} "
@@ -449,18 +766,33 @@ def evaluate_target(
                     flush=True,
                 )
             except Exception as error:
-                skipped.append({"sample_id": sample.get("sample_id"), "error": str(error)})
+                skipped_record = {
+                    key: value
+                    for key, value in sample.items()
+                    if key not in {"image", "gt_mask"}
+                }
+                skipped_record["error"] = str(error)
+                skipped.append(skipped_record)
+                completed_keys.add(evaluation_sample_key(skipped_record))
                 print(f"[skip] {target_name} {slider_tag} sample={sample.get('sample_id')} error={error}", flush=True)
+
+            newly_processed += 1
+            if newly_processed % 25 == 0:
+                write_json_atomic(
+                    partial_path,
+                    {"samples": records, "skipped": skipped},
+                )
 
             if runtime_args.device.type == "cuda":
                 torch.cuda.empty_cache()
 
         summary = summarize(records, noc_thresholds, args.max_clicks)
         summary.update({"target": target_name, "slider": slider, "elapsed_sec": time.time() - start, "skipped": len(skipped)})
-        result_path.write_text(
-            json.dumps({"summary": summary, "samples": records, "skipped": skipped}, ensure_ascii=False, indent=2),
-            encoding="utf-8",
+        write_json_atomic(
+            result_path,
+            {"summary": summary, "samples": records, "skipped": skipped},
         )
+        partial_path.unlink(missing_ok=True)
         target_summaries[slider_tag] = summary
         noc_text = " ".join(
             f"NoC@{threshold_key(threshold)}={fmt_metric(summary.get(f'noc{threshold_key(threshold)}'))}"
@@ -618,15 +950,39 @@ def run_slider_evaluation(args: argparse.Namespace) -> None:
 
     runtime_args, simpleclick_model, granularity_refiner, granularity_predictor, controller = load_runtime(args, cfg)
 
+    def run_target(target_name, samples):
+        if args.ess10:
+            evaluate_target_ess10(
+                target_name,
+                samples,
+                args,
+                runtime_args,
+                simpleclick_model,
+                granularity_refiner,
+                granularity_predictor,
+                controller,
+                output_dir,
+            )
+        else:
+            evaluate_target(
+                target_name,
+                samples,
+                slider_values,
+                args,
+                runtime_args,
+                simpleclick_model,
+                granularity_refiner,
+                granularity_predictor,
+                controller,
+                output_dir,
+            )
+
     for dataset_name in split_csv(args.datasets):
-        evaluate_target(dataset_name, iter_standard_samples(dataset_name, cfg), slider_values, args, runtime_args,
-                        simpleclick_model, granularity_refiner, granularity_predictor, controller, output_dir)
+        run_target(dataset_name, iter_standard_samples(dataset_name, cfg))
     for target in split_csv(args.pascalpart_targets):
-        evaluate_target(f"PascalPart/{target}", iter_pascalpart_samples(target, cfg), slider_values, args, runtime_args,
-                        simpleclick_model, granularity_refiner, granularity_predictor, controller, output_dir)
+        run_target(f"PascalPart/{target}", iter_pascalpart_samples(target, cfg))
     for target in split_csv(args.partimagenet_targets):
-        evaluate_target(f"PartImageNet/{target}", iter_partimagenet_samples(target, cfg), slider_values, args, runtime_args,
-                        simpleclick_model, granularity_refiner, granularity_predictor, controller, output_dir)
+        run_target(f"PartImageNet/{target}", iter_partimagenet_samples(target, cfg))
 
     print(f"[all done] output_dir={output_dir}", flush=True)
 

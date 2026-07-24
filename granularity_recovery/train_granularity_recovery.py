@@ -40,6 +40,11 @@ def parse_args():
     parser.add_argument("--gt-pull-power", type=float, default=2.0)
     parser.add_argument("--gt-pull-weight", type=float, default=0.45)
     parser.add_argument("--last-level-gt-weight", type=float, default=1.0)
+    parser.add_argument("--base-mimic-weight", type=float, default=0.25)
+    parser.add_argument("--base-edge-weight", type=float, default=2.00)
+    parser.add_argument("--gt-edge-weight", type=float, default=0.75)
+    parser.add_argument("--edge-shape-weight", type=float, default=1.00)
+    parser.add_argument("--edge-kernel-size", type=int, default=5)
     return parser.parse_args()
 
 
@@ -62,6 +67,8 @@ def collate_batch(batch):
         "inputs": [],
         "teacher_probs": [],
         "teacher_masks": [],
+        "base_teacher_probs": [],
+        "base_teacher_masks": [],
         "gt_masks": [],
         "effective_level_mask": [],
         "granularities": [],
@@ -72,6 +79,8 @@ def collate_batch(batch):
         collated["inputs"].append(pad_tensor_spatial(sample["inputs"], max_height, max_width))
         collated["teacher_probs"].append(pad_tensor_spatial(sample["teacher_probs"], max_height, max_width))
         collated["teacher_masks"].append(pad_tensor_spatial(sample["teacher_masks"], max_height, max_width))
+        collated["base_teacher_probs"].append(pad_tensor_spatial(sample["base_teacher_probs"], max_height, max_width))
+        collated["base_teacher_masks"].append(pad_tensor_spatial(sample["base_teacher_masks"], max_height, max_width))
         collated["gt_masks"].append(pad_tensor_spatial(sample["gt_masks"], max_height, max_width))
         collated["effective_level_mask"].append(sample["effective_level_mask"])
         collated["granularities"].append(sample["granularities"])
@@ -80,6 +89,8 @@ def collate_batch(batch):
     collated["inputs"] = torch.stack(collated["inputs"], dim=0)
     collated["teacher_probs"] = torch.stack(collated["teacher_probs"], dim=0)
     collated["teacher_masks"] = torch.stack(collated["teacher_masks"], dim=0)
+    collated["base_teacher_probs"] = torch.stack(collated["base_teacher_probs"], dim=0)
+    collated["base_teacher_masks"] = torch.stack(collated["base_teacher_masks"], dim=0)
     collated["gt_masks"] = torch.stack(collated["gt_masks"], dim=0)
     collated["effective_level_mask"] = torch.stack(collated["effective_level_mask"], dim=0)
     collated["granularities"] = torch.stack(collated["granularities"], dim=0)
@@ -91,10 +102,23 @@ def flatten_variants(batch):
     inputs = batch["inputs"].reshape(bsz * num_variants, channels, height, width)
     teacher_probs = batch["teacher_probs"].reshape(bsz * num_variants, 1, height, width)
     teacher_masks = batch["teacher_masks"].reshape(bsz * num_variants, 1, height, width)
+    base_teacher_probs = batch["base_teacher_probs"].reshape(bsz * num_variants, 1, height, width)
+    base_teacher_masks = batch["base_teacher_masks"].reshape(bsz * num_variants, 1, height, width)
     gt_masks = batch["gt_masks"].reshape(bsz * num_variants, 1, height, width)
     effective_level_mask = batch["effective_level_mask"]
     granularities = batch["granularities"]
-    return inputs, teacher_probs, teacher_masks, gt_masks, effective_level_mask, granularities, bsz, num_variants
+    return (
+        inputs,
+        teacher_probs,
+        teacher_masks,
+        base_teacher_probs,
+        base_teacher_masks,
+        gt_masks,
+        effective_level_mask,
+        granularities,
+        bsz,
+        num_variants,
+    )
 
 
 def dice_loss_from_logits(logits, targets, weights=None, eps=1e-6):
@@ -111,14 +135,47 @@ def dice_loss_from_logits(logits, targets, weights=None, eps=1e-6):
 
 def weighted_bce_with_logits(logits, targets, weights):
     raw = F.binary_cross_entropy_with_logits(logits, targets, reduction="none")
-    weighted = raw * weights
-    return weighted.sum() / weights.sum().clamp_min(1.0)
+    expanded_weights = torch.broadcast_to(weights, raw.shape)
+    weighted = raw * expanded_weights
+    return weighted.sum() / expanded_weights.sum().clamp_min(1.0)
+
+
+def dice_loss_from_probs(probs, targets, weights=None, eps=1e-6):
+    inter = (probs * targets).sum(dim=(1, 2, 3))
+    denom = probs.sum(dim=(1, 2, 3)) + targets.sum(dim=(1, 2, 3))
+    loss = 1.0 - (2.0 * inter + eps) / (denom + eps)
+    if weights is not None:
+        sample_weights = weights.reshape(-1)
+        return (loss * sample_weights).sum() / sample_weights.sum().clamp_min(1.0)
+    return loss.mean()
+
+
+def boundary_band(mask: torch.Tensor, kernel_size: int) -> torch.Tensor:
+    kernel_size = max(int(kernel_size), 1)
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    padding = kernel_size // 2
+    dilated = F.max_pool2d(mask, kernel_size=kernel_size, stride=1, padding=padding)
+    eroded = 1.0 - F.max_pool2d(1.0 - mask, kernel_size=kernel_size, stride=1, padding=padding)
+    return (dilated - eroded).clamp(0.0, 1.0)
+
+
+def soft_boundary_map(prob: torch.Tensor, kernel_size: int) -> torch.Tensor:
+    kernel_size = max(int(kernel_size), 1)
+    if kernel_size % 2 == 0:
+        kernel_size += 1
+    padding = kernel_size // 2
+    dilated = F.max_pool2d(prob, kernel_size=kernel_size, stride=1, padding=padding)
+    eroded = -F.max_pool2d(-prob, kernel_size=kernel_size, stride=1, padding=padding)
+    return (dilated - eroded).clamp(0.0, 1.0)
 
 
 def compute_loss(
     logits,
     teacher_probs,
     teacher_masks,
+    base_teacher_probs,
+    base_teacher_masks,
     gt_masks,
     effective_level_mask,
     granularities,
@@ -128,6 +185,11 @@ def compute_loss(
     gt_pull_power,
     gt_pull_weight,
     last_level_gt_weight,
+    base_mimic_weight,
+    base_edge_weight,
+    gt_edge_weight,
+    edge_shape_weight,
+    edge_kernel_size,
 ):
     height, width = logits.shape[-2:]
     flat_effective = effective_level_mask.reshape(batch_size * num_variants, 1, 1, 1).to(logits.device, dtype=logits.dtype)
@@ -170,13 +232,58 @@ def compute_loss(
     gt_pull_dice = dice_loss_from_logits(logits, gt_masks, weights=gt_pull_weights)
     gt_pull_loss = gt_pull_bce + gt_pull_dice
 
-    total = teacher_loss + last_level_gt_weight * instance_loss + 0.2 * smooth_loss + gt_pull_weight * gt_pull_loss
+    low_granularity_curve = ((0.55 - granularity_grouped) / 0.55).clamp(0.0, 1.0) * effective_grouped
+    low_granularity_weights = low_granularity_curve.reshape(batch_size * num_variants, 1, 1, 1)
+    base_mimic_bce = weighted_bce_with_logits(logits, base_teacher_probs, low_granularity_weights)
+    base_mimic_dice = dice_loss_from_logits(logits, base_teacher_masks, weights=low_granularity_weights)
+    base_mimic_loss = base_mimic_bce + base_mimic_dice
+
+    base_boundary = boundary_band(base_teacher_masks, edge_kernel_size)
+    base_edge_weights = base_boundary * low_granularity_weights
+    base_edge_pixel_loss = weighted_bce_with_logits(logits, base_teacher_masks, base_edge_weights)
+    pred_boundary = soft_boundary_map(torch.sigmoid(logits), edge_kernel_size)
+    base_edge_shape_loss = dice_loss_from_probs(
+        pred_boundary,
+        base_boundary,
+        weights=low_granularity_weights,
+    )
+    base_edge_loss = base_edge_pixel_loss + edge_shape_weight * base_edge_shape_loss
+
+    high_granularity_curve = ((granularity_grouped - 0.50) / 0.50).clamp(0.0, 1.0) * effective_grouped
+    high_granularity_weights = high_granularity_curve.reshape(batch_size * num_variants, 1, 1, 1)
+    gt_boundary = boundary_band(gt_masks, edge_kernel_size)
+    gt_edge_weights = gt_boundary * high_granularity_weights
+    gt_edge_pixel_loss = weighted_bce_with_logits(logits, gt_masks, gt_edge_weights)
+    gt_edge_shape_loss = dice_loss_from_probs(
+        pred_boundary,
+        gt_boundary,
+        weights=high_granularity_weights,
+    )
+    gt_edge_loss = gt_edge_pixel_loss + edge_shape_weight * gt_edge_shape_loss
+
+    total = (
+        teacher_loss
+        + last_level_gt_weight * instance_loss
+        + 0.2 * smooth_loss
+        + gt_pull_weight * gt_pull_loss
+        + base_mimic_weight * base_mimic_loss
+        + base_edge_weight * base_edge_loss
+        + gt_edge_weight * gt_edge_loss
+    )
     return total, {
         "teacher_loss": float(teacher_loss.detach().cpu()),
         "instance_loss": float(instance_loss.detach().cpu()),
         "smooth_loss": float(smooth_loss.detach().cpu()),
         "gt_pull_loss": float(gt_pull_loss.detach().cpu()),
+        "base_mimic_loss": float(base_mimic_loss.detach().cpu()),
+        "base_edge_loss": float(base_edge_loss.detach().cpu()),
+        "gt_edge_loss": float(gt_edge_loss.detach().cpu()),
+        "base_edge_pixel_loss": float(base_edge_pixel_loss.detach().cpu()),
+        "base_edge_shape_loss": float(base_edge_shape_loss.detach().cpu()),
+        "gt_edge_pixel_loss": float(gt_edge_pixel_loss.detach().cpu()),
+        "gt_edge_shape_loss": float(gt_edge_shape_loss.detach().cpu()),
         "mean_gt_pull_weight": float(gt_pull_curve.mean().detach().cpu()),
+        "mean_low_granularity_weight": float(low_granularity_curve.mean().detach().cpu()),
     }
 
 
@@ -204,14 +311,35 @@ def run_epoch(model, loader, device, optimizer=None, save_vis=False, exp_root=No
         "instance_loss": 0.0,
         "smooth_loss": 0.0,
         "gt_pull_loss": 0.0,
+        "base_mimic_loss": 0.0,
+        "base_edge_loss": 0.0,
+        "gt_edge_loss": 0.0,
+        "base_edge_pixel_loss": 0.0,
+        "base_edge_shape_loss": 0.0,
+        "gt_edge_pixel_loss": 0.0,
+        "gt_edge_shape_loss": 0.0,
         "mean_gt_pull_weight": 0.0,
+        "mean_low_granularity_weight": 0.0,
     }
 
     for batch_index, batch in enumerate(loader):
-        inputs, teacher_probs, teacher_masks, gt_masks, effective_level_mask, granularities, batch_size, num_variants = flatten_variants(batch)
+        (
+            inputs,
+            teacher_probs,
+            teacher_masks,
+            base_teacher_probs,
+            base_teacher_masks,
+            gt_masks,
+            effective_level_mask,
+            granularities,
+            batch_size,
+            num_variants,
+        ) = flatten_variants(batch)
         inputs = inputs.to(device=device, dtype=torch.float32)
         teacher_probs = teacher_probs.to(device=device, dtype=torch.float32)
         teacher_masks = teacher_masks.to(device=device, dtype=torch.float32)
+        base_teacher_probs = base_teacher_probs.to(device=device, dtype=torch.float32)
+        base_teacher_masks = base_teacher_masks.to(device=device, dtype=torch.float32)
         gt_masks = gt_masks.to(device=device, dtype=torch.float32)
 
         with torch.set_grad_enabled(is_train):
@@ -220,6 +348,8 @@ def run_epoch(model, loader, device, optimizer=None, save_vis=False, exp_root=No
                 logits,
                 teacher_probs,
                 teacher_masks,
+                base_teacher_probs,
+                base_teacher_masks,
                 gt_masks,
                 effective_level_mask,
                 granularities,
@@ -229,6 +359,11 @@ def run_epoch(model, loader, device, optimizer=None, save_vis=False, exp_root=No
                 args.gt_pull_power,
                 args.gt_pull_weight,
                 args.last_level_gt_weight,
+                args.base_mimic_weight,
+                args.base_edge_weight,
+                args.gt_edge_weight,
+                args.edge_shape_weight,
+                args.edge_kernel_size,
             )
             if is_train:
                 optimizer.zero_grad()

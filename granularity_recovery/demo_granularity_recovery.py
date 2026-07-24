@@ -70,6 +70,7 @@ def parse_args():
     parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
     parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.02)
     parser.add_argument("--granularity-recovery-checkpoint", type=str, default=None)
+    parser.add_argument("--refine-strength", type=float, default=0.65)
     args = parser.parse_args()
 
     if args.dinov3_repo is None:
@@ -103,6 +104,9 @@ def main():
         max_hole_ratio=args.granularity_max_hole_ratio,
         cluster_tau=0.60,
     )
+    print("Initializing DINOv3 encoder and positional basis...", flush=True)
+    granularity_refiner.warmup()
+    print("DINOv3 initialization complete.", flush=True)
 
     granularity_predictor = None
     if args.granularity_recovery_checkpoint is not None and Path(args.granularity_recovery_checkpoint).exists():
@@ -136,6 +140,7 @@ def main():
         update_image_callback=lambda reset_canvas=False: app_holder["app"]._update_image(reset_canvas=reset_canvas),
         granularity_refiner=granularity_refiner,
         granularity_predictor=granularity_predictor,
+        refine_strength=args.refine_strength,
     )
     app = GranularityRecoveryDemoApp(root, controller, limit_longest_size=args.limit_longest_size)
     app_holder["app"] = app

@@ -5,6 +5,10 @@ simpleclick/
 experiments/
 outputs/
 paper/
+paper_figure_tools/
+tmp/
+tmp_*.html
+tools/
 .vscode/
 .agents/
 1/

@@ -67,6 +67,11 @@ class GranularityRecoveryDataset(Dataset):
             if "recovery_teacher_probs" in blob.files
             else blob["completion_teacher_probs"].astype(np.float32)
         )
+        base_teacher_masks = (
+            blob["base_teacher_masks"].astype(np.float32)
+            if "base_teacher_masks" in blob.files
+            else (base_teacher_probs >= 0.49).astype(np.float32)
+        )
         training_teacher_probs = (
             blob["training_teacher_probs"].astype(np.float32)
             if "training_teacher_probs" in blob.files
@@ -88,6 +93,8 @@ class GranularityRecoveryDataset(Dataset):
         variants = []
         teacher_probs = []
         teacher_masks = []
+        base_probs = []
+        base_masks = []
         gt_masks = []
         for level_index, (granularity, model_granularity, heuristic_mask, base_prob, recovery_prob) in enumerate(
             zip(granularities, model_granularities, heuristic_masks, base_teacher_probs, recovery_teacher_probs)
@@ -107,12 +114,16 @@ class GranularityRecoveryDataset(Dataset):
             variants.append(stacked.astype(np.float32))
             teacher_probs.append(teacher_prob[None, ...].astype(np.float32))
             teacher_masks.append((teacher_prob >= 0.49).astype(np.float32)[None, ...])
+            base_probs.append(base_prob[None, ...].astype(np.float32))
+            base_masks.append(base_teacher_masks[level_index][None, ...].astype(np.float32))
             gt_masks.append(gt_mask[None, ...].astype(np.float32))
 
         return {
             "inputs": torch.from_numpy(np.stack(variants, axis=0)),
             "teacher_probs": torch.from_numpy(np.stack(teacher_probs, axis=0)),
             "teacher_masks": torch.from_numpy(np.stack(teacher_masks, axis=0)),
+            "base_teacher_probs": torch.from_numpy(np.stack(base_probs, axis=0)),
+            "base_teacher_masks": torch.from_numpy(np.stack(base_masks, axis=0)),
             "gt_masks": torch.from_numpy(np.stack(gt_masks, axis=0)),
             "effective_level_mask": torch.from_numpy(effective_level_mask.astype(np.float32)),
             "granularities": torch.from_numpy(granularities.astype(np.float32)),
