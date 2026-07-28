@@ -14,6 +14,9 @@ tmp_*.html
 tools/
 .vscode/
 .agents/
+*.bat
+evaluate/server_runs/
+docs/server_training.md
 1/
 five_dataset_noc_eval/
 part_noc85_eval/
