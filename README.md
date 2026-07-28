@@ -1,11 +1,12 @@
-# SimpleClick DINOv3 Granularity Recovery
+# SGR-Click
 
-This repository contains the current code line for click-grounded semantic
-granularity control built on top of SimpleClick and DINOv3.
+SGR-Click is a click-grounded semantic granularity recovery framework built on
+top of SimpleClick and DINOv3. It provides continuous target-scope control
+through a semantic granularity slider while retaining standard interactive
+segmentation refinement.
 
-The maintained runtime entry is:
-
-- `start_granularity_recovery_gui.bat`
+The maintained runtime entry is
+`granularity_recovery/demo_granularity_recovery.py`.
 
 The current pipeline is:
 
@@ -34,31 +35,44 @@ Detailed directory notes:
 
 ## Quick Start
 
-Launch the GUI:
+Create the environment and install the Python dependencies:
 
-```powershell
-start_granularity_recovery_gui.bat
+```bash
+conda create -n sgr-click python=3.10 -y
+conda activate sgr-click
+pip install -r requirements.txt
 ```
 
-Check the launcher without opening the GUI:
+Clone the official DINOv3 implementation:
 
-```powershell
-start_granularity_recovery_gui.bat --check
+```bash
+git clone https://github.com/facebookresearch/dinov3.git third_party/dinov3
 ```
 
-## Required Local Artifacts
+Place the external checkpoints at the paths listed below, then launch the GUI:
 
-This repository does not include large checkpoints or datasets.
+```bash
+python granularity_recovery/demo_granularity_recovery.py \
+  --checkpoint weights/simpleclick_models/cocolvis_vit_base.pth
+```
 
-Required local files are documented in:
+## Model Weights
 
-- [docs/granularity_recovery_runtime_checklist.md](docs/granularity_recovery_runtime_checklist.md)
+The trained SGR-Click recovery checkpoint is included in this repository:
 
-That checklist records:
+- `experiments/granularity_recovery/best.pth`
+- SHA-256: `781cd9bf6cba3b6e2f37d4567d76f604baf71784d73992036ff539eaa91f1e9c`
 
-- which checkpoints must remain on disk
-- which environment variables can override default paths
-- where the local DINOv3 repository is expected
+The two large pretrained backbones are distributed by their original authors
+and are not duplicated in this repository:
+
+| Component | Expected local path | Official source |
+| --- | --- | --- |
+| SimpleClick ViT-B | `weights/simpleclick_models/cocolvis_vit_base.pth` | [SimpleClick model weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y?usp=sharing) |
+| DINOv3 ViT-L/16 | `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` | [Official DINOv3 repository](https://github.com/facebookresearch/dinov3) |
+
+Alternative locations can be supplied through `DINOV3_REPO`,
+`DINOV3_WEIGHTS`, and `GRANULARITY_RECOVERY_CHECKPOINT`.
 
 ## Training and Data Generation
 
@@ -71,7 +85,6 @@ The main recovery training code lives in:
 Supporting notes:
 
 - [docs/granularity_refine_training_plan.md](docs/granularity_refine_training_plan.md)
-- [docs/server_training.md](docs/server_training.md)
 
 ## Evaluation
 
@@ -90,8 +103,9 @@ See:
 
 - [evaluate/README.md](evaluate/README.md)
 
-## Backup of Older Code Line
+## Upstream and Project History
 
-An older backup repository remains available at:
+SGR-Click is developed from SimpleClick. The original upstream implementation
+is available at:
 
-- [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)
+- [uncbiag/SimpleClick](https://github.com/uncbiag/SimpleClick)

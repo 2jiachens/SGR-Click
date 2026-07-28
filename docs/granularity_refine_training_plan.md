@@ -80,7 +80,7 @@ This keeps the model close to:
 ## Preview dataset generation
 
 ```powershell
-conda run -n simpleclick-dinov3 python granularity_recovery\build_granularity_recovery_dataset.py `
+conda run -n sgr-click python granularity_recovery\build_granularity_recovery_dataset.py `
   --sbd-root D:\数据集\SBD\benchmark_RELEASE\dataset `
   --output-root D:\数据集\SBD_granularity_recovery_preview `
   --max-images-per-split 2 `
@@ -91,7 +91,7 @@ conda run -n simpleclick-dinov3 python granularity_recovery\build_granularity_re
 ## Full dataset generation
 
 ```powershell
-conda run -n simpleclick-dinov3 python granularity_recovery\build_granularity_recovery_dataset.py `
+conda run -n sgr-click python granularity_recovery\build_granularity_recovery_dataset.py `
   --sbd-root D:\数据集\SBD\benchmark_RELEASE\dataset `
   --output-root D:\数据集\SBD_granularity_recovery_full `
   --log-every-images 25 `
@@ -108,7 +108,7 @@ Notes:
 Do not start yet unless the processed dataset looks correct.
 
 ```powershell
-conda run -n simpleclick-dinov3 python granularity_recovery\train_granularity_recovery.py `
+conda run -n sgr-click python granularity_recovery\train_granularity_recovery.py `
   --dataset-root D:\数据集\SBD_granularity_recovery_full `
   --exp-root D:\数据集\experiments\granularity_recovery `
   --epochs 20 `

@@ -1,13 +1,6 @@
 # Granularity Recovery Runtime Checklist
 
-This file records the local artifacts required to run the current maintained GUI:
-
-- `start_granularity_recovery_gui.bat`
-
-Older local experiment lines were removed from this repository. A backup of the
-older code line remains available at:
-
-- [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)
+This file records the artifacts required to run the maintained SGR-Click GUI.
 
 ## 0. Verified Local Snapshot
 
@@ -25,7 +18,8 @@ The launcher check currently resolves to:
 
 ## 1. Local Files That Must Stay On Disk
 
-These files are required locally and are intentionally not pushed to git:
+The two backbone checkpoints are required locally and intentionally not pushed
+to Git. The SGR-Click recovery checkpoint is included in the repository.
 
 ### Base Interactive Segmentation Checkpoint
 
@@ -75,7 +69,6 @@ Purpose:
 
 You can override the default runtime paths with:
 
-- `SIMPLECLICK_DINOV3_ENV`
 - `DINOV3_REPO`
 - `DINOV3_WEIGHTS`
 - `GRANULARITY_RECOVERY_CHECKPOINT`
@@ -84,23 +77,9 @@ You can override the default runtime paths with:
 
 The current maintained runtime path is:
 
-- launcher: `start_granularity_recovery_gui.bat`
 - GUI entry: `granularity_recovery/demo_granularity_recovery.py`
 - GUI logic: `granularity_recovery/gui_app.py`
 - controller: `granularity_recovery/gui_controller.py`
 - DINO hierarchy builder: `isegm/inference/dino_granularity.py`
 - recovery inference: `granularity_recovery/inference.py`
 - model definition: `granularity_recovery/model.py`
-
-## 4. If You Need the Older Version Again
-
-Use the GitHub backup instead of trying to recover deleted local files:
-
-- old launcher: `start_simpleclick_gui.bat`
-- old no-refine launcher: `start_simpleclick_gui_no_refine_vitl.bat`
-- old dataset builder: `scripts/build_sbd_granularity_refine_dataset.py`
-- old trainer: `train_granularity_refine.py`
-
-Backup repository:
-
-- [2jiachens/simpleclick-dinov3](https://github.com/2jiachens/simpleclick-dinov3)

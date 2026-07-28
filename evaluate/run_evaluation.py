@@ -48,6 +48,16 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Evaluate the SimpleClick + DINOv3 hierarchy baseline without the learned recovery module.",
     )
+    parser.add_argument(
+        "--ablation-mode",
+        choices=["full", "frozen_hierarchy", "recovery_only", "simple_prior"],
+        default="full",
+        help=(
+            "Ablation path: full model; frozen DINO hierarchy without the learned "
+            "recovery network; learned recovery without self-guided boundary "
+            "projection; or the single-granularity SimpleClick prior."
+        ),
+    )
     parser.add_argument("--output-dir", default="outputs/server_slider_eval")
     parser.add_argument("--save-json", default=None)
     parser.add_argument("--datasets", default=",".join(STANDARD_DATASETS))
@@ -63,6 +73,8 @@ def parse_args() -> argparse.Namespace:
                         help="Optional JSON file containing an explicit ordered PascalPart sample list.")
     parser.add_argument("--part-name", default="head")
     parser.add_argument("--sample-limit", type=int, default=0, help="Debug cap per target; 0 means no cap.")
+    parser.add_argument("--sample-shard-id", type=int, default=0)
+    parser.add_argument("--num-sample-shards", type=int, default=1)
     parser.add_argument("--candidate-offset", type=int, default=0,
                         help="PascalPart-only: skip the first N candidate instances after sorting.")
     parser.add_argument("--skip-sample-ids", default="",
@@ -85,6 +97,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
     parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.02)
     parser.add_argument("--refine-strength", type=float, default=0.65)
+    parser.add_argument(
+        "--gui-slider-protocol",
+        action="store_true",
+        default=False,
+        help=(
+            "Create the standard first click at slider 0.50, then move the "
+            "slider to the requested value before measuring the first-click mask."
+        ),
+    )
     parser.add_argument("--ess10", action="store_true", default=False,
                         help="Evaluate at most ten distinct mask states selected without GT.")
     parser.add_argument("--ess10-scan-step", type=float, default=0.01)
@@ -93,6 +114,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--resume", action="store_true", default=True)
     args = parser.parse_args()
 
+    if args.num_sample_shards < 1:
+        parser.error("--num-sample-shards must be >= 1")
+    if not 0 <= args.sample_shard_id < args.num_sample_shards:
+        parser.error("--sample-shard-id must satisfy 0 <= id < num shards")
+    if args.disable_granularity_recovery:
+        if args.ablation_mode not in {"full", "frozen_hierarchy"}:
+            parser.error(
+                "--disable-granularity-recovery conflicts with "
+                f"--ablation-mode {args.ablation_mode}"
+            )
+        args.ablation_mode = "frozen_hierarchy"
     if args.config_path is None:
         args.config_path = "evaluate/config_server_eval.yml" if args.task == "slider" else "config.yml"
     if args.dinov3_repo is None:
@@ -143,6 +175,9 @@ def read_image(path: Path) -> np.ndarray:
 
 
 def build_runtime_components(args):
+    if args.ablation_mode == "simple_prior":
+        return None, None
+
     granularity_refiner = DinoGranularityRefiner(
         repo_path=args.dinov3_repo,
         weights_path=args.dinov3_weights,
@@ -154,7 +189,7 @@ def build_runtime_components(args):
         cluster_tau=0.60,
     )
     granularity_predictor = None
-    if not args.disable_granularity_recovery:
+    if args.ablation_mode in {"full", "recovery_only"}:
         granularity_predictor = GranularityRecoveryInference(
             checkpoint_path=args.granularity_recovery_checkpoint,
             device=args.device,
@@ -186,6 +221,7 @@ def build_controller(args, simpleclick_model, granularity_refiner, granularity_p
         granularity_predictor=granularity_predictor,
         prob_thresh=args.pred_thresh,
         refine_strength=args.refine_strength,
+        enable_boundary_projection=args.ablation_mode != "recovery_only",
     )
 
 
@@ -203,9 +239,10 @@ def evaluate_fixed_granularity(
     granularity: float,
     max_clicks: int,
     iou_threshold: float,
+    gui_slider_protocol: bool = False,
 ) -> Dict[str, object]:
     controller.set_image(image)
-    controller._requested_granularity = float(granularity)
+    controller._requested_granularity = 0.50 if gui_slider_protocol else float(granularity)
 
     clicker = Clicker(gt_mask=gt_mask)
     pred_mask = np.zeros_like(gt_mask, dtype=bool)
@@ -218,6 +255,8 @@ def evaluate_fixed_granularity(
         y, x = current_click.coords
 
         controller.add_click(int(x), int(y), bool(current_click.is_positive))
+        if click_index == 0 and gui_slider_protocol:
+            controller.set_granularity(float(granularity))
 
         current_prob = controller.current_object_prob
         if current_prob is None:
@@ -329,6 +368,7 @@ def evaluate_ess10_sample(
             granularity=granularity,
             max_clicks=args.max_clicks,
             iou_threshold=stop_threshold,
+            gui_slider_protocol=args.gui_slider_protocol,
         )
         for granularity in discovery["selected_granularities"]
     ]
@@ -409,6 +449,12 @@ def filter_skip_samples(target_name: str, samples: List[Dict[str, object]], skip
             continue
         kept.append(sample)
     return kept
+
+
+def select_sample_shard(samples: List[Dict[str, object]], shard_id: int, num_shards: int) -> List[Dict[str, object]]:
+    if num_shards == 1:
+        return samples
+    return samples[shard_id::num_shards]
 
 
 def evaluation_sample_key(sample: Dict[str, object]) -> str:
@@ -594,6 +640,7 @@ def evaluate_target_ess10(
         return
 
     samples = list(sample_iter)
+    samples = select_sample_shard(samples, args.sample_shard_id, args.num_sample_shards)
     samples = filter_skip_samples(target_name, samples, load_skip_samples(args.skip_samples_file))
     if args.sample_limit > 0:
         samples = samples[: args.sample_limit]
@@ -699,6 +746,7 @@ def evaluate_target(
         return
 
     samples = list(sample_iter)
+    samples = select_sample_shard(samples, args.sample_shard_id, args.num_sample_shards)
     samples = filter_skip_samples(target_name, samples, load_skip_samples(args.skip_samples_file))
     if args.sample_limit > 0:
         samples = samples[: args.sample_limit]
@@ -754,6 +802,7 @@ def evaluate_target(
                     granularity=slider,
                     max_clicks=args.max_clicks,
                     iou_threshold=stop_iou_threshold,
+                    gui_slider_protocol=args.gui_slider_protocol,
                 )
                 record = {k: v for k, v in sample.items() if k not in {"image", "gt_mask"}}
                 record.update(result)
@@ -787,7 +836,15 @@ def evaluate_target(
                 torch.cuda.empty_cache()
 
         summary = summarize(records, noc_thresholds, args.max_clicks)
-        summary.update({"target": target_name, "slider": slider, "elapsed_sec": time.time() - start, "skipped": len(skipped)})
+        summary.update({
+            "target": target_name,
+            "slider": slider,
+            "ablation_mode": args.ablation_mode,
+            "sample_shard_id": args.sample_shard_id,
+            "num_sample_shards": args.num_sample_shards,
+            "elapsed_sec": time.time() - start,
+            "skipped": len(skipped),
+        })
         write_json_atomic(
             result_path,
             {"summary": summary, "samples": records, "skipped": skipped},

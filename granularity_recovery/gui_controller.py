@@ -22,6 +22,7 @@ class GranularityRecoveryController:
         granularity_predictor=None,
         prob_thresh=0.5,
         refine_strength=0.65,
+        enable_boundary_projection=True,
     ):
         self.net = net
         self.prob_thresh = prob_thresh
@@ -50,6 +51,7 @@ class GranularityRecoveryController:
         self.granularity_refiner = granularity_refiner
         self.granularity_predictor = granularity_predictor
         self.refine_strength = float(np.clip(refine_strength, 0.0, 1.25))
+        self.enable_boundary_projection = bool(enable_boundary_projection)
         self.reset_predictor()
 
     def set_image(self, image):
@@ -646,10 +648,11 @@ class GranularityRecoveryController:
             np.maximum(constrained, self.prob_thresh + 0.03),
             constrained * 0.35,
         ).astype(np.float32)
-        result = self._project_semantic_stage_with_simpleclick(
-            result,
-            display_granularity,
-        )
+        if self.enable_boundary_projection:
+            result = self._project_semantic_stage_with_simpleclick(
+                result,
+                display_granularity,
+            )
         self._refined_semantic_stage_cache[stage_key] = (
             baseline_binary.copy(),
             result.copy(),

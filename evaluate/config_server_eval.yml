@@ -2,7 +2,7 @@ INTERACTIVE_MODELS_PATH: "./weights"
 EXPS_PATH: "./experiments"
 
 # Expected server layout:
-#   /root/code/simpleclick+dinov3
+#   /root/code/SGR-Click
 #   /root/autodl-tmp/GrabCut
 #   /root/autodl-tmp/Berkeley
 #   /root/autodl-tmp/DAVIS345

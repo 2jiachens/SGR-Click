@@ -2,7 +2,10 @@
 *.pth
 results/
 simpleclick/
-experiments/
+experiments/*
+!experiments/granularity_recovery/
+experiments/granularity_recovery/*
+!experiments/granularity_recovery/best.pth
 outputs/
 paper/
 paper_figure_tools/
