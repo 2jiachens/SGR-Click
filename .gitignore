@@ -7,9 +7,12 @@ experiments/*
 experiments/granularity_recovery/*
 !experiments/granularity_recovery/best.pth
 outputs/
+datasets/
+weights/
 paper/
 paper_figure_tools/
 tmp/
+.codex_tmp/
 tmp_*.html
 tools/
 .vscode/

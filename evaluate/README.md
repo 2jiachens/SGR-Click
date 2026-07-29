@@ -1,104 +1,85 @@
-# Evaluation
+# Paper Evaluation
 
-This directory stores the maintained evaluation protocol for the paper-facing
-granularity recovery pipeline. It contains only code, rules, and fixed sample
-lists. Datasets, checkpoints, and generated results are expected to live
-outside the repository.
+This directory contains the maintained code and fixed sample lists required to
+reproduce the experiments reported in the paper. Datasets, checkpoints, and
+generated outputs are stored outside this directory.
 
-## Metrics
+## Experiments
 
-All targets are evaluated at multiple slider values unless a specific protocol
-overrides the grid.
+### Standard ten-point evaluation
 
-Reported metrics use the same per-instance aggregation rule adopted by the
-project:
-
-- `NoC@85`: for each object, take the minimum click count that reaches IoU
-  `0.85` over all tested slider values, then average across objects.
-- `NoC@90`: identical aggregation at IoU `0.90`.
-- `IoU@1`: for each object, record the best first-click IoU over all tested
-  slider values, then average across objects.
-
-The default click cap is `20`.
-
-## ESS-10 Protocol
-
-`--ess10` enables a separate effective-semantic-state oracle for staircase
-outputs. It scans the DINO hierarchy over the semantic slider range
-`[0.5, 1.0]`, records the first display value of every distinct semantic stage,
-and retains at most ten stages with the largest hierarchy-mask transitions.
-The 0.5 root state and a distinct endpoint stage are retained. If fewer than
-ten semantic stages exist, only the unused slots are filled uniformly below
-0.5. Candidate construction does not inspect GT; GT is used only for the
-standard first click and final metric computation.
-
-ESS-10 writes a resumable `ess10.json` for each target and must use a separate
-output directory:
+`run_evaluation.py` evaluates SGR-Click at the ten slider values
+`{0.1, 0.2, ..., 1.0}` and reports NoC@85, NoC@90, and IoU@1. It supports the
+five whole-object datasets, PascalPart targets, and PartImageNet targets used
+by the paper.
 
 ```bash
-python -u evaluate/run_evaluation.py \
-  --task slider \
-  --config-path evaluate/config_server_eval.yml \
+python evaluate/run_evaluation.py \
+  --config-path config.yml \
+  --protocol standard_ten \
   --checkpoint weights/simpleclick_models/cocolvis_vit_base.pth \
   --granularity-recovery-checkpoint experiments/granularity_recovery/best.pth \
-  --ess10 --ess10-scan-step 0.01 --ess10-max-states 10 \
-  --output-dir /root/autodl-tmp/eval_outputs/granularity_recovery_main_ess10_vitb
+  --gui-slider-protocol \
+  --output-dir outputs/standard_ten_vitb
 ```
 
-Keep the fixed `{0.1, ..., 1.0}` protocol for direct comparison with UniGraCo.
-ESS-10 is a staircase-aware supplementary protocol unless the same state
-selection rule is also applied to the competing method.
+Use `cocolvis_vit_large.pth` for the ViT-L run. `merge_slider_metrics.py`
+merges non-overlapping sample or slider shards without changing the
+per-instance best-slider aggregation.
 
-## Supported Targets
+### Hierarchical semantic evaluation
 
-Standard datasets:
+The paper evaluates complete slider trajectories on fixed 1,000-sample subsets
+of SPIN, PascalPart, and PartImageNet. Both methods scan `0.00-1.00` at a
+`0.05` interval. Metrics are LR@60, HSR@60, LR@70, HSR@70, and mBIoU; all are
+higher-is-better.
 
-- `GrabCut`, `Berkeley`, `SBD`, `DAVIS`, `PascalVOC`
-- Report `NoC@85`, `NoC@90`, and `IoU@1`.
-
-PascalPart:
-
-- `head`, `wheel`, `torso`, `all`
-- Category subsets follow fixed sample keys.
-- Part labels use the intended semantic target rather than finer descendants.
-
-PartImageNet:
-
-- `head`, `body`, `foot`, `all`
-- `all` uses a fixed random-1000 sample list.
-
-## Main Files
-
-- `run_evaluation.py`: main evaluation entry for the current repository.
-- `merge_slider_metrics.py`: merges partial runs and applies the best-slider
-  aggregation rule.
-- `config_server_eval.yml`: dataset and checkpoint paths for server-side runs.
-- `protocols/`: predefined slider schedules and dataset protocols.
-- `sample_keys/`: fixed sample subsets for reproducible part evaluation.
-- `server_runs/`: command templates used for split server execution.
-
-## Split Evaluation Notes
-
-The repository keeps the previous multi-server split command templates for
-large-scale runs. If a dataset is evaluated across several slider shards, merge
-the partial outputs with `merge_slider_metrics.py` after all jobs finish.
-
-Example:
+SGR-Click:
 
 ```bash
-python evaluate/merge_slider_metrics.py \
-  outputs/server_slider_eval_vitl_part_body/PartImageNet__body \
-  outputs/server_slider_eval_vitl_part_body_g080/PartImageNet__body \
-  outputs/server_slider_eval_vitl_part_body_g090/PartImageNet__body \
-  outputs/server_slider_eval_vitl_part_body_g100/PartImageNet__body
+python evaluate/run_semantic_coverage.py \
+  --dataset SPIN \
+  --backbone ViT-B \
+  --output-dir outputs/hierarchical_sgr_vitb_spin
 ```
 
-## External Artifacts
+UniGraCo:
 
-Before running evaluation, prepare:
+Clone the [official UniGraCo repository](https://github.com/Zhao-Yian/UniGraCo)
+to `third_party/UniGraCo` and download its official SimpleClick and LoRA
+checkpoints before running the comparison:
 
-- base interactive-segmentation checkpoints under `weights/simpleclick_models/`
-- the trained recovery checkpoint under `experiments/granularity_recovery/`
-- dataset roots referenced by `config_server_eval.yml`
-- optional fixed evaluation subsets such as the PartImageNet export used in the
-  paper experiments
+```bash
+python evaluate/run_unigraco_semantic_coverage.py \
+  --dataset SPIN \
+  --backbone ViT-B \
+  --official-repo third_party/UniGraCo \
+  --checkpoint weights/simpleclick_models/sbd_vit_base.pth \
+  --lora-checkpoint weights/unigraco/GraCo_base_lora.pth \
+  --output-dir outputs/hierarchical_unigraco_vitb_spin
+```
+
+Use `--sample-shard-id` and `--num-sample-shards` for deterministic,
+non-overlapping distributed evaluation.
+
+### Module ablations
+
+`run_evaluation.py --ablation-mode` supports the paper's `simple_prior`,
+`frozen_hierarchy`, `recovery_only`, and `full` settings. Select
+`--protocol ablation_refinement` for the fixed `0.50` refinement experiment or
+`--protocol ablation_expansion` for the fixed `1.00` expansion experiment.
+
+## Maintained Files
+
+- `run_evaluation.py`: standard ten-point evaluation and module ablations.
+- `merge_slider_metrics.py`: deterministic merge and metric aggregation.
+- `run_semantic_coverage.py`: SGR-Click hierarchical semantic evaluation.
+- `run_unigraco_semantic_coverage.py`: UniGraCo hierarchical semantic evaluation.
+- `semantic_coverage.py`: LR, HSR, and mBIoU definitions and aggregation.
+- `semantic_coverage_data.py`: SPIN, PascalPart, and PartImageNet hierarchy loaders.
+- `paper_samples.json`: all fixed paper sample lists and their metadata.
+- `paper_protocols.json`: the standard ten-point and two ablation protocols.
+- `../config.yml`: portable dataset and checkpoint path configuration.
+
+Generated results, caches, server queue scripts, deprecated protocols, and
+unused comparison methods are intentionally excluded.

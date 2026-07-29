@@ -19,19 +19,11 @@ The current pipeline is:
 - `granularity_recovery/`
   runtime GUI, dataset builder, training code, inference wrapper, and model
 - `evaluate/`
-  evaluation entrypoints, slider protocols, fixed sample lists, and server run templates
+  paper evaluation entrypoints with consolidated protocols and fixed sample lists
 - `isegm/`
   SimpleClick-based interaction, model, and utility code
 - `models/`
   model config files used by the interactive backbone
-- `docs/`
-  runtime checklist and training notes
-- `paper/`
-  local paper drafts and figures
-
-Detailed directory notes:
-
-- [docs/repository_layout.md](docs/repository_layout.md)
 
 ## Quick Start
 
@@ -56,6 +48,9 @@ python granularity_recovery/demo_granularity_recovery.py \
   --checkpoint weights/simpleclick_models/cocolvis_vit_base.pth
 ```
 
+Edit `config.yml` so its dataset paths point to your local copies before
+running the evaluation commands.
+
 ## Model Weights
 
 The trained SGR-Click recovery checkpoint is included in this repository:
@@ -69,6 +64,7 @@ and are not duplicated in this repository:
 | Component | Expected local path | Official source |
 | --- | --- | --- |
 | SimpleClick ViT-B | `weights/simpleclick_models/cocolvis_vit_base.pth` | [SimpleClick model weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y?usp=sharing) |
+| SimpleClick ViT-L | `weights/simpleclick_models/cocolvis_vit_large.pth` | [SimpleClick model weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y?usp=sharing) |
 | DINOv3 ViT-L/16 | `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` | [Official DINOv3 repository](https://github.com/facebookresearch/dinov3) |
 
 Alternative locations can be supplied through `DINOV3_REPO`,
@@ -82,9 +78,8 @@ The main recovery training code lives in:
 - [granularity_recovery/train_granularity_recovery.py](granularity_recovery/train_granularity_recovery.py)
 - [granularity_recovery/dataset.py](granularity_recovery/dataset.py)
 
-Supporting notes:
-
-- [docs/granularity_refine_training_plan.md](docs/granularity_refine_training_plan.md)
+See [granularity_recovery/README.md](granularity_recovery/README.md) for the
+maintained runtime and training components.
 
 ## Evaluation
 
@@ -94,10 +89,10 @@ The maintained evaluation entry is:
 
 This directory also contains:
 
-- fixed sample lists
-- slider protocols
+- consolidated fixed paper sample lists
+- the standard ten-point and ablation protocols
 - result-merging scripts
-- server command templates
+- SGR-Click and UniGraCo hierarchical semantic evaluation
 
 See:
 
