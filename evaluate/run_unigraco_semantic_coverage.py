@@ -19,6 +19,8 @@ from evaluate.semantic_coverage import (
     summarize_hierarchical_records,
 )
 from evaluate.semantic_coverage_data import SemanticHierarchyDataset
+from evaluate.semantic_display_protocol import DISPLAY_MODES, apply_display_protocol
+from evaluate.reproducibility import seed_everything, write_run_manifest
 
 
 def parse_args() -> argparse.Namespace:
@@ -29,6 +31,12 @@ def parse_args() -> argparse.Namespace:
         required=True,
     )
     parser.add_argument("--backbone", choices=["ViT-B", "ViT-L"], required=True)
+    parser.add_argument(
+        "--category",
+        choices=["all", "head", "torso", "wheel", "body", "foot"],
+        default="all",
+        help="Category-aligned subset. SPIN supports only all.",
+    )
     parser.add_argument("--official-repo", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--lora-checkpoint", type=Path, required=True)
@@ -56,10 +64,27 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sample-shard-id", type=int, default=0)
     parser.add_argument("--num-sample-shards", type=int, default=1)
     parser.add_argument("--sample-limit", type=int, default=0)
-    parser.add_argument("--scan-step", type=float, default=0.05)
+    parser.add_argument("--scan-step", type=float, default=0.1)
+    parser.add_argument(
+        "--display-mode",
+        choices=DISPLAY_MODES,
+        default="raw",
+        help=(
+            "raw: score each independently reset control; ascending_union: apply "
+            "the shared pixelwise cumulative-union display cache."
+        ),
+    )
     parser.add_argument("--recall-thresholds", default="0.60,0.70")
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--seed", type=int, default=0)
     args = parser.parse_args()
+    allowed_categories = {
+        "PascalPart": {"all", "head", "torso", "wheel"},
+        "PartImageNet": {"all", "head", "body", "foot"},
+        "SPIN": {"all"},
+    }
+    if args.category not in allowed_categories[args.dataset]:
+        parser.error(f"category {args.category!r} is invalid for {args.dataset}")
     args.recall_thresholds = tuple(
         float(value) for value in args.recall_thresholds.split(",") if value.strip()
     )
@@ -136,12 +161,24 @@ def generate_unigraco_candidates(
 
 def main() -> None:
     args = parse_args()
+    seed_everything(args.seed)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     partial_path = args.output_dir / "semantic_coverage.partial.json"
     result_path = args.output_dir / "semantic_coverage.json"
     if result_path.exists():
         print(f"[already complete] {result_path}", flush=True)
         return
+
+    write_run_manifest(
+        args.output_dir,
+        args,
+        REPO_ROOT,
+        artifacts=[
+            REPO_ROOT / "evaluate" / "paper_samples.json",
+            args.checkpoint,
+            args.lora_checkpoint,
+        ],
+    )
 
     partial = (
         json.loads(partial_path.read_text(encoding="utf-8"))
@@ -172,6 +209,7 @@ def main() -> None:
                     targets[0],
                     scan_step=args.scan_step,
                 )
+                predictions = apply_display_protocol(predictions, args.display_mode)
                 metrics = hierarchical_semantic_metrics(
                     predictions,
                     targets,
@@ -220,7 +258,14 @@ def main() -> None:
             "model": "UniGraCo",
             "backbone": args.backbone,
             "dataset": args.dataset,
+            "category": args.category,
             "official_repo": str(args.official_repo),
+            "display_mode": args.display_mode,
+            "shared_display_rule": (
+                "none"
+                if args.display_mode == "raw"
+                else "ascending pixelwise cumulative union"
+            ),
             "semantic_targets": (
                 ["subpart", "part", "whole_object"]
                 if args.dataset == "SPIN"

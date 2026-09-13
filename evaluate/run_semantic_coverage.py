@@ -21,11 +21,13 @@ from evaluate.run_evaluation import (
     resolve_default_dinov3_repo,
     resolve_default_dinov3_weights,
 )
+from evaluate.reproducibility import seed_everything, write_run_manifest
 from evaluate.semantic_coverage import (
     hierarchical_semantic_metrics,
     summarize_hierarchical_records,
 )
 from evaluate.semantic_coverage_data import SemanticHierarchyDataset
+from evaluate.semantic_display_protocol import DISPLAY_MODES, apply_display_protocol
 from isegm.inference import utils
 from isegm.inference.clicker import Clicker
 from isegm.utils import exp
@@ -39,6 +41,39 @@ def parse_args() -> argparse.Namespace:
         required=True,
     )
     parser.add_argument("--backbone", choices=["ViT-B", "ViT-L"], required=True)
+    parser.add_argument(
+        "--category",
+        choices=["all", "head", "torso", "wheel", "body", "foot"],
+        default="all",
+        help="Category-aligned subset. SPIN supports only all.",
+    )
+    parser.add_argument(
+        "--ablation-mode",
+        choices=[
+            "full",
+            "frozen_hierarchy",
+            "external_hierarchy",
+            "soft_no_evidence_filter",
+            "direct_dino_fusion",
+            "soft_no_connected_support",
+            "soft_no_endpoint",
+            "soft_no_endpoint_no_projection",
+        ],
+        default="full",
+        help=(
+            "Training-free component ablation: complete model or the frozen "
+            "hierarchy without boundary projection."
+        ),
+    )
+    parser.add_argument(
+        "--traversal-order",
+        choices=["ascending", "descending"],
+        default="ascending",
+        help=(
+            "Order in which slider controls are visited. ascending is the paper "
+            "protocol; descending tests order invariance."
+        ),
+    )
     parser.add_argument("--config-path", default="config.yml")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument(
@@ -46,7 +81,6 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="SimpleClick checkpoint. Defaults to the matching cocolvis ViT-B/ViT-L checkpoint.",
     )
-    parser.add_argument("--granularity-recovery-checkpoint", default="experiments/granularity_recovery/best.pth")
     parser.add_argument(
         "--pascalpart-annotations-dir",
         type=Path,
@@ -70,11 +104,40 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sample-shard-id", type=int, default=0)
     parser.add_argument("--num-sample-shards", type=int, default=1)
     parser.add_argument("--sample-limit", type=int, default=0)
-    parser.add_argument("--scan-step", type=float, default=0.05)
+    parser.add_argument("--scan-step", type=float, default=0.1)
+    parser.add_argument(
+        "--display-mode",
+        choices=DISPLAY_MODES,
+        default="raw",
+        help=(
+            "raw: score each queried control without cross-control accumulation; "
+            "ascending_union: apply the shared pixelwise cumulative-union display "
+            "cache after restoring controls to ascending order."
+        ),
+    )
     parser.add_argument("--recall-thresholds", default="0.60,0.70")
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument(
+        "--positional-debias-mode",
+        choices=["none", "zero", "random"],
+        default="zero",
+    )
+    parser.add_argument("--positional-debias-seed", type=int, default=0)
+    parser.add_argument("--cluster-tau", type=float, default=0.60)
+    parser.add_argument("--expansion-evidence-floor", type=float, default=0.15)
+    parser.add_argument("--soft-logit-gain", type=float, default=4.5)
+    parser.add_argument("--prototype-radius", type=float, default=2.5)
+    parser.add_argument("--similarity-temperature", type=float, default=0.08)
     parser.add_argument("--refresh-every", type=int, default=8)
     args = parser.parse_args()
+    allowed_categories = {
+        "PascalPart": {"all", "head", "torso", "wheel"},
+        "PartImageNet": {"all", "head", "body", "foot"},
+        "SPIN": {"all"},
+    }
+    if args.category not in allowed_categories[args.dataset]:
+        parser.error(f"category {args.category!r} is invalid for {args.dataset}")
     if args.num_sample_shards < 1:
         parser.error("--num-sample-shards must be positive")
     if not 0 <= args.sample_shard_id < args.num_sample_shards:
@@ -101,19 +164,22 @@ def write_json_atomic(path: Path, payload: object) -> None:
 
 def build_sgr_runtime(args: argparse.Namespace):
     runtime_args = SimpleNamespace(
-        ablation_mode="full",
+        ablation_mode=args.ablation_mode,
         checkpoint=args.checkpoint,
-        granularity_recovery_checkpoint=args.granularity_recovery_checkpoint,
         device=torch.device(args.device),
         dinov3_repo=resolve_default_dinov3_repo(),
         dinov3_model="dinov3_vitl16",
         dinov3_weights=resolve_default_dinov3_weights("dinov3_vitl16"),
         dinov3_image_size=768,
-        granularity_candidate_threshold=0.50,
-        granularity_max_hole_ratio=0.02,
         pred_thresh=0.5,
         limit_longest_size=800,
-        refine_strength=0.65,
+        positional_debias_mode=args.positional_debias_mode,
+        positional_debias_seed=args.positional_debias_seed,
+        cluster_tau=args.cluster_tau,
+        expansion_evidence_floor=args.expansion_evidence_floor,
+        soft_logit_gain=args.soft_logit_gain,
+        prototype_radius=args.prototype_radius,
+        similarity_temperature=args.similarity_temperature,
     )
     cfg = exp.load_config_file(args.config_path, return_edict=True)
     checkpoint_path = utils.find_checkpoint(cfg.INTERACTIVE_MODELS_PATH, runtime_args.checkpoint)
@@ -121,10 +187,12 @@ def build_sgr_runtime(args: argparse.Namespace):
         checkpoint_path,
         runtime_args.device,
         eval_ritm=False,
-        cpu_dist_maps=True,
+        # Avoid the legacy Cython propagation queue, which can overflow for
+        # multi-click trajectories and corrupt the process heap.
+        cpu_dist_maps=False,
     )
-    refiner, recovery = build_runtime_components(runtime_args)
-    controller = build_controller(runtime_args, model, refiner, recovery)
+    refiner = build_runtime_components(runtime_args)
+    controller = build_controller(runtime_args, model, refiner)
     return controller
 
 
@@ -133,6 +201,7 @@ def generate_sgr_candidates(
     image: np.ndarray,
     click_target: np.ndarray,
     scan_step: float,
+    traversal_order: str = "ascending",
 ):
     controller.set_image(image)
     clicker = Clicker(gt_mask=np.asarray(click_target, dtype=np.int32))
@@ -143,25 +212,50 @@ def generate_sgr_candidates(
     controller.add_click(int(x), int(y), bool(first_click.is_positive))
 
     count = int(round(1.0 / scan_step))
-    controls = np.linspace(0.0, 1.0, count + 1, dtype=np.float64)
-    masks = []
-    for control in controls:
+    ascending_controls = np.linspace(0.0, 1.0, count + 1, dtype=np.float64)
+    if traversal_order == "descending":
+        traversal_controls = ascending_controls[::-1].copy()
+    else:
+        traversal_controls = ascending_controls.copy()
+
+    traversal_masks = []
+    for control in traversal_controls:
         controller.set_granularity(float(control))
         probability = controller.current_object_prob
-        masks.append((probability > controller.prob_thresh).copy())
+        traversal_masks.append((probability > controller.prob_thresh).copy())
+
+    # Reindex masks to ascending order so that downstream metric code always
+    # sees the same layout regardless of traversal direction.
+    if traversal_order == "descending":
+        masks = list(reversed(traversal_masks))
+    else:
+        masks = traversal_masks
 
     controller.reset_last_object(update_image=False)
-    return masks, controls.astype(float).tolist(), (int(x), int(y))
+    return masks, ascending_controls.astype(float).tolist(), (int(x), int(y))
 
 
 def main() -> None:
     args = parse_args()
+    seed_everything(args.seed)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     partial_path = args.output_dir / "semantic_coverage.partial.json"
     result_path = args.output_dir / "semantic_coverage.json"
     if result_path.exists():
         print(f"[already complete] {result_path}", flush=True)
         return
+
+    write_run_manifest(
+        args.output_dir,
+        args,
+        REPO_ROOT,
+        artifacts=[
+            args.config_path,
+            REPO_ROOT / "evaluate" / "paper_samples.json",
+            args.checkpoint,
+            resolve_default_dinov3_weights("dinov3_vitl16"),
+        ],
+    )
 
     if partial_path.exists():
         partial = json.loads(partial_path.read_text(encoding="utf-8"))
@@ -192,7 +286,9 @@ def main() -> None:
                     image,
                     targets[0],
                     scan_step=args.scan_step,
+                    traversal_order=args.traversal_order,
                 )
+                predictions = apply_display_protocol(predictions, args.display_mode)
                 metrics = hierarchical_semantic_metrics(
                     predictions,
                     targets,
@@ -231,8 +327,17 @@ def main() -> None:
         "protocol": {
             "name": "Annotated Semantic-Level Coverage",
             "model": "SGR-Click",
+            "ablation_mode": args.ablation_mode,
+            "traversal_order": args.traversal_order,
+            "display_mode": args.display_mode,
+            "shared_display_rule": (
+                "none"
+                if args.display_mode == "raw"
+                else "ascending pixelwise cumulative union"
+            ),
             "backbone": args.backbone,
             "dataset": args.dataset,
+            "category": args.category,
             "semantic_targets": (
                 ["subpart", "part", "whole_object"]
                 if args.dataset == "SPIN"

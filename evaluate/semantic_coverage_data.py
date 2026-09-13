@@ -90,7 +90,8 @@ class SemanticHierarchyDataset:
         raise ValueError(f"unsupported dataset: {self.args.dataset}")
 
     def _pascalpart_samples(self) -> list[dict[str, object]]:
-        samples = load_paper_samples()["pascalpart"]["all"]
+        category = str(getattr(self.args, "category", "all"))
+        samples = load_paper_samples()["pascalpart"][category]
         result = []
         for item in samples:
             sample_id = str(item["sample_id"])
@@ -126,6 +127,7 @@ class SemanticHierarchyDataset:
         return image, [part_mask, object_mask], ["part", "whole_object"]
 
     def _partimagenet_samples(self) -> list[dict[str, object]]:
+        category = str(getattr(self.args, "category", "all"))
         return [
             {
                 **row,
@@ -133,7 +135,7 @@ class SemanticHierarchyDataset:
                     f"{row['sample_id']}:{row['class_name']}:{row['source_values']}"
                 ),
             }
-            for row in load_paper_samples()["partimagenet"]["all"]
+            for row in load_paper_samples()["partimagenet"][category]
         ]
 
     def _load_partimagenet(self, sample: dict[str, object]):

@@ -23,8 +23,9 @@ class DinoGranularityRefiner:
         model_name: str = "dinov3_vitl16",
         image_size: int = 768,
         candidate_threshold: float = 0.50,
-        max_hole_ratio: float = 0.04,
         positional_debias_components: int = 500,
+        positional_debias_mode: str = "zero",
+        positional_debias_seed: int = 0,
         cluster_tau: float = 0.60,
     ):
         self.repo_path = Path(repo_path).expanduser().resolve()
@@ -33,14 +34,20 @@ class DinoGranularityRefiner:
         self.model_name = model_name
         self.image_size = image_size
         self.candidate_threshold = candidate_threshold
-        self.max_hole_ratio = max_hole_ratio
         self.positional_debias_components = positional_debias_components
+        if positional_debias_mode not in {"none", "zero", "random"}:
+            raise ValueError(
+                "positional_debias_mode must be one of: none, zero, random"
+            )
+        self.positional_debias_mode = positional_debias_mode
+        self.positional_debias_seed = int(positional_debias_seed)
         self.cluster_tau = cluster_tau
 
         self.encoder = None
         self._positional_basis_cache = {}
         self._prepared_image_key = None
         self._prepared_semantic_feature = None
+        self.capture_frontier_scores = False
         self.reset()
 
     def reset(self):
@@ -56,13 +63,13 @@ class DinoGranularityRefiner:
         self._root_level_count = 0
         self._start_level = 0
         self._original_size = None
-        self._hole_area_limit = 0
         self._current_granularity = 0.0
         self._semantic_component_map = None
         self._semantic_component_features = None
         self._semantic_component_centroids = None
         self._semantic_component_neighbors = None
         self._semantic_image_size = None
+        self._frontier_score_trace = []
 
     @staticmethod
     def _image_cache_key(image: np.ndarray) -> Tuple[int, Tuple[int, ...], str]:
@@ -136,31 +143,54 @@ class DinoGranularityRefiner:
 
     @torch.inference_mode()
     def _build_positional_basis(self, input_height: int, input_width: int, channels: int) -> torch.Tensor:
-        cache_key = (input_height, input_width, channels)
+        cache_key = (
+            input_height,
+            input_width,
+            channels,
+            self.positional_debias_mode,
+            self.positional_debias_seed,
+        )
         if cache_key in self._positional_basis_cache:
             return self._positional_basis_cache[cache_key]
 
-        zero_image = torch.zeros(1, 3, input_height, input_width, device=self.device, dtype=torch.float32)
-        mean = zero_image.new_tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
-        std = zero_image.new_tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
-        zero_image = (zero_image - mean) / std
+        if self.positional_debias_mode == "none":
+            basis = torch.empty(channels, 0, device=self.device, dtype=torch.float32)
+            self._positional_basis_cache[cache_key] = basis
+            return basis
 
-        zero_feature = self.encoder.get_intermediate_layers(
-            zero_image,
+        if self.positional_debias_mode == "zero":
+            probe_image = torch.zeros(
+                1, 3, input_height, input_width,
+                device=self.device, dtype=torch.float32,
+            )
+        else:
+            generator = torch.Generator(device=self.device)
+            generator.manual_seed(self.positional_debias_seed)
+            probe_image = torch.rand(
+                1, 3, input_height, input_width,
+                device=self.device, dtype=torch.float32,
+                generator=generator,
+            )
+        mean = probe_image.new_tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
+        std = probe_image.new_tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
+        probe_image = (probe_image - mean) / std
+
+        probe_feature = self.encoder.get_intermediate_layers(
+            probe_image,
             n=[11],
             reshape=True,
         )[0][0]
-        zero_feature = F.normalize(zero_feature, p=2, dim=0)
+        probe_feature = F.normalize(probe_feature, p=2, dim=0)
 
         max_components = min(
             self.positional_debias_components,
             channels,
-            zero_feature.shape[1] * zero_feature.shape[2],
+            probe_feature.shape[1] * probe_feature.shape[2],
         )
         if max_components <= 0:
-            basis = torch.empty(channels, 0, device=self.device, dtype=zero_feature.dtype)
+            basis = torch.empty(channels, 0, device=self.device, dtype=probe_feature.dtype)
         else:
-            matrix = zero_feature.reshape(channels, -1)
+            matrix = probe_feature.reshape(channels, -1)
             matrix = matrix - matrix.mean(dim=1, keepdim=True)
             basis, _, _ = torch.linalg.svd(matrix, full_matrices=False)
             basis = basis[:, :max_components].contiguous()
@@ -255,21 +285,6 @@ class DinoGranularityRefiner:
         fallback = np.zeros_like(probability, dtype=np.uint8)
         cv2.circle(fallback, (x, y), 6, 1, -1)
         return fallback.astype(bool)
-
-    @staticmethod
-    def _fill_small_holes(mask: np.ndarray, max_area: int) -> np.ndarray:
-        if max_area <= 0 or not np.any(mask):
-            return mask
-        inverse = np.logical_not(mask).astype(np.uint8)
-        num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(inverse, connectivity=8)
-        filled = mask.copy()
-        height, width = mask.shape
-        for label in range(1, num_labels):
-            x, y, region_width, region_height, area = stats[label]
-            touches_border = x == 0 or y == 0 or x + region_width == width or y + region_height == height
-            if not touches_border and area <= max_area:
-                filled[labels == label] = True
-        return filled
 
     @staticmethod
     def _region_means(values: np.ndarray, labels: np.ndarray, num_regions: int) -> np.ndarray:
@@ -749,8 +764,6 @@ class DinoGranularityRefiner:
                     positive_click,
                     self.candidate_threshold,
                 )
-        self._hole_area_limit = max(64, int(original_candidate.sum() * self.max_hole_ratio))
-        original_candidate = self._fill_small_holes(original_candidate, self._hole_area_limit)
         self._original_candidate = original_candidate.copy()
         probability_patch = cv2.resize(
             simple_probability.astype(np.float32),
@@ -864,7 +877,6 @@ class DinoGranularityRefiner:
                 relax_to_probability=relax_to_probability,
                 hard_clip_candidate=hard_clip_candidate,
             )
-            up_mask = self._fill_small_holes(up_mask, self._hole_area_limit)
             area = float(up_mask.sum())
             if area < 16:
                 return
@@ -992,11 +1004,31 @@ class DinoGranularityRefiner:
             region_feature = _current_region_feature()
             region_area = _current_region_area()
             candidate_frontier = sorted(frontier)
+            candidate_scores = {
+                int(component_idx): _component_score(
+                    component_idx, region_feature, region_area
+                )
+                for component_idx in candidate_frontier
+            }
             best_component = min(
                 candidate_frontier,
-                key=lambda component_idx: _component_score(component_idx, region_feature, region_area),
+                key=lambda component_idx: candidate_scores[component_idx],
             )
-            best_score = _component_score(best_component, region_feature, region_area)
+            best_score = candidate_scores[best_component]
+            if self.capture_frontier_scores:
+                self._frontier_score_trace.append(
+                    {
+                        "step": len(selected_components) - 1,
+                        "selected_component": int(best_component),
+                        "candidates": [
+                            {
+                                "component": int(component_idx),
+                                "score": float(candidate_scores[component_idx][0]),
+                            }
+                            for component_idx in candidate_frontier
+                        ],
+                    }
+                )
             if semantic_overdrive:
                 component_area = float(component_pixel_masks[best_component].sum())
                 semantic_distance = float(best_score[1])
@@ -1144,5 +1176,4 @@ class DinoGranularityRefiner:
 
         height, width = self._original_size
         mask = cv2.resize(mask.astype(np.uint8), (width, height), interpolation=cv2.INTER_NEAREST).astype(bool)
-        mask = self._fill_small_holes(mask, self._hole_area_limit)
         return mask & self._original_candidate

@@ -1,106 +1,68 @@
 # SGR-Click
 
-SGR-Click is a click-grounded semantic granularity recovery framework built on
-top of SimpleClick and DINOv3. It provides continuous target-scope control
-through a semantic granularity slider while retaining standard interactive
-segmentation refinement.
+SGR-Click adds continuous semantic granularity control to interactive
+segmentation through a single slider. The method reuses frozen pretrained
+models and introduces **zero task-specific trainable parameters**; no
+additional training is required.
 
-The maintained runtime entry is
-`granularity_recovery/demo_granularity_recovery.py`.
+## Pipeline
 
-The current pipeline is:
-
-- SimpleClick interactive backbone
-- DINOv3 click-rooted semantic hierarchy
-- a single granularity-recovery network for full-range slider control
-
-## Repository Layout
-
-- `granularity_recovery/`
-  runtime GUI, dataset builder, training code, inference wrapper, and model
-- `evaluate/`
-  paper evaluation entrypoints with consolidated protocols and fixed sample lists
-- `isegm/`
-  SimpleClick-based interaction, model, and utility code
-- `models/`
-  model config files used by the interactive backbone
+1. **SimpleClick** generates a click prior from the first positive click.
+2. **DINOv3** builds a click-rooted semantic hierarchy via agglomerative
+   clustering and greedy frontier expansion on position-debiased features.
+   Low-evidence semantic additions are rejected with aggregate soft
+   SimpleClick evidence, preventing background from entering before the object.
+3. The **granularity slider** selects a cumulative hierarchy mask and hands the
+   endpoint to a soft whole-object semantic completion field.
+4. **SimpleClick boundary projection** refines the blocky DINOv3-patch
+   mask into a pixel-accurate result using synthetic interior clicks.
 
 ## Quick Start
 
-Create the environment and install the Python dependencies:
-
 ```bash
-conda create -n sgr-click python=3.10 -y
-conda activate sgr-click
+# 1. Create environment
+conda create -n sgr-click python=3.10 -y && conda activate sgr-click
 pip install -r requirements.txt
-```
 
-Clone the official DINOv3 implementation:
-
-```bash
+# 2. Clone DINOv3
 git clone https://github.com/facebookresearch/dinov3.git third_party/dinov3
+
+# 3. Download pretrained weights (see Model Weights below), then launch
+start_granularity_recovery_no_training_gui.bat
 ```
-
-Place the external checkpoints at the paths listed below, then launch the GUI:
-
-```bash
-python granularity_recovery/demo_granularity_recovery.py \
-  --checkpoint weights/simpleclick_models/cocolvis_vit_base.pth
-```
-
-Edit `config.yml` so its dataset paths point to your local copies before
-running the evaluation commands.
 
 ## Model Weights
 
-The trained SGR-Click recovery checkpoint is included in this repository:
-
-- `experiments/granularity_recovery/best.pth`
-- SHA-256: `781cd9bf6cba3b6e2f37d4567d76f604baf71784d73992036ff539eaa91f1e9c`
-
-The two large pretrained backbones are distributed by their original authors
-and are not duplicated in this repository:
+Two frozen pretrained backbones from their original authors:
 
 | Component | Expected local path | Official source |
 | --- | --- | --- |
-| SimpleClick ViT-B | `weights/simpleclick_models/cocolvis_vit_base.pth` | [SimpleClick model weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y?usp=sharing) |
-| SimpleClick ViT-L | `weights/simpleclick_models/cocolvis_vit_large.pth` | [SimpleClick model weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y?usp=sharing) |
-| DINOv3 ViT-L/16 | `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` | [Official DINOv3 repository](https://github.com/facebookresearch/dinov3) |
+| SimpleClick ViT-B | `weights/simpleclick_models/cocolvis_vit_base.pth` | [SimpleClick weights](https://drive.google.com/drive/folders/1zVhZefCjsTBxvyxnYMVnbkrNeRCH6y9Y) |
+| DINOv3 ViT-L/16 | `weights/dinov3/dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth` | [Official DINOv3 repo](https://github.com/facebookresearch/dinov3) |
 
-Alternative locations can be supplied through `DINOV3_REPO`,
-`DINOV3_WEIGHTS`, and `GRANULARITY_RECOVERY_CHECKPOINT`.
+Override paths via `DINOV3_REPO` and `DINOV3_WEIGHTS` environment variables.
 
-## Training and Data Generation
+## Repository Layout
 
-The main recovery training code lives in:
-
-- [granularity_recovery/build_granularity_recovery_dataset.py](granularity_recovery/build_granularity_recovery_dataset.py)
-- [granularity_recovery/train_granularity_recovery.py](granularity_recovery/train_granularity_recovery.py)
-- [granularity_recovery/dataset.py](granularity_recovery/dataset.py)
-
-See [granularity_recovery/README.md](granularity_recovery/README.md) for the
-maintained runtime and training components.
+- `granularity_recovery/` — GUI entry, controller, and app
+- `isegm/` — SimpleClick interaction, model, and utility code
+- `isegm/inference/dino_granularity.py` — DINOv3 hierarchy construction (core algorithm)
+- `evaluate/` — paper evaluation entrypoints
+- `models/` — model config files for the interactive backbone
 
 ## Evaluation
 
-The maintained evaluation entry is:
+```bash
+python evaluate/run_evaluation.py
 
-- [evaluate/run_evaluation.py](evaluate/run_evaluation.py)
+# Per-image visible-staircase NoC used by the default model
+python evaluate/run_staircase_noc.py --datasets GrabCut,Berkeley
+```
 
-This directory also contains:
+See `evaluate/README.md` for protocols and fixed sample lists.
 
-- consolidated fixed paper sample lists
-- the standard ten-point and ablation protocols
-- result-merging scripts
-- SGR-Click and UniGraCo hierarchical semantic evaluation
-
-See:
-
-- [evaluate/README.md](evaluate/README.md)
-
-## Upstream and Project History
-
-SGR-Click is developed from SimpleClick. The original upstream implementation
-is available at:
-
-- [uncbiag/SimpleClick](https://github.com/uncbiag/SimpleClick)
+Every maintained evaluation writes a `run_manifest.json` containing the exact
+arguments, Git revision and dirty-worktree status, software/CUDA environment,
+random seed, and SHA-256 identities of the protocol files and checkpoints.
+See `docs/reproducibility.md` for the method boundary, ablation definitions,
+and reporting checklist.

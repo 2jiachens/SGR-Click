@@ -7,6 +7,7 @@ import os
 import re
 import sys
 import time
+import zipfile
 from functools import lru_cache
 from pathlib import Path
 from types import SimpleNamespace
@@ -22,10 +23,13 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from granularity_recovery.gui_controller import GranularityRecoveryController
-from granularity_recovery.inference import GranularityRecoveryInference
+from granularity_recovery.soft_semantic_controller import SoftSemanticFusionController
+from evaluate.reproducibility import seed_everything, write_run_manifest
 from isegm.inference import utils
 from isegm.inference.clicker import Clicker
 from isegm.inference.dino_granularity import DinoGranularityRefiner
+from isegm.inference.soft_dino_semantic import SoftDinoSemanticRefiner
+from isegm.inference.direct_dino_fusion import DirectDinoFusionRefiner
 from isegm.utils import exp
 
 
@@ -45,26 +49,34 @@ def parse_args() -> argparse.Namespace:
         default="standard_ten",
     )
     parser.add_argument("--checkpoint", default="weights/simpleclick_models/cocolvis_vit_base.pth")
-    parser.add_argument("--granularity-recovery-checkpoint", default="experiments/granularity_recovery/best.pth")
-    parser.add_argument(
-        "--disable-granularity-recovery",
-        action="store_true",
-        help="Evaluate the SimpleClick + DINOv3 hierarchy baseline without the learned recovery module.",
-    )
     parser.add_argument(
         "--ablation-mode",
-        choices=["full", "frozen_hierarchy", "recovery_only", "simple_prior"],
+        choices=[
+            "full",
+            "frozen_hierarchy",
+            "external_hierarchy",
+            "soft_no_evidence_filter",
+            "simple_prior",
+        ],
         default="full",
         help=(
-            "Ablation path: full model; frozen DINO hierarchy without the learned "
-            "recovery network; learned recovery without self-guided boundary "
-            "projection; or the single-granularity SimpleClick prior."
+            "Training-free component ablation: full hierarchy plus boundary "
+            "projection; hierarchy without projection; or the single-granularity "
+            "SimpleClick prior."
         ),
     )
     parser.add_argument("--output-dir", default="outputs/standard_ten")
     parser.add_argument("--datasets", default=",".join(STANDARD_DATASETS))
-    parser.add_argument("--pascalpart-targets", default=",".join(PASCALPART_TARGETS))
-    parser.add_argument("--partimagenet-targets", default=",".join(PARTIMAGENET_TARGETS))
+    parser.add_argument(
+        "--pascalpart-targets",
+        default="",
+        help="Optional comma-separated PascalPart targets; disabled by default.",
+    )
+    parser.add_argument(
+        "--partimagenet-targets",
+        default="",
+        help="Optional comma-separated PartImageNet targets; disabled by default.",
+    )
     parser.add_argument("--sample-limit", type=int, default=0, help="Debug cap per target; 0 means no cap.")
     parser.add_argument("--sample-shard-id", type=int, default=0)
     parser.add_argument("--num-sample-shards", type=int, default=1)
@@ -74,15 +86,19 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--noc-thresholds", default="0.85,0.90")
     parser.add_argument("--pred-thresh", type=float, default=0.5)
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--cpu", action="store_true")
     parser.add_argument("--limit-longest-size", type=int, default=800)
     parser.add_argument("--dinov3-repo", default=None)
     parser.add_argument("--dinov3-model", default="dinov3_vitl16", choices=["dinov3_vits16", "dinov3_vitb16", "dinov3_vitl16"])
     parser.add_argument("--dinov3-weights", default=None)
     parser.add_argument("--dinov3-image-size", type=int, default=768)
-    parser.add_argument("--granularity-candidate-threshold", type=float, default=0.50)
-    parser.add_argument("--granularity-max-hole-ratio", type=float, default=0.02)
-    parser.add_argument("--refine-strength", type=float, default=0.65)
+    parser.add_argument(
+        "--positional-debias-mode",
+        choices=["none", "zero", "random"],
+        default="zero",
+    )
+    parser.add_argument("--positional-debias-seed", type=int, default=0)
     parser.add_argument(
         "--gui-slider-protocol",
         action="store_true",
@@ -100,13 +116,6 @@ def parse_args() -> argparse.Namespace:
         parser.error("--num-sample-shards must be >= 1")
     if not 0 <= args.sample_shard_id < args.num_sample_shards:
         parser.error("--sample-shard-id must satisfy 0 <= id < num shards")
-    if args.disable_granularity_recovery:
-        if args.ablation_mode not in {"full", "frozen_hierarchy"}:
-            parser.error(
-                "--disable-granularity-recovery conflicts with "
-                f"--ablation-mode {args.ablation_mode}"
-            )
-        args.ablation_mode = "frozen_hierarchy"
     if args.dinov3_repo is None:
         args.dinov3_repo = resolve_default_dinov3_repo()
     if args.dinov3_weights is None:
@@ -154,29 +163,63 @@ def read_image(path: Path) -> np.ndarray:
 
 def build_runtime_components(args):
     if args.ablation_mode == "simple_prior":
-        return None, None
+        return None
 
-    granularity_refiner = DinoGranularityRefiner(
+    if args.ablation_mode == "external_hierarchy":
+        return DinoGranularityRefiner(
+            repo_path=args.dinov3_repo,
+            weights_path=args.dinov3_weights,
+            device=args.device,
+            model_name=args.dinov3_model,
+            image_size=args.dinov3_image_size,
+            candidate_threshold=0.50,
+            positional_debias_mode=getattr(args, "positional_debias_mode", "zero"),
+            positional_debias_seed=getattr(args, "positional_debias_seed", 0),
+            cluster_tau=0.60,
+        )
+
+    if args.ablation_mode == "direct_dino_fusion":
+        return DirectDinoFusionRefiner(
+            repo_path=args.dinov3_repo,
+            weights_path=args.dinov3_weights,
+            device=args.device,
+            model_name=args.dinov3_model,
+            image_size=args.dinov3_image_size,
+            positional_debias_mode=getattr(args, "positional_debias_mode", "zero"),
+            positional_debias_seed=getattr(args, "positional_debias_seed", 0),
+            prototype_radius=getattr(args, "prototype_radius", 2.5),
+            similarity_temperature=getattr(args, "similarity_temperature", 0.08),
+            logit_gain=getattr(args, "soft_logit_gain", 4.5),
+        )
+
+    granularity_refiner = SoftDinoSemanticRefiner(
         repo_path=args.dinov3_repo,
         weights_path=args.dinov3_weights,
         device=args.device,
         model_name=args.dinov3_model,
         image_size=args.dinov3_image_size,
-        candidate_threshold=args.granularity_candidate_threshold,
-        max_hole_ratio=args.granularity_max_hole_ratio,
-        cluster_tau=0.60,
+        positional_debias_mode=getattr(args, "positional_debias_mode", "zero"),
+        positional_debias_seed=getattr(args, "positional_debias_seed", 0),
+        expansion_evidence_floor=(
+            0.0
+            if args.ablation_mode == "soft_no_evidence_filter"
+            else getattr(args, "expansion_evidence_floor", 0.15)
+        ),
+        cluster_tau=getattr(args, "cluster_tau", 0.60),
+        soft_logit_gain=getattr(args, "soft_logit_gain", 4.5),
+        prototype_radius=getattr(args, "prototype_radius", 2.5),
+        similarity_temperature=getattr(args, "similarity_temperature", 0.08),
+        enable_connected_support=args.ablation_mode != "soft_no_connected_support",
+        enable_soft_endpoint=args.ablation_mode not in {
+            "soft_no_endpoint",
+            "soft_no_endpoint_no_projection",
+        },
     )
-    granularity_predictor = None
-    if args.ablation_mode in {"full", "recovery_only"}:
-        granularity_predictor = GranularityRecoveryInference(
-            checkpoint_path=args.granularity_recovery_checkpoint,
-            device=args.device,
-        )
-    return granularity_refiner, granularity_predictor
+    return granularity_refiner
 
 
-def build_controller(args, simpleclick_model, granularity_refiner, granularity_predictor):
-    return GranularityRecoveryController(
+def build_controller(args, simpleclick_model, granularity_refiner):
+    return SoftSemanticFusionController(
         simpleclick_model,
         args.device,
         predictor_params={
@@ -196,10 +239,13 @@ def build_controller(args, simpleclick_model, granularity_refiner, granularity_p
         },
         update_image_callback=lambda reset_canvas=False: None,
         granularity_refiner=granularity_refiner,
-        granularity_predictor=granularity_predictor,
         prob_thresh=args.pred_thresh,
-        refine_strength=args.refine_strength,
-        enable_boundary_projection=args.ablation_mode != "recovery_only",
+        enable_boundary_projection=args.ablation_mode not in {
+            "frozen_hierarchy",
+            "simple_prior",
+            "direct_dino_fusion",
+            "soft_no_endpoint_no_projection",
+        },
     )
 
 
@@ -266,10 +312,19 @@ def evaluate_fixed_granularity(
 def load_runtime(args: argparse.Namespace, cfg):
     runtime_args = SimpleNamespace(**vars(args))
     checkpoint_path = utils.find_checkpoint(cfg.INTERACTIVE_MODELS_PATH, args.checkpoint)
-    simpleclick_model = utils.load_is_model(checkpoint_path, runtime_args.device, eval_ritm=False, cpu_dist_maps=True)
-    granularity_refiner, granularity_predictor = build_runtime_components(runtime_args)
-    controller = build_controller(runtime_args, simpleclick_model, granularity_refiner, granularity_predictor)
-    return runtime_args, simpleclick_model, granularity_refiner, granularity_predictor, controller
+    # The legacy Cython CPU distance-map implementation uses a fixed-size
+    # propagation queue that can overflow with many clicks and corrupt the
+    # process heap.  The native PyTorch implementation computes the same
+    # coordinate features without that unsafe queue.
+    simpleclick_model = utils.load_is_model(
+        checkpoint_path,
+        runtime_args.device,
+        eval_ritm=False,
+        cpu_dist_maps=False,
+    )
+    granularity_refiner = build_runtime_components(runtime_args)
+    controller = build_controller(runtime_args, simpleclick_model, granularity_refiner)
+    return runtime_args, simpleclick_model, granularity_refiner, controller
 
 
 def load_skip_samples(path_text: str) -> set[tuple[str, str]]:
@@ -332,15 +387,65 @@ def write_json_atomic(path: Path, payload: object) -> None:
 
 def load_pascalpart_mask(sample: Dict[str, object], dataset_root: Path, voc_images_dir: Path) -> tuple[np.ndarray, np.ndarray]:
     sample_id = str(sample["sample_id"])
-    mat_path = dataset_root / "parts" / "Annotations_Part" / f"{sample_id}.mat"
-    image_path = voc_images_dir / f"{sample_id}.jpg"
+    annotation_candidates = [
+        dataset_root / "parts" / "Annotations_Part" / f"{sample_id}.mat",
+        dataset_root / "Annotations_Part" / f"{sample_id}.mat",
+        dataset_root / f"{sample_id}.mat",
+    ]
+    image_candidates = [
+        voc_images_dir / f"{sample_id}.jpg",
+        voc_images_dir / "train" / f"{sample_id}.jpg",
+        voc_images_dir / "val" / f"{sample_id}.jpg",
+    ]
+    mat_path = next(
+        (path for path in annotation_candidates if path.is_file()),
+        annotation_candidates[0],
+    )
+    image_path = next(
+        (path for path in image_candidates if path.is_file()), image_candidates[0]
+    )
     image = read_image(image_path)
     ann = loadmat(str(mat_path))["anno"]["objects"][0, 0]
     gt_mask = ann["parts"][0, int(sample["object_id"])]["mask"][0, int(sample["part_id"])]
     return image, (gt_mask > 0).astype(np.int32)
 
 
-def load_partimagenet_mask(row: Dict[str, str], eval_root: Path) -> tuple[np.ndarray, np.ndarray]:
+@lru_cache(maxsize=1)
+def open_partimagenet_archive(path: str) -> zipfile.ZipFile:
+    return zipfile.ZipFile(path)
+
+
+def load_partimagenet_mask(
+    row: Dict[str, str],
+    eval_root: Path,
+    source_zip: Path | None = None,
+) -> tuple[np.ndarray, np.ndarray]:
+    if source_zip is not None and source_zip.is_file():
+        archive = open_partimagenet_archive(str(source_zip))
+        split = str(row["split"])
+        sample_id = str(row["sample_id"])
+        image_payload = archive.read(
+            f"PartImageNet/images/{split}/{sample_id}.JPEG"
+        )
+        annotation_payload = archive.read(
+            f"PartImageNet/annotations/{split}/{sample_id}.png"
+        )
+        image_bgr = cv2.imdecode(
+            np.frombuffer(image_payload, dtype=np.uint8), cv2.IMREAD_COLOR
+        )
+        labels = cv2.imdecode(
+            np.frombuffer(annotation_payload, dtype=np.uint8), cv2.IMREAD_UNCHANGED
+        )
+        if image_bgr is None or labels is None:
+            raise RuntimeError(f"failed to decode PartImageNet sample {sample_id}")
+        image = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
+        source_values = [
+            int(value)
+            for value in str(row["source_values"]).replace(";", ",").split(",")
+            if value.strip()
+        ]
+        return image, np.isin(labels, source_values).astype(np.int32)
+
     image = read_image(eval_root / row["image_path"])
     mask = cv2.imread(str(eval_root / row["mask_path"]), cv2.IMREAD_GRAYSCALE)
     if mask is None:
@@ -383,8 +488,12 @@ def iter_pascalpart_samples(target: str, cfg) -> Iterator[Dict[str, object]]:
 
 def iter_partimagenet_samples(target: str, cfg) -> Iterator[Dict[str, object]]:
     eval_root = (REPO_ROOT / cfg.PARTIMAGENET_EVAL_PATH).resolve()
+    source_zip_value = getattr(cfg, "PARTIMAGENET_SOURCE_ZIP", "")
+    source_zip = (
+        (REPO_ROOT / source_zip_value).resolve() if source_zip_value else None
+    )
     for row in load_paper_samples()["partimagenet"][target]:
-        image, gt_mask = load_partimagenet_mask(row, eval_root)
+        image, gt_mask = load_partimagenet_mask(row, eval_root, source_zip)
         yield {
             "dataset": f"PartImageNet/{target}",
             "sample_id": row["sample_id"],
@@ -442,7 +551,6 @@ def evaluate_target(
     runtime_args,
     simpleclick_model,
     granularity_refiner,
-    granularity_predictor,
     controller,
     output_dir: Path,
 ) -> None:
@@ -499,7 +607,11 @@ def evaluate_target(
                 if runtime_args.device.type == "cuda":
                     torch.cuda.empty_cache()
                     torch.cuda.ipc_collect()
-                controller = build_controller(runtime_args, simpleclick_model, granularity_refiner, granularity_predictor)
+                controller = build_controller(
+                    runtime_args,
+                    simpleclick_model,
+                    granularity_refiner,
+                )
 
             print(f"[sample start] {target_name} {slider_tag} {index}/{len(samples)} sample={sample.get('sample_id')}", flush=True)
             try:
@@ -570,14 +682,29 @@ def evaluate_target(
 
 
 def run_slider_evaluation(args: argparse.Namespace) -> None:
+    seed_everything(args.seed)
     cfg = exp.load_config_file(args.config_path, return_edict=True)
     protocols = json.loads(PAPER_PROTOCOLS_PATH.read_text(encoding="utf-8"))
     protocol = protocols[args.protocol]
     slider_values = [float(v) for v in protocol["slider_values"]]
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
+    write_run_manifest(
+        output_dir,
+        args,
+        REPO_ROOT,
+        artifacts=[
+            args.config_path,
+            PAPER_PROTOCOLS_PATH,
+            PAPER_SAMPLES_PATH,
+            args.checkpoint,
+            args.dinov3_weights,
+        ],
+    )
 
-    runtime_args, simpleclick_model, granularity_refiner, granularity_predictor, controller = load_runtime(args, cfg)
+    runtime_args, simpleclick_model, granularity_refiner, controller = load_runtime(args, cfg)
+
+    aggregate_targets: Dict[str, object] = {}
 
     def run_target(target_name, samples):
         evaluate_target(
@@ -588,10 +715,14 @@ def run_slider_evaluation(args: argparse.Namespace) -> None:
             runtime_args,
             simpleclick_model,
             granularity_refiner,
-            granularity_predictor,
             controller,
             output_dir,
         )
+        summary_path = output_dir / target_name.replace("/", "__") / "summary.json"
+        if summary_path.exists():
+            aggregate_targets[target_name] = json.loads(
+                summary_path.read_text(encoding="utf-8")
+            )
 
     for dataset_name in split_csv(args.datasets):
         run_target(dataset_name, iter_standard_samples(dataset_name, cfg))
@@ -600,6 +731,17 @@ def run_slider_evaluation(args: argparse.Namespace) -> None:
     for target in split_csv(args.partimagenet_targets):
         run_target(f"PartImageNet/{target}", iter_partimagenet_samples(target, cfg))
 
+    write_json_atomic(
+        output_dir / "aggregate.json",
+        {
+            "protocol": args.protocol,
+            "checkpoint": args.checkpoint,
+            "datasets": split_csv(args.datasets),
+            "pascalpart_targets": split_csv(args.pascalpart_targets),
+            "partimagenet_targets": split_csv(args.partimagenet_targets),
+            "targets": aggregate_targets,
+        },
+    )
     print(f"[all done] output_dir={output_dir}", flush=True)
 
 

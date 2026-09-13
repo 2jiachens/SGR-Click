@@ -72,3 +72,118 @@ def summarize_hierarchical_records(
             for name in metric_names
         },
     }
+
+
+def semantic_trajectory_diagnostics(
+    matched_prediction_indices: Sequence[int],
+    prediction_areas: Sequence[int],
+    target_prediction_ious: Sequence[Sequence[float]],
+    signature_decimals: int = 12,
+) -> dict[str, float | int]:
+    """Diagnose ordering, reverse area changes, and observable state changes.
+
+    The observable signature combines mask area with IoU against every annotated
+    semantic target. Distinct signatures are a conservative lower bound on the
+    number of distinct binary masks because two masks can share the same area and
+    target overlaps.
+    """
+    matched = np.asarray(matched_prediction_indices, dtype=np.int64)
+    areas = np.asarray(prediction_areas, dtype=np.int64)
+    target_ious = np.asarray(target_prediction_ious, dtype=np.float64)
+
+    if matched.ndim != 1 or matched.size == 0:
+        raise ValueError("matched_prediction_indices must be a non-empty vector")
+    if areas.ndim != 1 or areas.size < 2:
+        raise ValueError("prediction_areas must contain at least two states")
+    if target_ious.ndim != 2 or target_ious.shape[1] != areas.size:
+        raise ValueError("target_prediction_ious must be [levels, states]")
+    if target_ious.shape[0] != matched.size:
+        raise ValueError("one matched index is required per semantic level")
+
+    semantic_order_success = float(np.all(np.diff(matched) > 0))
+    area_deltas = np.diff(areas.astype(np.float64))
+    previous_areas = np.maximum(areas[:-1].astype(np.float64), 1.0)
+    backward_area_rate = float(
+        np.mean(np.maximum(-area_deltas, 0.0) / previous_areas)
+    )
+    rounded_ious = np.round(target_ious, decimals=int(signature_decimals))
+    signatures = [
+        (int(areas[state]), *rounded_ious[:, state].tolist())
+        for state in range(areas.size)
+    ]
+    observable_state_count = len(set(signatures))
+
+    return {
+        "semantic_order_success": semantic_order_success,
+        "backward_area_rate": backward_area_rate,
+        "observable_state_count": int(observable_state_count),
+    }
+
+
+def rescore_semantic_record(
+    record: dict[str, object],
+    state_indices: Sequence[int],
+    recall_thresholds: Sequence[float] = DEFAULT_RECALL_THRESHOLDS,
+) -> dict[str, float | int]:
+    """Rescore a saved trajectory on a shared subset of slider states."""
+    indices = np.asarray(state_indices, dtype=np.int64)
+    target_ious = np.asarray(record["target_prediction_ious"], dtype=np.float64)
+    areas = np.asarray(record["prediction_areas"], dtype=np.int64)
+    if indices.ndim != 1 or indices.size < 2:
+        raise ValueError("state_indices must contain at least two indices")
+    if indices.min() < 0 or indices.max() >= target_ious.shape[1]:
+        raise ValueError("state index is outside the saved trajectory")
+
+    selected_ious = target_ious[:, indices]
+    selected_areas = areas[indices]
+    matched = selected_ious.argmax(axis=1)
+    best_ious = selected_ious[
+        np.arange(selected_ious.shape[0]),
+        matched,
+    ]
+    diagnostics = semantic_trajectory_diagnostics(
+        matched,
+        selected_areas,
+        selected_ious,
+    )
+    diagnostics["semantic_order_rate"] = diagnostics.pop(
+        "semantic_order_success"
+    )
+    result: dict[str, float | int] = {
+        "m_biou": float(np.mean(best_ious)),
+        **diagnostics,
+    }
+    for threshold in recall_thresholds:
+        suffix = f"{round(float(threshold) * 100):02d}"
+        hits = best_ious >= float(threshold)
+        result[f"lr{suffix}"] = float(np.mean(hits))
+        result[f"hsr{suffix}"] = float(np.all(hits))
+    return result
+
+
+def summarize_semantic_trajectory_records(
+    records: Sequence[dict[str, object]],
+) -> dict[str, float | int | None]:
+    if not records:
+        return {
+            "samples": 0,
+            "semantic_order_rate": None,
+            "backward_area_rate": None,
+            "observable_state_count": None,
+        }
+
+    diagnostics = [
+        semantic_trajectory_diagnostics(
+            record["matched_prediction_indices"],
+            record["prediction_areas"],
+            record["target_prediction_ious"],
+        )
+        for record in records
+    ]
+    names = tuple(diagnostics[0])
+    summary = {
+        name: float(np.mean([float(item[name]) for item in diagnostics]))
+        for name in names
+    }
+    summary["semantic_order_rate"] = summary.pop("semantic_order_success")
+    return {"samples": len(records), **summary}

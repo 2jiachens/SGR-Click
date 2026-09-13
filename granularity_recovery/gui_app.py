@@ -40,7 +40,7 @@ class GranularityRecoveryDemoApp(ttk.Frame):
         self.controller = controller
         self.limit_longest_size = limit_longest_size
 
-        master.title("SimpleClick Granularity Recovery Demo")
+        master.title("SGR-Click")
         master.withdraw()
         master.update_idletasks()
         x = (master.winfo_screenwidth() - master.winfo_reqwidth()) / 2
@@ -225,7 +225,7 @@ class GranularityRecoveryDemoApp(ttk.Frame):
         self.lbfgs_iters_entry.grid(row=1, column=2, padx=10, pady=2, sticky="w")
         self.brs_options_frame.columnconfigure((0, 1), weight=1)
 
-        self.granularity_frame = FocusLabelFrame(master, text="DINOv3 granularity")
+        self.granularity_frame = FocusLabelFrame(master, text="Semantic Granularity")
         self.granularity_frame.pack(side=tk.TOP, fill=tk.X, padx=10, pady=3)
         self.granularity_scale = FocusHorizontalScale(
             self.granularity_frame,
@@ -333,9 +333,10 @@ class GranularityRecoveryDemoApp(ttk.Frame):
     def _about_callback(self):
         self.menubar.focus_set()
         text = [
-            "SimpleClick Granularity Recovery Demo",
-            "Base branch keeps the original low-granularity interaction style.",
-            "Recovery branch improves high-granularity whole-object restoration.",
+            "SGR-Click",
+            "DINOv3 click-rooted semantic hierarchy with SimpleClick boundary projection.",
+            "Zero learned parameters — frozen DINOv3 builds multi-level masks,",
+            "the slider selects one, and frozen SimpleClick refines the boundary.",
         ]
         messagebox.showinfo("About Demo", "\n".join(text))
 

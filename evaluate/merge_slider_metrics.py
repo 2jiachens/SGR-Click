@@ -69,7 +69,10 @@ def load_records(
     by_sample: Dict[str, Dict[str, list]] = {}
     sliders: List[str] = []
     for result_dir in result_dirs:
-        for path in sorted(result_dir.glob("g*.json")):
+        # Only consume finalized slider files.  Resume checkpoints use names
+        # such as ``g060.partial.json`` and must never count as an additional
+        # controller trajectory in the oracle aggregation.
+        for path in sorted(result_dir.glob("g[0-9][0-9][0-9].json")):
             slider = path.stem
             if slider not in sliders:
                 sliders.append(slider)
