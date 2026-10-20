@@ -1,0 +1,14 @@
+{
+  "cocolvis_vit_base.pth": {
+    "bytes": 392181717,
+    "sha256": "4c8472e21cdfed6d05301f14f5c6a244f21b453a59a8aee52238dc7b12223f4a"
+  },
+  "dinov3_vitl16_pretrain_lvd1689m-8aa4cbdd.pth": {
+    "bytes": 1213050671,
+    "sha256": "8aa4cbddda325040fc78db2c272754af6ebe8ff2c55f6ec4f1964d8890f66035"
+  },
+  "sgr_click_lite.pt": {
+    "bytes": 9651389,
+    "sha256": "6f206433e689511611871e5d5c80bf66692769dd1e9d294268ac3760fc9bedca"
+  }
+}

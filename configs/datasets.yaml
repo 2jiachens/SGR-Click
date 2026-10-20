@@ -1,0 +1,10 @@
+# Paths are relative to this file. Absolute paths are also accepted.
+pascalpart_annotations: ../datasets/PascalPart/parts/Annotations_Part
+pascalpart_images: ../datasets/VOCdevkit/VOC2012/JPEGImages
+partimagenet_zip: ../datasets/PartImageNet_Seg.zip
+spin_annotations: ../datasets/SPIN/spin_jsons_for_coco
+grabcut: ../datasets/GrabCut
+berkeley: ../datasets/Berkeley
+davis: ../datasets/DAVIS345
+sbd: ../datasets/SBD/benchmark_RELEASE/dataset
+pascalvoc: ../datasets/VOCdevkit/VOC2012

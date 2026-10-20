@@ -1,0 +1,13 @@
+# Install an appropriate torch/torchvision build separately.
+numpy==1.26.4
+scipy==1.15.3
+opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
+scikit-learn==1.7.2
+scikit-image==0.24.0
+timm==0.6.11
+mmcv==1.6.2
+albumentations==0.5.2
+einops==0.8.2
+PyYAML==6.0.2
+pycocotools==2.0.11

@@ -1,8 +1,10 @@
 import numpy as np
 import pytest
 
-from evaluate.semantic_coverage import (
+from sgr_click.evaluation.semantic_coverage import (
+    boundary_f_score,
     hierarchical_semantic_metrics,
+    mask_trajectory_diagnostics,
     rescore_semantic_record,
     semantic_trajectory_diagnostics,
     summarize_hierarchical_records,
@@ -110,3 +112,25 @@ def test_summarize_semantic_trajectory_records():
     assert summary["samples"] == 2
     assert summary["semantic_order_rate"] == 0.5
     assert summary["backward_area_rate"] == pytest.approx(0.25)
+
+
+def test_mask_trajectory_diagnostics_detects_equal_area_replacement():
+    first = np.zeros((6, 6), dtype=bool)
+    second = np.zeros((6, 6), dtype=bool)
+    first[1:3, 1:3] = True
+    second[1:3, 2:4] = True
+
+    diagnostics = mask_trajectory_diagnostics([first, second])
+
+    assert diagnostics["mask_regression_ratio"] == pytest.approx(0.5)
+    assert diagnostics["strict_nested_step_rate"] == 0.0
+    assert diagnostics["nested_step_rate_1pct"] == 0.0
+    assert diagnostics["exact_state_count"] == 2
+
+
+def test_boundary_f_score_rewards_matching_boundaries():
+    target = square(1, 7)
+    shifted = square(2, 8)
+
+    assert boundary_f_score(target, target, tolerance=0) == pytest.approx(1.0)
+    assert boundary_f_score(shifted, target, tolerance=0) < 1.0
