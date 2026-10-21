@@ -1,0 +1,3 @@
+# MMCV 1.6.2 imports pkg_resources during its isolated source build.
+# setuptools 82 removed that module; keep the compatible build backend.
+setuptools>=77,<82

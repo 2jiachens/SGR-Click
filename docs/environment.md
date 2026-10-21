@@ -37,6 +37,13 @@ for the checks. Install it after selecting the appropriate torch/torchvision
 build:
 
 ```bash
-python -m pip install -r requirements-repro.txt
-python -m pip install -e ".[dev]"
+python -m pip install --upgrade "pip>=25.3"
+python -m pip install --build-constraint build-constraints.txt -r requirements-repro.txt
+python -m pip install --build-constraint build-constraints.txt -e ".[dev]"
 ```
+
+Use the build constraint for fresh installations: MMCV 1.6.2 requires
+`pkg_resources` during its source build, so the isolated build environment uses
+`setuptools<82`. This constraint leaves the model and runtime dependencies
+unchanged. Installing an older setuptools only in the main environment does
+not constrain pip's isolated build environment.

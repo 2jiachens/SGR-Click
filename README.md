@@ -96,8 +96,8 @@ Install a compatible PyTorch / torchvision pair for your device using the
 [official installer instructions](https://pytorch.org/get-started/locally/), then:
 
 ```bash
-python -m pip install --upgrade pip
-python -m pip install -e .
+python -m pip install --upgrade "pip>=25.3"
+python -m pip install --build-constraint build-constraints.txt -e .
 ```
 
 See the [tested environment](docs/environment.md) for dependency versions.
@@ -260,7 +260,8 @@ tests/                 Path, cache, data, and protocol checks
 ```
 
 ```bash
-python -m pip install -e ".[dev]"
+python -m pip install --upgrade "pip>=25.3"
+python -m pip install --build-constraint build-constraints.txt -e ".[dev]"
 python -m pytest -q
 ```
 
