@@ -2,7 +2,7 @@
 
 # SGR-Click
 
-### Semantic Anchors and Progressive Completion<br>for Interactive Granularity Control
+### Semantic Granularity Recovery<br>for Interactive Segmentation
 
 **Click a part. Explore its semantic context. Select the scope you need.**
 
@@ -11,6 +11,8 @@
 </div>
 
 ![Granularity control from a face click: comparison examples and semantic stages recovered by SGR-Click-TF.](assets/teaser.png)
+
+**SGR** stands for **Semantic Granularity Recovery**.
 
 **One click can refer to different parts of the same object.** SGR-Click makes
 that choice explicit: it recovers representative **semantic anchors**, then

@@ -23,7 +23,7 @@ def load_model(args):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="SGR-Click: semantic granularity recovery.")
+    parser = argparse.ArgumentParser(description="SGR-Click: Semantic Granularity Recovery for Interactive Segmentation.")
     commands = parser.add_subparsers(dest="command", required=True)
     demo = commands.add_parser("demo", help="Open the interactive desktop demo.")
     add_model_arguments(demo)
